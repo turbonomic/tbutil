@@ -6,7 +6,7 @@
 
 Download the correct zip file for your platform from ..
 
-`https://s3.eu-west-2.amazonaws.com/turbonomic-emea-cs-bucket/tbutil/1.3g/7c1f708069dae87a0d4eb4b8dfd3f30b`
+`https://github.com/turbonomic/tbutil/blob/master/releases/v1_3g.md`
 
 Once downloaded, un-zip the file into a directory of your choice. For example (for version 1.3g, Linux)...
 

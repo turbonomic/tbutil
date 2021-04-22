@@ -82,10 +82,17 @@ function getPdfNote(doc) {
 //== MD Files ===========================================================================
 
 function getMdNames() {
-	return readDir("../docs/"+release+"/*.md").map(path => {
+	var files1 = readDir("../docs/"+release+"/*.md").map(path => {
 		var p = path.split("/");
 		return p[p.length-1];
 	});
+	var files2 = readDir("../docs/"+release+"/K8S/*.md").map(path => {
+		var p = path.split("/");
+		return "K8S/" + p[p.length-1];
+	});
+	var files = _.flatten([files1, files2]);
+	files.sort();
+	return files;
 }
 
 function getMd(doc) {
@@ -119,9 +126,10 @@ function getBinary() {
 }
 
 function getUrlBase() {
-	return "/turbonomic/tbutil/releases/download/" + release;
+	return "https:/turbonomic/tbutil/releases/download/" + release;
 }
 
+debugger;
 
 //=======================================================================================
 

@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tbutil-flexera
+  labels:
+    app: tbutil-flexera
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: tbutil-flexera
+
+  template:
+
+    metadata:
+      labels:
+        app: tbutil-flexera
+
+    spec:
+      serviceAccountName: turbo-user
+
+      securityContext:
+        fsGroup: 2000
+
+      volumes:
+        - name: tbutil-flexera-volume
+          persistentVolumeClaim:
+            claimName: tbutil-flexera-volume
+        - name: topology-processor
+          persistentVolumeClaim:
+            claimName: topology-processor
+
+      containers:
+      - name: tbutil-flexera
+        image: labdocker:5000/tbutil-flexera:1.3g
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: TURBO_MACHINE_ID_FILE
+            value: /home/tbutil/.tbutilmachine-id
+
+          - name: TURBO_K8S_SERVICE_NAME
+            value: tbutil-flexera
+
+        ports:
+          - containerPort: 22
+
+        volumeMounts:
+          - name: tbutil-flexera-volume
+            subPath: tbutil
+            mountPath: /home/tbutil
+
+          - name: tbutil-flexera-volume
+            subPath: tbexport
+            mountPath: /home/tbexport
+
+          - name: tbutil-flexera-volume
+            subPath: etc-ssh
+            mountPath: /etc/ssh
+
+          - name: tbutil-flexera-volume
+            subPath: etc-crontabs
+            mountPath: /etc/crontabs
+          - name: topology-processor
+            subPath: helper_dir
+            mountPath: /home/turbonomic/data/helper_dir/topology-processor
+            readOnly: true
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: tbutil-flexera
+spec:
+  type: NodePort
+  ports:
+    - name: ssh
+      port: 22
+      targetPort: 22
+      nodePort: 31122
+
+  selector:
+    app: tbutil-flexera

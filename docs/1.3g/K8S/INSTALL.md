@@ -1,4 +1,4 @@
-# TBUtil Containers
+# Installing TBUtil PODs
 
 | Info | Value |
 | ---- | ----- |
@@ -33,11 +33,11 @@ When the instructions that follow require a file to be downloaded, refer to the 
 
 | Flavour | Zip | volume.yaml | deploy-online.yaml |
 | ------- | --- | ----------- | ------------------ |
-| base | [click here](https://s3.eu-west-2.amazonaws.com/turbonomic-emea-cs-bucket/tbutil/1.3g/7c1f708069dae87a0d4eb4b8dfd3f30b/tbutil-base-k8s-1_3g.zip) | [click here](https://s3.eu-west-2.amazonaws.com/turbonomic-emea-cs-bucket/tbutil/1.3g/7c1f708069dae87a0d4eb4b8dfd3f30b/base/volume.yaml) | [click here](https://s3.eu-west-2.amazonaws.com/turbonomic-emea-cs-bucket/tbutil/1.3g/7c1f708069dae87a0d4eb4b8dfd3f30b/base/deploy-online.yaml) |
-| actionscripts | [click here](https://s3.eu-west-2.amazonaws.com/turbonomic-emea-cs-bucket/tbutil/1.3g/7c1f708069dae87a0d4eb4b8dfd3f30b/tbutil-actionscripts-k8s-1_3g.zip) | [click here](https://s3.eu-west-2.amazonaws.com/turbonomic-emea-cs-bucket/tbutil/1.3g/7c1f708069dae87a0d4eb4b8dfd3f30b/actionscripts/volume.yaml) | [click here](https://s3.eu-west-2.amazonaws.com/turbonomic-emea-cs-bucket/tbutil/1.3g/7c1f708069dae87a0d4eb4b8dfd3f30b/actionscripts/deploy-online.yaml) |
-| hotwarm | [click here](https://s3.eu-west-2.amazonaws.com/turbonomic-emea-cs-bucket/tbutil/1.3g/7c1f708069dae87a0d4eb4b8dfd3f30b/tbutil-hotwarm-k8s-1_3g.zip) | [click here](https://s3.eu-west-2.amazonaws.com/turbonomic-emea-cs-bucket/tbutil/1.3g/7c1f708069dae87a0d4eb4b8dfd3f30b/hotwarm/volume.yaml) | [click here](https://s3.eu-west-2.amazonaws.com/turbonomic-emea-cs-bucket/tbutil/1.3g/7c1f708069dae87a0d4eb4b8dfd3f30b/hotwarm/deploy-online.yaml) |
-| flexera | [click here](https://s3.eu-west-2.amazonaws.com/turbonomic-emea-cs-bucket/tbutil/1.3g/7c1f708069dae87a0d4eb4b8dfd3f30b/tbutil-flexera-k8s-1_3g.zip) | [click here](https://s3.eu-west-2.amazonaws.com/turbonomic-emea-cs-bucket/tbutil/1.3g/7c1f708069dae87a0d4eb4b8dfd3f30b/flexera/volume.yaml) | [click here](https://s3.eu-west-2.amazonaws.com/turbonomic-emea-cs-bucket/tbutil/1.3g/7c1f708069dae87a0d4eb4b8dfd3f30b/flexera/deploy-online.yaml) |
-| full | [click here](https://s3.eu-west-2.amazonaws.com/turbonomic-emea-cs-bucket/tbutil/1.3g/7c1f708069dae87a0d4eb4b8dfd3f30b/tbutil-full-k8s-1_3g.zip) | [click here](https://s3.eu-west-2.amazonaws.com/turbonomic-emea-cs-bucket/tbutil/1.3g/7c1f708069dae87a0d4eb4b8dfd3f30b/full/volume.yaml) | [click here](https://s3.eu-west-2.amazonaws.com/turbonomic-emea-cs-bucket/tbutil/1.3g/7c1f708069dae87a0d4eb4b8dfd3f30b/full/deploy-online.yaml) |
+| base | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-base-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/base/1.3g/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/base/1.3g/deploy-online.yaml) |
+| actionscripts | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-actionscripts-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/actionscripts/1.3g/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/actionscripts/1.3g/deploy-online.yaml) |
+| hotwarm | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-hotwarm-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/hotwarm/1.3g/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/hotwarm/1.3g/deploy-online.yaml) |
+| flexera | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-flexera-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/flexera/1.3g/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/flexera/1.3g/deploy-online.yaml) |
+| full | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-full-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/full/1.3g/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/full/1.3g/deploy-online.yaml) |
 
 Note: the volume.yaml files supplied assumesthat PVCs use Gluster. You may need to change the file if your installation uses a different persistent storage provider.
 

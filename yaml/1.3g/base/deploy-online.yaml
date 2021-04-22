@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tbutil-base
+  labels:
+    app: tbutil-base
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: tbutil-base
+
+  template:
+
+    metadata:
+      labels:
+        app: tbutil-base
+
+    spec:
+      serviceAccountName: turbo-user
+
+      securityContext:
+        fsGroup: 2000
+
+      volumes:
+        - name: tbutil-base-volume
+          persistentVolumeClaim:
+            claimName: tbutil-base-volume
+
+      containers:
+      - name: tbutil-base
+        image: turbointegrations/tbutil-base:1.3g
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: TURBO_MACHINE_ID_FILE
+            value: /home/tbutil/.tbutilmachine-id
+
+          - name: TURBO_K8S_SERVICE_NAME
+            value: tbutil-base
+
+        ports:
+
+        volumeMounts:
+          - name: tbutil-base-volume
+            subPath: tbutil
+            mountPath: /home/tbutil
+
+          - name: tbutil-base-volume
+            subPath: tbexport
+            mountPath: /home/tbexport
+
+          - name: tbutil-base-volume
+            subPath: etc-ssh
+            mountPath: /etc/ssh
+
+          - name: tbutil-base-volume
+            subPath: etc-crontabs
+            mountPath: /etc/crontabs
+
+---

@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tbutil-actionscripts
+  labels:
+    app: tbutil-actionscripts
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: tbutil-actionscripts
+
+  template:
+
+    metadata:
+      labels:
+        app: tbutil-actionscripts
+
+    spec:
+      serviceAccountName: turbo-user
+
+      securityContext:
+        fsGroup: 2000
+
+      volumes:
+        - name: tbutil-actionscripts-volume
+          persistentVolumeClaim:
+            claimName: tbutil-actionscripts-volume
+
+      containers:
+      - name: tbutil-actionscripts
+        image: turbointegrations/tbutil-actionscripts:1.3g
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: TURBO_MACHINE_ID_FILE
+            value: /home/tbutil/.tbutilmachine-id
+
+          - name: TURBO_K8S_SERVICE_NAME
+            value: tbutil-actionscripts
+
+        ports:
+          - containerPort: 22
+
+        volumeMounts:
+          - name: tbutil-actionscripts-volume
+            subPath: tbutil
+            mountPath: /home/tbutil
+
+          - name: tbutil-actionscripts-volume
+            subPath: tbexport
+            mountPath: /home/tbexport
+
+          - name: tbutil-actionscripts-volume
+            subPath: etc-ssh
+            mountPath: /etc/ssh
+
+          - name: tbutil-actionscripts-volume
+            subPath: etc-crontabs
+            mountPath: /etc/crontabs
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: tbutil-actionscripts
+spec:
+  ports:
+    - name: ssh
+      port: 22
+      targetPort: 22
+
+  selector:
+    app: tbutil-actionscripts
