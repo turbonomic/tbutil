@@ -9,7 +9,7 @@
 
 ## Installing the POD
 
-Install the container as a K8S POD by following [these instructions](INSTALL.html) with "actionscripts" as the POD flavour.
+Install the container as a K8S POD by following [these instructions](INSTALL.md) with "actionscripts" as the POD flavour.
 
 Once installed, you can set up the scripts and then register the script server with Turbonomic.
 

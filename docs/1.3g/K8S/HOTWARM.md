@@ -45,7 +45,7 @@ The following points should be noted prior to deploying the hot/warm logic.
 
 ### Step 1: Install the POD
 
-Install the container as a K8S POD by following [these instructions](INSTALL.html) with "hotwarm" as the POD flavour.
+Install the container as a K8S POD by following [these instructions](INSTALL.md) with "hotwarm" as the POD flavour.
 
 ### Step 2: Configure
 

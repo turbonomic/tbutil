@@ -21,9 +21,9 @@ The following flavours are currently available:
 | Flavour | Description |
 | ------- | ----------- |
 | base | A basic TBUtil installation with no plugins or other extended features. This forms the basis of all other flavours. |
-| [actionscripts](ACTIONSCRIPTS.html) | This adds some skeleton action scripts (and an openssh server) to the base flavour. You can use this as the starting point for building your own real actions script integrations. |
-| [hotwarm](HOTWARM.html) | A TBUtil container with features for hot/warm standby backup of the Turbonomic system. |
-| [flexera](FLEXERA.html) | A TButil container with features for extracting VM, Host and Cluster details into CSV files that can be imported into Flexera. |
+| [actionscripts](ACTIONSCRIPTS.md) | This adds some skeleton action scripts (and an openssh server) to the base flavour. You can use this as the starting point for building your own real actions script integrations. |
+| [hotwarm](HOTWARM.md) | A TBUtil container with features for hot/warm standby backup of the Turbonomic system. |
+| [flexera](FLEXERA.md) | A TButil container with features for extracting VM, Host and Cluster details into CSV files that can be imported into Flexera. |
 | full | All the above the features, merged into a single container. |
 
 
@@ -33,11 +33,11 @@ When the instructions that follow require a file to be downloaded, refer to the 
 
 | Flavour | Zip | volume.yaml | deploy-online.yaml |
 | ------- | --- | ----------- | ------------------ |
-| base | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-base-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/base/1.3g/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/base/1.3g/deploy-online.yaml) |
-| actionscripts | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-actionscripts-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/actionscripts/1.3g/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/actionscripts/1.3g/deploy-online.yaml) |
-| hotwarm | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-hotwarm-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/hotwarm/1.3g/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/hotwarm/1.3g/deploy-online.yaml) |
-| flexera | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-flexera-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/flexera/1.3g/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/flexera/1.3g/deploy-online.yaml) |
-| full | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-full-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/full/1.3g/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/full/1.3g/deploy-online.yaml) |
+| base | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-base-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/base/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/base/deploy-online.yaml) |
+| actionscripts | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-actionscripts-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/actionscripts/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/actionscripts/deploy-online.yaml) |
+| hotwarm | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-hotwarm-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/hotwarm/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/hotwarm/deploy-online.yaml) |
+| flexera | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-flexera-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/flexera/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/flexera/deploy-online.yaml) |
+| full | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-full-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/full/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/full/deploy-online.yaml) |
 
 Note: the volume.yaml files supplied assumesthat PVCs use Gluster. You may need to change the file if your installation uses a different persistent storage provider.
 

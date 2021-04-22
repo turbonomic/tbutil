@@ -10,7 +10,7 @@
 
 ### Step 1: Install the POD
 
-Install the container as a K8S POD by following [these instructions](INSTALL.html) with "flexera" as the POD flavour.
+Install the container as a K8S POD by following [these instructions](INSTALL.md) with "flexera" as the POD flavour.
 
 ### Step 2: Configure
 
