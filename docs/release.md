@@ -1,58 +1,45 @@
-# TbUtil Version 1.3g (Pre-release)
+# TbUtil Version 1.2c
 
-Released: 15 Apr 2021
+Released: 13th Nov 2020
 
 Unsupported software, Copyright (C) Turbonomic 2018 .. 2021
 
-## Starting points.
 
-Refer to [README.md](../docs/README.md) for high-level overview of TBUtil.
-
-Refer to [QUICK-INSTALL.md](../docs/QUICK-INSTALL.md) for:
-
-- Installation into Turbonimic V6 systems
-- Installing directly onto the OVA of Turbonomic V8 systems
-- Installing onto non-Turbonomic systems (such as your laptop).
-
-Refer to [IWO.md](../docs/IWO.md) for information about installing TBUtil for use with IWO.
-
-Refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on installing as a POD into a V8 system.
-
-## Downloads for OVA or Laptop installation
+## Downloads
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
-| [tbutil-1_3g-linux.zip](https:/turbonomic/tbutil/releases/download/1.3g/tbutil-1_3g-linux.zip) | 10b0d6480bf2343a78eb9d4086fbaf25 | Download for x86_64 Linux |
-| [tbutil-1_3g-mac.zip](https:/turbonomic/tbutil/releases/download/1.3g/tbutil-1_3g-mac.zip) | ec931076aae81850813887df78fe19b5 | Download for MAC (64 bit) |
-| [tbutil-1_3g-windows.zip](https:/turbonomic/tbutil/releases/download/1.3g/tbutil-1_3g-windows.zip) | 8823f4fdbd4578cadb2abd4617d37c14 | Download for Windows (64 bit) |
+| [tbutil-1_2c-linux.zip](https://github.com/turbonomic/tbutil/releases/download/v1.2c/tbutil-1_2c-linux.zip) | f5e78ce37d870fa351c21e027d67979f | Download for x86_64 Linux |
+| [tbutil-1_2c-mac.zip](https://github.com/turbonomic/tbutil/releases/download/v1.2c/tbutil-1_2c-mac.zip) | b7ccb2b1a1faf300c141a6c8093a32f4 | Download for MAC (64 bit) |
+| [tbutil-1_2c-windows.zip](https://github.com/turbonomic/tbutil/releases/download/v1.2c/tbutil-1_2c-windows.zip) | 4b772176d2a6ae46b0ce10435001d8e6 | Download for Windows (64 bit) |
 
 
-## MarkDown Documents
+## Installation
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
-| [API-REFERENCE.md](../docs/API-REFERENCE.md) | bb1ad78e6c756707e96fe9281adb2b26 | REST API Reference (For Turbonomic 6.4.35) |
-| [BUILDING.md](../docs/BUILDING.md) | f9bdf4727f4e8ae90e9a1add5d1ed8c0 | TButil 1.3g - Building from source |
-| [EXAMPLES.md](../docs/EXAMPLES.md) | ce9a11f73dea14c09b65e0cd6447ec96 | TButil (VERSION) - Example scripts |
-| [IWO.md](../docs/IWO.md) | 55f639c07a80ad88a9534a2a2ef23896 | TBUtil 1.3g IWO Instance Credentials |
-| [JS-ADDINS.md](../docs/JS-ADDINS.md) | 961663ca405c09e2fb9eb605728e0208 | Add-ins available to TBUtil 1.3g JS formatters and TBScripts |
-| [K8S/ACTIONSCRIPTS.md](../docs/K8S/ACTIONSCRIPTS.md) | 73da1954b39d104912b884b917a82723 | TBUtil Template Action Scripts POD |
-| [K8S/FLEXERA.md](../docs/K8S/FLEXERA.md) | dd9673b8761bd0cd4f5a1d68d17d6b31 | TBUtil Flexera intergration POD |
-| [K8S/HOTWARM.md](../docs/K8S/HOTWARM.md) | 3d809618d85fcd9cea28e7d93cdc4cef | TBUtil Hot/Warm Standby POD |
-| [K8S/INSTALL.md](../docs/K8S/INSTALL.md) | 1393e13c07cc489ae64bd28b586c9cb6 | Installing TBUtil PODs |
-| [K8S/INTERNALS.md](../docs/K8S/INTERNALS.md) | 45ee1885ce2119dcb7610a3700aa8588 | TBUtil POD Internals. |
-| [PLUGINS.md](../docs/PLUGINS.md) | ed6652618f7b1bde8364cffe69e6565c | TB Script Plugins |
-| [QUICK-INSTALL.md](../docs/QUICK-INSTALL.md) | fb69f24ace0426dccad93b60c8386373 | TBUtil 1.3g Quick Install Guide. |
-| [README.md](../docs/README.md) | 6634ff4bb7372cb7273e97d91dccc09f | TButil 1.3g - Turbonomic Command-Line Utility |
-| [RUNNING-PLANS.md](../docs/RUNNING-PLANS.md) | f6e688f29d478064d40cfd6c81809d23 | Running plans with tbutil 1.1n or later. |
-| [SUBCOMMANDS.md](../docs/SUBCOMMANDS.md) | 3b3f8834fef2877b8eb4c5079c7d1415 | TBUtil 1.3g Sub Commands |
-| [apiv1-plugin.md](../docs/apiv1-plugin.md) | 4ee31e6ce0dafde54819f63cb4d40a73 | API V1 plugin for TBUtil |
-| [arangodb-plugin.md](../docs/arangodb-plugin.md) | 58839fa620037293f2f217e30d5d82a4 | ArangoDB plugin for TBUtil |
-| [excel-plugin.md](../docs/excel-plugin.md) | 86caffb815cab253a0e06d93c67ad376 | EXCEL plugin for TBUtil |
-| [mysql-plugin.md](../docs/mysql-plugin.md) | 46e75b6687618239058bce6170e12c8f | MySQL Plugin for TBUtil |
-| [pdf-plugin.md](../docs/pdf-plugin.md) | b78af736bd900f6c7604ef2b8ecea57f | PDF Plugin for TBUtil |
-| [smtp-plugin.md](../docs/smtp-plugin.md) | 9bc422d85b6bb23934cb450ba5c4a2bc | SMTP Plugin for TBUtil |
-| [sqlite3-plugin.md](../docs/sqlite3-plugin.md) | 3f2cc898c14915588e7f758c542dca9c | SqLite3 Plugin for TBUtil |
-| [sys-plugin.md](../docs/sys-plugin.md) | de7fceda499eb12aea01c1a06494dd34 | SYS Plugin for TBUtil |
-| [vcenter-plugin.md](../docs/vcenter-plugin.md) | 35ca9ac19f20ac03636a98e32df03b27 | vCenter plugin for TBUtil |
-| [xml-plugin.md](../docs/xml-plugin.md) | ed340246da269a473962613173332490 | XML Plugin for TBUtil |
+| [QUICK-INSTALL.pdf](https://github.com/turbonomic/tbutil/releases/download/v1.2c/QUICK-INSTALL.pdf) | 02cb9435131f158983b25738ca55a638 | Just 2 pages of installation instructions |
+
+
+## Users and Developer's documentation
+
+| File Name | MD5 Checksum | Notes |
+| --------- | ------------ | ----- |
+| [README.pdf](https://github.com/turbonomic/tbutil/releases/download/v1.2c/README.pdf) | 3a04c685ccd88e4e516c140d75dc9f5c | TbUtil overview |
+| [BUILDING.pdf](https://github.com/turbonomic/tbutil/releases/download/v1.2c/BUILDING.pdf) | bf513cedb923556f59829acb1d338a5c | How to build from source |
+| [EXAMPLES.pdf](https://github.com/turbonomic/tbutil/releases/download/v1.2c/EXAMPLES.pdf) | d0ffb95631027741c7d0875d787f7eb0 | Brief description of some example scripts |
+| [JS-ADDINS.pdf](https://github.com/turbonomic/tbutil/releases/download/v1.2c/JS-ADDINS.pdf) | 46246f98fe8a2bacad93d641eb427dfb | Extensions to the JavaScript language implemented in tbscript. |
+| [REFERENCE.pdf](https://github.com/turbonomic/tbutil/releases/download/v1.2c/REFERENCE.pdf) | 656f9a843aecb45e1cb2489877f0d7e5 | List of the Turbonomic REST API functions implemented by tbscript. |
+| [RUNNING-PLANS.pdf](https://github.com/turbonomic/tbutil/releases/download/v1.2c/RUNNING-PLANS.pdf) | 08104a9e5cda386146abfb333c5bf4dc | Some notes about running Turbonomic plans using tbscript. |
+| [SUBCOMMANDS.htm](https://github.com/turbonomic/tbutil/releases/download/v1.2c/SUBCOMMANDS.html) | b91acb005d10a6d32257484d81ff2f5e | Documentation for the tbutil sub commands (work in progress). |
+
+
+## Documentation on Plugins
+
+| File Name | MD5 Checksum | Notes |
+| --------- | ------------ | ----- |
+| [PLUGINS.pdf](https://github.com/turbonomic/tbutil/releases/download/v1.2c/PLUGINS.pdf) | 75d44de19d292ba93b523cf43f6c244d | What is a TbUtil plugin, and how to write one? |
+| [excel-plugin.pdf](https://github.com/turbonomic/tbutil/releases/download/v1.2c/excel-plugin.pdf) | c85902277afa5c38996295f71debcf2c | A plugin to allow Excel spread sheets to be created by tbscript. |
+| [smtp-plugin.pdf](https://github.com/turbonomic/tbutil/releases/download/v1.2c/smtp-plugin.pdf) | 124e80f99438e662c361f71dc33c46ff | A plugin to allow tbscript to send emails using the SMTP protocol. |
+| [sql-plugin.pdf](https://github.com/turbonomic/tbutil/releases/download/v1.2c/sql-plugin.pdf) | f7c59af4bcfa5e95830b1837995c4e87 | The SqLite3 and MySQL database access plugins for tbscript. |
+| [xml-plugin.pdf](https://github.com/turbonomic/tbutil/releases/download/v1.2c/xml-plugin.pdf) | c47f9ca197398f2d82ab839853af85ff | Allow reading and writing of XML documents in tbscript. |
