@@ -10,11 +10,11 @@
 
 ### Step 1: Install the POD
 
-Install the container as a K8S POD by following [these instructions](INSTALL.md) with "flexera" as the POD flavour.
+Install the container as a K8S POD by following [these instructions](INSTALL.md) using "flexera" as the POD flavour.
 
 ### Step 2: Configure
 
-This step is not required if you are updating from the earlier release because the configuration is stored in the persistent volume (unless you have deleted the PV, of course).
+This step is not required if you are updating from the earlier release of the Flexera integration POD because the configuration is already stored in the persistent volume (unless you have deleted the PV, of course).
 
 Log in to the POD using "bash"
 

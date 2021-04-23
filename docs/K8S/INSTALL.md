@@ -33,11 +33,11 @@ When the instructions that follow require a file to be downloaded, refer to the 
 
 | Flavour | Zip | volume.yaml | deploy-online.yaml |
 | ------- | --- | ----------- | ------------------ |
-| base | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-base-k8s-1.3g.tgz) | [click here](../../../yaml/base/volume.yaml) | [click here](../../../yaml/base/deploy-online.yaml) |
-| actionscripts | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-actionscripts-k8s-1.3g.tgz) | [click here](../../../yaml/actionscripts/volume.yaml) | [click here](../../../yaml/actionscripts/deploy-online.yaml) |
-| hotwarm | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-hotwarm-k8s-1.3g.tgz) | [click here](../../../yaml/hotwarm/volume.yaml) | [click here](../../../yaml/hotwarm/deploy-online.yaml) |
-| flexera | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-flexera-k8s-1.3g.tgz) | [click here](../../../yaml/flexera/volume.yaml) | [click here](../../../yaml/flexera/deploy-online.yaml) |
-| full | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-full-k8s-1.3g.tgz) | [click here](../../../yaml/full/volume.yaml) | [click here](../../../yaml/full/deploy-online.yaml) |
+| base | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-base-k8s-1.3g.tgz) | [click here](../../yaml/base/volume.yaml) | [click here](../../yaml/base/deploy-online.yaml) |
+| actionscripts | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-actionscripts-k8s-1.3g.tgz) | [click here](../../yaml/actionscripts/volume.yaml) | [click here](../../yaml/actionscripts/deploy-online.yaml) |
+| hotwarm | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-hotwarm-k8s-1.3g.tgz) | [click here](../../yaml/hotwarm/volume.yaml) | [click here](../../yaml/hotwarm/deploy-online.yaml) |
+| flexera | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-flexera-k8s-1.3g.tgz) | [click here](../../yaml/flexera/volume.yaml) | [click here](../../yaml/flexera/deploy-online.yaml) |
+| full | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-full-k8s-1.3g.tgz) | [click here](../../yaml/full/volume.yaml) | [click here](../../yaml/full/deploy-online.yaml) |
 
 Note: the volume.yaml files supplied assume that the PVC uses Gluster/Heketi. You will need to edit the file if your installation uses a different persistent storage provider.
 

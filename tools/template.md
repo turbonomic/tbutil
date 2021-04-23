@@ -1,4 +1,4 @@
-# TbUtil Version {{release}} (Pre-release)
+# TbUtil Version {{release}}
 
 Released: {{ release_date }}
 
@@ -6,7 +6,7 @@ Unsupported software, Copyright (C) Turbonomic 2018 .. 2021
 
 ## Starting points.
 
-Refer to [README.md](../docs/README.md) for high-level overview of TBUtil.
+Refer to [README.md](../docs/README.md) for a high-level overview of TBUtil.
 
 Refer to [QUICK-INSTALL.md](../docs/QUICK-INSTALL.md) for:
 
@@ -17,6 +17,8 @@ Refer to [QUICK-INSTALL.md](../docs/QUICK-INSTALL.md) for:
 Refer to [IWO.md](../docs/IWO.md) for information about installing TBUtil for use with IWO.
 
 Refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on installing as a POD into a V8 system.
+
+**Turbonomic employees**: Refer to the ["#tbutil" slack channel](https://turbonomic.slack.com/messages/CQCSKJN3Y) for updates, support and discussion.
 
 
 {{- if zipExists "*" }}
