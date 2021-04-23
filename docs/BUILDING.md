@@ -1,27 +1,31 @@
 # TButil 1.3g - Building from source
 
-*Last updated: 5 Jan 2021*
+*Last updated: 22 Apr 2021*
 
 ## How to build "tbutil" from source.
 
 (Most people wont need to do this)
 
-The build process must be run on a Linux system (I use Ubuntu 18.04.1 TLS running in VM under VitualBox in a Windows 10 laptop), and it will generate the full set of Linux, MAC and Windows 64-bit binaries.
+The build process must be run on a Linux system (I use Ubuntu 16.04.7 TLS running in VM under VitualBox in a Windows 10 laptop), and it will generate the full set of Linux, MAC and Windows 64-bit binaries.
 
 If you do not have a 64bit Ubuntu system to hand for the build, you can build using a docker container. The steps for this are listed in the "Building using docker" section, below.
 
-Development and testing have been performed with GO 1.10.2.
+Development and testing have been performed with GO 1.15.1.
 
-## Building on Ubuntu 18.04.1 TLS
+## Building on Ubuntu 16.04.7 TLS
 
 There are four (optionally: five) steps to follow to build "tbutil" under Ubuntu (use the Docker approach on other platforms).
 
-1: Install golang into your development Linux platform.
+1: Install GO and Markdown-PDF into your development Linux platform.
 
 For Ubuntu: this is done by running the command..
 
 ```
-sudo apt install golang
+cd $HOME
+wget https://golang.org/dl/go1.15.1.linux-amd64.tar.gz
+tar xvfz go1.15.1.linux-amd64.tar.gz
+npm install markdown-pdf
+export PATH=$HOME/go/bin:$HOME/node_modules/markdown-pdf/bin:$PATH
 ```
 
 Other platforms will have other commands to do this job.
@@ -41,9 +45,15 @@ $ GIT_TERMINAL_PROMPT=1 go get -d -v git.turbonomic.com/cs/turbo-util
 
 You'll need a username and password for the git repo, which you may be asked to enter twice.
 
+You can probably ignore errors about not-found packages at this stage.
+
 4: Compile and install
 
+Make sure that `go version` reports 1.15.1. If not: then correct the PATH as above so that it does.
+
 ```
+$ cd $GOPATH/src/git.turbonomic.com/cs/turbo-api-client-lib
+$ make
 $ cd $GOPATH/src/git.turbonomic.com/cs/turbo-util
 $ make
 ```
@@ -69,6 +79,8 @@ This will install "otto" and "otto.exe" into $GOPATH/bin, $OTTO/bin/darwin and $
 
 ## Building PDF versions of documentation files.
 
+**NOTE: This section is out of date**
+
 If you want to create QUICK-INSTALL.pdf and README.pdf files, the process is as follows..
 
 1: Install NodeJS (if not already installed)
@@ -91,6 +103,8 @@ make docs
 ```
 
 ## Building using docker
+
+**NOTE: This section is out of date**
 
 If you want to build on Windows or Darwin or some flavours of Linux, you'll need to use a Ubuntu docker container. The steps are simple (once you have a running docker installation on your system)...
 

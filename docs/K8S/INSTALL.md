@@ -2,7 +2,7 @@
 
 | Info | Value |
 | ---- | ----- |
-| Date | 22 Apr 2021 |
+| Date | 23 Apr 2021 |
 | Author | Chris Lowth - chris.lowth@turbonomic.com |
 | TBUtil Version | 1.3g |
 
@@ -18,7 +18,7 @@ A number of flavours of TBUtil container are available. They are all based on th
 
 The following flavours are currently available:
 
-| Flavour | Description |
+| Name | Description |
 | ------- | ----------- |
 | base | A basic TBUtil installation with no plugins or other extended features. This forms the basis of all other flavours. |
 | [actionscripts](ACTIONSCRIPTS.md) | This adds some skeleton action scripts (and an openssh server) to the base flavour. You can use this as the starting point for building your own real actions script integrations. |
@@ -33,19 +33,19 @@ When the instructions that follow require a file to be downloaded, refer to the 
 
 | Flavour | Zip | volume.yaml | deploy-online.yaml |
 | ------- | --- | ----------- | ------------------ |
-| base | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-base-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/base/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/base/deploy-online.yaml) |
-| actionscripts | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-actionscripts-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/actionscripts/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/actionscripts/deploy-online.yaml) |
-| hotwarm | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-hotwarm-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/hotwarm/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/hotwarm/deploy-online.yaml) |
-| flexera | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-flexera-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/flexera/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/flexera/deploy-online.yaml) |
-| full | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-full-k8s-1.3g.tgz) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/full/volume.yaml) | [click here](https://github.com/turbonomic/tbutil/blob/master/yaml/1.3g/full/deploy-online.yaml) |
+| base | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-base-k8s-1.3g.tgz) | [click here](../../../yaml/base/volume.yaml) | [click here](../../../yaml/base/deploy-online.yaml) |
+| actionscripts | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-actionscripts-k8s-1.3g.tgz) | [click here](../../../yaml/actionscripts/volume.yaml) | [click here](../../../yaml/actionscripts/deploy-online.yaml) |
+| hotwarm | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-hotwarm-k8s-1.3g.tgz) | [click here](../../../yaml/hotwarm/volume.yaml) | [click here](../../../yaml/hotwarm/deploy-online.yaml) |
+| flexera | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-flexera-k8s-1.3g.tgz) | [click here](../../../yaml/flexera/volume.yaml) | [click here](../../../yaml/flexera/deploy-online.yaml) |
+| full | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-full-k8s-1.3g.tgz) | [click here](../../../yaml/full/volume.yaml) | [click here](../../../yaml/full/deploy-online.yaml) |
 
-Note: the volume.yaml files supplied assumesthat PVCs use Gluster. You may need to change the file if your installation uses a different persistent storage provider.
+Note: the volume.yaml files supplied assume that the PVC uses Gluster/Heketi. You will need to edit the file if your installation uses a different persistent storage provider.
 
 ## Off-Line installation (Turbonomic OVA deployments)
 
-Off-line installation is the process of deploying a TBUtil container POD into a Kubernetes environment that has no direct connection to the public docker hub. Typically, this will be on a Turbonomic OVA installation.
+Off-line installation is the process of deploying a TBUtil container POD into a Kubernetes environment that has no direct connection to the public (or private) docker hub. Typically, this will be on a Turbonomic OVA installation.
 
-In the following instructions, the string "**{FLAVOUR}**" should be replaced by the relevant flavour name (from the "Name" column of the table at the top of this page).
+In the following instructions, the string "{FLAVOUR}" should be replaced by the relevant flavour name (from the "Name" column of the table at the top of this page).
 
 1. Download the container zip file from the relevant entry in the "Zip" column in the "Downloads" table above.
 2. Copy the downloaded zip file onto the Turbonomic OVA system using WinSCP (on Windows), scp or sftp (on Linux or MAC) or equivalent.
@@ -72,7 +72,7 @@ Now you are ready to run through the flavour-specific set up steps.
 
 On-line installation is the process of deploying the latest TBUtil container POD into a Kubernetes environment that has direct connection to the public docker hub via the internet.
 
-In the following instructions, the string "**{FLAVOUR}**" should be replaced by the relevant flavour name (from the "Name" column of the table at the top of this page).
+In the following instructions, the string "{FLAVOUR}" should be replaced by the relevant flavour name (from the "Name" column of the table at the top of this page).
 
 1. Download the `volume.yaml` and `deploy-online.yaml` files from the relevant row in the "Downloads" table above.
 2. Review the yaml files and edit if required.

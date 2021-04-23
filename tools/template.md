@@ -4,6 +4,21 @@ Released: {{ release_date }}
 
 Unsupported software, Copyright (C) Turbonomic 2018 .. 2021
 
+## Starting points.
+
+Refer to [README.md](../docs/README.md) for high-level overview of TBUtil.
+
+Refer to [QUICK-INSTALL.md](../docs/QUICK-INSTALL.md) for:
+
+- Installation into Turbonimic V6 systems
+- Installing directly onto the OVA of Turbonomic V8 systems
+- Installing onto non-Turbonomic systems (such as your laptop).
+
+Refer to [IWO.md](../docs/IWO.md) for information about installing TBUtil for use with IWO.
+
+Refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on installing as a POD into a V8 system.
+
+
 {{- if zipExists "*" }}
 
 ## Downloads for OVA or Laptop installation
@@ -15,7 +30,7 @@ Unsupported software, Copyright (C) Turbonomic 2018 .. 2021
 | [tbutil-{{reltag}}-windows.zip]({{urlbase}}/tbutil-{{reltag}}-windows.zip) | {{ zipsum "windows" }} | Download for Windows (64 bit) |
 
 {{- end }}
-{{- if tgzExists "*" }}
+{{/*- if tgzExists "*" }}
 
 ## Downloads for K8S POD installation
 
@@ -37,7 +52,7 @@ Unsupported software, Copyright (C) Turbonomic 2018 .. 2021
 | [tbutil-full-k8s-{{release}}.tgz]({{urlbase}}/tbutil-full-k8s-{{release}}.tgz) | {{ tgzsum "full" }} | POD containing all TbUtil K8S POD features in one. |
 {{- end }}
 
-{{- end }}
+{{- end */}}
 
 {{- if mdExists "*" }}
 
@@ -46,7 +61,7 @@ Unsupported software, Copyright (C) Turbonomic 2018 .. 2021
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
 {{- range getMdNames }}
-| [{{ . }}](../docs/{{release}}/{{.}}) | {{ mdsum . }} | {{ getMdNote . }} |
+| [{{ . }}](../docs/{{.}}) | {{ mdsum . }} | {{ getMdNote . }} |
 {{- end }}
 {{- end }}
 

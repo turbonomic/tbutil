@@ -67,6 +67,9 @@ function getPdf(doc) {
 }
 
 function pdfExists(doc) {
+	if (doc === "*") {
+		return getPdfNames().length > 0;
+	}
 	return readDir(getPdf(doc)).length > 0 ? true : false;
 }
 
@@ -82,11 +85,11 @@ function getPdfNote(doc) {
 //== MD Files ===========================================================================
 
 function getMdNames() {
-	var files1 = readDir("../docs/"+release+"/*.md").map(path => {
+	var files1 = readDir("../docs/*.md").map(path => {
 		var p = path.split("/");
 		return p[p.length-1];
 	});
-	var files2 = readDir("../docs/"+release+"/K8S/*.md").map(path => {
+	var files2 = readDir("../docs/K8S/*.md").map(path => {
 		var p = path.split("/");
 		return "K8S/" + p[p.length-1];
 	});
@@ -96,7 +99,7 @@ function getMdNames() {
 }
 
 function getMd(doc) {
-	return "../docs/"+release+"/"+(doc.trimSuffix(".md"))+".md";
+	return "../docs/"+(doc.trimSuffix(".md"))+".md";
 }
 
 function mdExists(doc) {
