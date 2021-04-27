@@ -25,6 +25,8 @@ Refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on installing 
 
 ## Downloads for OVA or Laptop installation
 
+**NOTE: The files in this section are not yet available **
+
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
 | [tbutil-{{reltag}}-linux.zip]({{urlbase}}/tbutil-{{reltag}}-linux.zip) | {{ zipsum "linux" }} | Download for x86_64 Linux |
@@ -35,6 +37,8 @@ Refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on installing 
 {{/*- if tgzExists "*" }}
 
 ## Downloads for K8S POD installation
+
+**NOTE: The files in this section are not yet available **
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
@@ -77,3 +81,10 @@ Refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on installing 
 | [{{ . }}]({{urlbase}}/{{.}}) | {{ pdfsum . }} | {{ getPdfNote . }} |
 {{- end }}
 {{- end }}
+
+
+## Open-source Licenses
+
+TBUtil is built in the GO language from opensource components. Tbutil and the majority of its componets are licensed with the [Apache License V2.0 (Jan 2004)](../licenses/git.turbonomic.com/cs/turbo-util/LICENSE), but some use different licenses.
+
+The component license files and source code (where the license mandates that it is provided) can be browsed [here](../licenses).

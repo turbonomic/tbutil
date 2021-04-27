@@ -1,6 +1,6 @@
 # SqLite3 Plugin for TBUtil
 
-*Last updated: 18 Mar 2021*
+*Last updated: 27 Apr 2021*
 
 ---
 

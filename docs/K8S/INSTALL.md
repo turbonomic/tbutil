@@ -2,7 +2,7 @@
 
 | Info | Value |
 | ---- | ----- |
-| Date | 23 Apr 2021 |
+| Date | 27 Apr 2021 |
 | Author | Chris Lowth - chris.lowth@turbonomic.com |
 | TBUtil Version | 1.3g |
 
@@ -31,6 +31,8 @@ The following flavours are currently available:
 
 When the instructions that follow require a file to be downloaded, refer to the following table and click on the relevant link.
 
+**NOTE: The files in "zip" column are not yet available **
+
 | Flavour | Zip | volume.yaml | deploy-online.yaml |
 | ------- | --- | ----------- | ------------------ |
 | base | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-base-k8s-1.3g.tgz) | [click here](../../yaml/base/volume.yaml) | [click here](../../yaml/base/deploy-online.yaml) |
@@ -40,6 +42,13 @@ When the instructions that follow require a file to be downloaded, refer to the 
 | full | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-full-k8s-1.3g.tgz) | [click here](../../yaml/full/volume.yaml) | [click here](../../yaml/full/deploy-online.yaml) |
 
 Note: the volume.yaml files supplied assume that the PVC uses Gluster/Heketi. You will need to edit the file if your installation uses a different persistent storage provider.
+
+## Unlocking TBUtil
+
+The `tbutil` binaries installed in the container require an "unlock key" file to be applied before they can be used. This is **not** a license (it confers no specific rights).
+
+In order to complete the installation, you will need to obtain a key. Please reach out to your Turbonomic field representative or support. They will supply you with a single line text file that includes your name or email address and the key string. This will be needed during the installation process.
+
 
 ## Off-Line installation (Turbonomic OVA deployments)
 
@@ -64,6 +73,7 @@ In the following instructions, the string "{FLAVOUR}" should be replaced by the 
     - `kubectl apply -f deploy-offline.yaml`
 9. Open the bash shell in the pod using the command:
     - `kubectl exec -ti deploy/tbutil-{FLAVOUR} -- /bin/bash`
+10. Install the unlock key by copying the file you obtained earlier to `/home/tbutil/.tbutilissue`.
 
 Now you are ready to run through the flavour-specific set up steps.
 
@@ -82,6 +92,7 @@ In the following instructions, the string "{FLAVOUR}" should be replaced by the 
     - `kubectl apply -f deploy-online.yaml`
 5. Open the bash shell in the pod using the command:
     - `kubectl exec -ti deploy/tbutil-{FLAVOUR} -- /bin/bash`
+6. Install the unlock key by copying the file you obtained earlier to `/home/tbutil/.tbutilissue`
 
 If you want to install an older release instead, then download it's zip file (as described in step 1 for off-line installation) and extract the "`volume.yaml`" and "`deploy-online.yaml`" files from that, review then and then run:
 

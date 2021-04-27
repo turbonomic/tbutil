@@ -9,6 +9,20 @@ In the following notes, the string "{FLAVOUR}" should be replaced by the flavour
 - full
 
 
+## Unlocking TBUtil
+
+The `tbutil` binaries installed in the container require an "issue key" file to be applied before they can be used. This is **not** a license (it confers no specific rights).
+
+To obtain a key, please reach out to your Turbonomic field representative or support. They will supply you with a single line text file that includes your name or email address and the key string. Copy the supplied file to `/home/tbutil/.tbutilissue`.
+
+
+## OpenSource licenses
+
+TBUtil is built in the GO language from opensource components. Tbutil and the majority of its componets are licensed with the Apache License V2.0 (Jan 2004), but some use different licenses.
+
+The license files and source code (where the license mandates that it is provided) are available in the file `/licenses.zip` on all the container flavours. You can also browse them [here](../licenses).
+
+
 ## Container Structure
 
 All flavours are based on the "Alpine" 3.13.4 container with a number of minor changes, as follows.

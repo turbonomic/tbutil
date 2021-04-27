@@ -1,6 +1,6 @@
 # Add-ins available to TBUtil 1.3g JS formatters and TBScripts
 
-*Last updated: 30 Mar 2021*
+*Last updated: 27 Apr 2021*
 
 Note: the selection of features and functions available to scripts depends on the context in which they are called. The following context types exist..
 
@@ -612,7 +612,7 @@ Returns: encrypted password.
 | Type | Description |
 | ---- | ----------- |
 | 1    | encrypt for API, SSH and DB passwords in .tbutilrc |
-| 2    | encrypt for use in import files |
+| 2    | encrypt for use in import files (eg: for targets or users) |
 
 
 ## eprint(value ...)
