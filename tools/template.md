@@ -25,7 +25,7 @@ Refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on installing 
 
 ## Downloads for OVA or Laptop installation
 
-**NOTE: The files in this section are not yet available **
+**NOTE: The files in this section are not yet available**
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
@@ -38,7 +38,7 @@ Refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on installing 
 
 ## Downloads for K8S POD installation
 
-**NOTE: The files in this section are not yet available **
+**NOTE: The files in this section are not yet available**
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |

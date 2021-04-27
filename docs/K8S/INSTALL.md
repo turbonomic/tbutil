@@ -31,7 +31,7 @@ The following flavours are currently available:
 
 When the instructions that follow require a file to be downloaded, refer to the following table and click on the relevant link.
 
-**NOTE: The files in "zip" column are not yet available **
+**NOTE: The files in "zip" column are not yet available**
 
 | Flavour | Zip | volume.yaml | deploy-online.yaml |
 | ------- | --- | ----------- | ------------------ |
