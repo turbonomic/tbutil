@@ -2,7 +2,7 @@
 
 | Label          | Value       |
 | -------------- | ----------- |
-| Date           | 27 Apr 2021 |
+| Date           | 29 Apr 2021 |
 | Author         | Chris Lowth - chris.lowth@turbonomic.com |
 | TBUtil version | 1.3g |
 
@@ -110,7 +110,7 @@ Turbonomic needs to discover the POD and the scripts it contains, but first you 
 
 1. Log in to the POD using the command `kubectl exec -ti deploy/tbutil-actionscripts -- /bin/bash`
 2. Configure credentials using the command `tbutil save credentials`.
-    - **IP address or hostname**: It is mandatory to give the answer "`nginx`" (this is the default anyway).
+    - **IP address or hostname**: The answer is almost certainly "`nginx`" (this is the default anyway).
     - **API/UI User name**: Give the name of a user with admin rights. The default of `administrator` is usually good.
     - **password**: Give the user's password
 3. Ensure that the action scripts you want to register are correct, as described above.

@@ -1,6 +1,6 @@
 # TButil 1.3g - Turbonomic Command-Line Utility
 
-*Last updated: 27 Apr 2021*
+*Last updated: 28 Apr 2021*
 
 ## Introduction
 
@@ -370,9 +370,9 @@ Just run "tbutil" with no arguments.
 TBUTIL: Unsupported Software, Copyright (C) Turbonomic 2018,2019,2020,2021
 Issued To   : chris.lowth@turbonomic.com
 GIT Tag     : 1.3g
-Commit Hash : 69fd50b598379470183f8d8d193aeda2dd62cd04
-Commit Time : 2021-04-27 11:19:16 +0100
-Build Time  : 2021-04-27 11:25:50 +0100
+Commit Hash : 0bb8c5d8add5fcae3b5582beade827394aa35cf1
+Commit Time : 2021-04-29 10:18:16 +0100
+Build Time  : 2021-04-29 10:20:01 +0100
 API Version : 6.4.35
 (use "tbutil -version" for more version info)
 

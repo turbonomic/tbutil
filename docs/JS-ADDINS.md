@@ -1,6 +1,6 @@
 # Add-ins available to TBUtil 1.3g JS formatters and TBScripts
 
-*Last updated: 27 Apr 2021*
+*Last updated: 28 Apr 2021*
 
 Note: the selection of features and functions available to scripts depends on the context in which they are called. The following context types exist..
 
@@ -161,9 +161,11 @@ Returns the specified persistent fact string for the client connection. Facts ar
 Returns the name of the host (or IP) for the Turbonomic instance to which "client" refers.
 
 
-### {client}.getInstances(type ...)
+### {client}.getInstances([func, ]type ...)
 
-Collects the information for all instances of the specified types. This uses the "search" API endpoint.
+Collects and returns the information for all instances of the specified types. This uses the "getSearchResults" API endpoint.
+
+If the first argument is a function then pagination is used and the function is called for each object found. The return value in this case is the number of objects found.
 
 
 ### {client}.getSwagger( )
