@@ -2,7 +2,7 @@
 
 | Info | Value |
 | ---- | ----- |
-| Date | 29 Apr 2021 |
+| Date | 5 May 2021 |
 | Author | Chris Lowth - chris.lowth@turbonomic.com |
 | TBUtil Version | 1.3g |
 
@@ -33,11 +33,11 @@ When the instructions that follow require a file to be downloaded, refer to the 
 
 | Flavour | Zip | volume.yaml | volume-local.yaml | deploy-online.yaml |
 | ------- | --- | ----------- | ----------------- | ------------------ |
-| base | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-base-k8s-1.3g.zip) | [click here](../../yaml/base/volume.yaml) | [click here](../../yaml/base/volume-local.yaml) | [click here](../../yaml/base/deploy-online.yaml) |
-| actionscripts | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-actionscripts-k8s-1.3g.zip) | [click here](../../yaml/actionscripts/volume.yaml) | [click here](../../yaml/actionscripts/volume-local.yaml) | [click here](../../yaml/actionscripts/deploy-online.yaml) |
-| hotwarm | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-hotwarm-k8s-1.3g.zip) | [click here](../../yaml/hotwarm/volume.yaml) | [click here](../../yaml/hotwarm/volume-local.yaml) | [click here](../../yaml/hotwarm/deploy-online.yaml) |
-| flexera | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-flexera-k8s-1.3g.zip) | [click here](../../yaml/flexera/volume.yaml) | [click here](../../yaml/flexera/volume-local.yaml) | [click here](../../yaml/flexera/deploy-online.yaml) |
-| full | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-full-k8s-1.3g.zip) | [click here](../../yaml/full/volume.yaml) | [click here](../../yaml/full/volume-local.yaml) | [click here](../../yaml/full/deploy-online.yaml) |
+| base | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-base-k8s-1.3g.zip) | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v1.3g/yaml/base/volume.yaml) | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v1.3g/yaml/base/volume-local.yaml) | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v1.3g/yaml/base/deploy-online.yaml) |
+| actionscripts | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-actionscripts-k8s-1.3g.zip) | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v1.3g/yaml/actionscripts/volume.yaml) | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v1.3g/yaml/actionscripts/volume-local.yaml) | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v1.3g/yaml/actionscripts/deploy-online.yaml) |
+| hotwarm | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-hotwarm-k8s-1.3g.zip) | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v1.3g/yaml/hotwarm/volume.yaml) | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v1.3g/yaml/hotwarm/volume-local.yaml) | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v1.3g/yaml/hotwarm/deploy-online.yaml) |
+| flexera | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-flexera-k8s-1.3g.zip) | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v1.3g/yaml/flexera/volume.yaml) | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v1.3g/yaml/flexera/volume-local.yaml) | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v1.3g/yaml/flexera/deploy-online.yaml) |
+| full | [click here](https://github.com/turbonomic/tbutil/releases/download/v1.3g/tbutil-full-k8s-1.3g.zip) | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v1.3g/yaml/full/volume.yaml) | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v1.3g/yaml/full/volume-local.yaml) | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v1.3g/yaml/full/deploy-online.yaml) |
 
 
 ## Determine the volume type
@@ -97,7 +97,7 @@ In the following instructions, the string "{FLAVOUR}" should be replaced by the 
     - `kubectl exec -ti deploy/tbutil-{FLAVOUR} -- /bin/bash`
 12. Install the unlock key by copying the file you obtained earlier to `/home/tbutil/.tbutilissue`.
 
-Now you are ready to run through the flavour-specific set up steps.
+Now you are ready to run through the flavour-specific set up steps (click on the relevant link in the left-hand column of the "container flavours" table at the top of this page for more details).
 
 
 ## On-Line installation
@@ -126,4 +126,4 @@ If you want to install an older release instead, then download it's zip file (as
 - `kubectl apply -f {VOLUME-FILE-NAME}`
 - `kubectl apply -f deploy-online.yaml`
 
-Now you are ready to run through the flavour-specific set up steps.
+Now you are ready to run through the flavour-specific set up steps (click on the relevant link in the left-hand column of the "container flavours" table at the top of this page for more details).

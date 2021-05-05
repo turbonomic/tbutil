@@ -1,6 +1,6 @@
 # Add-ins available to TBUtil 1.3g JS formatters and TBScripts
 
-*Last updated: 28 Apr 2021*
+*Last updated: 30 Apr 2021*
 
 Note: the selection of features and functions available to scripts depends on the context in which they are called. The following context types exist..
 

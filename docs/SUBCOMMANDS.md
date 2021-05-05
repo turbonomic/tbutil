@@ -1,6 +1,6 @@
 # TBUtil 1.3g Sub Commands
 
-*Last updated: 28 Apr 2021*
+*Last updated: 5 May 2021*
 
 ## To do
 
@@ -715,7 +715,7 @@ If `-indirect` is specified when exporting a static group, then the export inclu
 
 The supported formatting flags are `-j` and `-y` for both variants of the command, and `-s` for the "static" version only (see [common formatting options](#common-options)).
 
-The plural variant exports all custom groups to the specified directory (which must not pre-exist). The `-v` option causes the export files to contain the full DTO rather than the contracted version that is otherwise created.
+The plural variant exports all custom groups to the specified directory (which must not pre-exist). The `-v` option causes the export files to contain the full DTO rather than the contracted version that is otherwise created (which renders them unsuitable for re-importing).
 
 **See also:**
 [`create static group`](#create-static-group),

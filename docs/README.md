@@ -1,6 +1,6 @@
 # TButil 1.3g - Turbonomic Command-Line Utility
 
-*Last updated: 28 Apr 2021*
+*Last updated: 30 Apr 2021*
 
 ## Introduction
 
@@ -16,7 +16,7 @@ TButil includes an embedded JavaScript engine that can be used to format the out
 
 Download from the project's S3 site..
 
-https://github.com/turbonomic/tbutil/blob/master/releases/v1_3g.md
+https://github.com/turbonomic/tbutil/blob/v1.3g/docs/release.md
 
 Once you've downloaded the relevant ZIP, follow the instructions contained in the QUICK-INSTALL.pdf file it contains. This takes you through the process step by step.
 
@@ -370,9 +370,9 @@ Just run "tbutil" with no arguments.
 TBUTIL: Unsupported Software, Copyright (C) Turbonomic 2018,2019,2020,2021
 Issued To   : chris.lowth@turbonomic.com
 GIT Tag     : 1.3g
-Commit Hash : 0bb8c5d8add5fcae3b5582beade827394aa35cf1
-Commit Time : 2021-04-29 10:18:16 +0100
-Build Time  : 2021-04-29 10:20:01 +0100
+Commit Hash : fd883c00e0634c4b15b13df26b83d305d603e47f
+Commit Time : 2021-05-05 12:14:47 +0100
+Build Time  : 2021-05-05 12:16:14 +0100
 API Version : 6.4.35
 (use "tbutil -version" for more version info)
 
@@ -430,7 +430,7 @@ The optional '{cred}' argument provides the credentials for the connection with 
 * Absent but no TURBO_CREDENTIALS defined: the "@default" block from .tbutilrc is used.
 
 Download code and docs from:
-   https://github.com/turbonomic/tbutil/blob/master/releases/v1_3g.md
+   https://github.com/turbonomic/tbutil/blob/v1.3g/docs/release.md
 ```
 
 ### Get the list of clusters
