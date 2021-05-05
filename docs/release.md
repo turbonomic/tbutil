@@ -26,9 +26,9 @@ Refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on installing 
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
-| [tbutil-1_3g-linux.zip](https:/turbonomic/tbutil/releases/download/1.3g/tbutil-1_3g-linux.zip) | 108a0215b7b84ff777cca2a5bd6db868 | Download for x86_64 Linux |
-| [tbutil-1_3g-mac.zip](https:/turbonomic/tbutil/releases/download/1.3g/tbutil-1_3g-mac.zip) | 8ab337e86d503a9b04c7f78392276836 | Download for MAC (64 bit) |
-| [tbutil-1_3g-windows.zip](https:/turbonomic/tbutil/releases/download/1.3g/tbutil-1_3g-windows.zip) | d260e62057e99687e09ee1a49cb1bb7b | Download for Windows (64 bit) |
+| [tbutil-1_3g-linux.zip](https:/turbonomic/tbutil/releases/download/v1.3g/tbutil-1_3g-linux.zip) | 108a0215b7b84ff777cca2a5bd6db868 | Download for x86_64 Linux |
+| [tbutil-1_3g-mac.zip](https:/turbonomic/tbutil/releases/download/v1.3g/tbutil-1_3g-mac.zip) | 8ab337e86d503a9b04c7f78392276836 | Download for MAC (64 bit) |
+| [tbutil-1_3g-windows.zip](https:/turbonomic/tbutil/releases/download/v1.3g/tbutil-1_3g-windows.zip) | d260e62057e99687e09ee1a49cb1bb7b | Download for Windows (64 bit) |
 
 
 ## MarkDown Documents
@@ -55,6 +55,7 @@ Refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on installing 
 | [excel-plugin.md](../docs/excel-plugin.md) | 2760d5a4d7cf2f5734af8542557fa4b4 | EXCEL plugin for TBUtil |
 | [mysql-plugin.md](../docs/mysql-plugin.md) | 105c9b25879ae425b4ddb81c6aa70b49 | MySQL Plugin for TBUtil |
 | [pdf-plugin.md](../docs/pdf-plugin.md) | 1839065198fe9ff50633e23c8e5ad069 | PDF Plugin for TBUtil |
+| [release.md](../docs/release.md) | d41d8cd98f00b204e9800998ecf8427e | <no value> |
 | [smtp-plugin.md](../docs/smtp-plugin.md) | dc43c5a16eb38c1e3a30df8a46fd63ec | SMTP Plugin for TBUtil |
 | [sqlite3-plugin.md](../docs/sqlite3-plugin.md) | 6c842c45d5848c1799830daf2977b8aa | SqLite3 Plugin for TBUtil |
 | [sys-plugin.md](../docs/sys-plugin.md) | 7f4dc12a67eb7d136d25efc30974aed4 | SYS Plugin for TBUtil |

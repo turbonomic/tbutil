@@ -129,7 +129,7 @@ function getBinary() {
 }
 
 function getUrlBase() {
-	return "https:/turbonomic/tbutil/releases/download/" + release;
+	return "https:/turbonomic/tbutil/releases/download/v" + release;
 }
 
 debugger;
