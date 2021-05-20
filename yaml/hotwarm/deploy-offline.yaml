@@ -30,7 +30,7 @@ spec:
 
       containers:
       - name: tbutil-hotwarm
-        image: tbutil-hotwarm:1.3g
+        image: tbutil-hotwarm:1.3h
         imagePullPolicy: Never
         env:
           - name: TURBO_MACHINE_ID_FILE

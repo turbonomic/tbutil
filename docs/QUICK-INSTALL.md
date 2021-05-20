@@ -1,24 +1,24 @@
-# TBUtil 1.3g Quick Install Guide.
+# TBUtil 1.3h Quick Install Guide.
 
-*Last updated: 30 Apr 2021*
+*Last updated: 20 May 2021*
 
 ## Installing from downloaded zip file.
 
 Download the correct zip file for your platform from ..
 
-`https://github.com/turbonomic/tbutil/blob/v1.3g/docs/release.md`
+`https://github.com/turbonomic/tbutil/blob/v1.3h/docs/release.md`
 
-Once downloaded, un-zip the file into a directory of your choice. For example (for version 1.3g, Linux)...
+Once downloaded, un-zip the file into a directory of your choice. For example (for version 1.3h, Linux)...
 
 ```
 $ cd $HOME
-$ unzip $HOME/Downloads/tbutil-1_3g-linux.zip    (or the location you have copied the zip file to)
+$ unzip $HOME/Downloads/tbutil-1_3h-linux.zip    (or the location you have copied the zip file to)
 ```
 
 Now "cd" into the directory that you unzipped into and run the "install.sh" or "install.bat" script from there. For example (on Linux) ...
 
 ```
-$ cd tbutil-1_3g
+$ cd tbutil-1_3h
 $ sh install.sh
 ```
 

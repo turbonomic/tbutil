@@ -1,6 +1,6 @@
-# TBUtil 1.3g Sub Commands
+# TBUtil 1.3h Sub Commands
 
-*Last updated: 5 May 2021*
+*Last updated: 20 May 2021*
 
 ## To do
 
@@ -26,7 +26,7 @@
 | policies | [`delete policy`](#delete-policy), [`export policy`](#export-policy), [`export all policies`](#export-all-policies), [`import policy`](#import-policy), [`list policies`](#list-policies), [`print policy changes`](#print-policy-changes), [`reset policy`](#reset-policy) |
 | reports | [`delete report instance`](#delete-report-instance), [`delete report schedule`](#delete-report-schedule), [`download report instance`](#download-report-instance), [`execute report query`](#execute-report-query), [`export report`](#export-report), [`list report instances`](#list-report-instances), [`list report queries`](#list-report-queries), [`list report schedules`](#list-report-schedules), [`list report templates`](#list-report-templates) |
 | statistics | |
-| targets | [`crypt`](#crypt), [`delete target`](#delete-target), [`export target`](#export-target), [`import target`](#import-target), [`list targets`](#list-targets), [`rediscover target`](#rediscover-target), [`validate target`](#validate-target) |
+| targets | [`crypt`](#crypt), [`delete target`](#delete-target), [`export target`](#export-target), [`export targets`](#export-targets), [`import target`](#import-target), [`list targets`](#list-targets), [`rediscover target`](#rediscover-target), [`validate target`](#validate-target) |
 | templates | [`delete template`](#delete-template), [`export template`](#export-template), [`import template`](#import-template), [`list templates`](#list-templates) |
 | users | [`create local user`](#create-local-user), [`delete user`](#delete-user), [`export user`](#export-user), [`import user`](#import-user), [`list users`](#list-users) |
 | vms | [`list vms`](#list-vms) |
@@ -291,6 +291,14 @@ The `-delete-key` option can be used to delete the key file created with `-creat
 Note: This will effectively invalidate any user or target export files who's passwords have been written using the now-deleted key.
 
 ```
+tbutil crypt -proxy {http_proxy_file}
+```
+
+The `-proxy` option adds the encrypted password to a proxy export file created with [`export http proxy config`](#export-http-proxy-config) so that it can be used with [`import http proxy config`](#import-http-proxy-config).
+
+Note: The command is interactive and asks for the password from the user but hides what is typed. It also accepts the password from an "input redirect" file, in which case the prompts are not displayed.
+
+```
 tbutil crypt -target {target_file}
 ```
 
@@ -304,7 +312,7 @@ tbutil crypt -user {user_file}
 
 The `-user` option adds the encrypted password to a user export file created with [`export user`](#export-user). Note that this **must** be done before the file can used by [`import user`](#import-user).
 
-Note: The command is interactive and asks for the password from the user but hides what is typed. It also accepts the password an "input redirect" file, in which case the prompts are not displayed.
+Note: The command is interactive and asks for the password from the user but hides what is typed. It also accepts the password from an "input redirect" file, in which case the prompts are not displayed.
 
 ```
 tbutil crypt -encode {clear_text}]
@@ -315,8 +323,10 @@ The `-encode` option prints the encoded version of the supplied clear-text passw
 **See also:**
 [`export target`](#export-target),
 [`import target`](#import-target),
+[`import targets`](#import-targets),
 [`export user`](#export-user),
-[`import user`](#import-user)
+[`import user`](#import-user),
+[`import users`](#import-users),
 
 ### delete
 
@@ -518,6 +528,7 @@ If option `-force` is used, then it is not an error for the identified targets n
 **See also:**
 [`crypt`](#crypt),
 [`export target`](#export-target),
+[`export targets`](#export-targets),
 [`import target`](#import-target),
 [`list targets`](#list-targets),
 [`rediscover target`](#rediscover-target),
@@ -869,6 +880,9 @@ tbutil [{cred}] export target [-j|-s ..|-y] [-ask-secrets] {target_id}
 
 Prints a JSON document containing the definition of the target who's UUID is given as the argument, suitable for editting and/or re-importing using the [`import target`](#import-target) command.
 
+Note:
+- This command cannot be used against IWO.
+
 If any of the allowed [common formatting options](#common-options) are specified, then the output is the unprocessed output of the API call used. The resulting text is NOT suitable to be imported using [`import target`](#import-target).
 
 The supported formatting flags are `-j`, `-s` and `-y` (see [common formatting options](#common-options))
@@ -885,9 +899,39 @@ See [`crypt`](#crypt) for more information.
 [`crypt`](#crypt),
 [`delete target`](#delete-target),
 [`import target`](#import-target),
+[`export targets`](#import-targets),
 [`list targets`](#list-targets),
 [`rediscover target`](#rediscover-target),
 [`validate target`](#validate-target)
+
+
+### export targets
+
+**Usage:**
+
+```
+tbutil [{cred}] export [cloud|onprem] targets [-v] [-random-secrets] {directory_name}
+```
+
+Exports details of all (or "cloud" or "onprem") targets to the named directory in a format that is suitable for re-importing.
+
+Notes:
+- Derived targets are silently excluded.
+- This command cannot be used against IWO.
+
+Option "-v" causes the command to write the full target details (as returned by the API) to the files - but this is **not** suitable for re-importing.
+
+Option "-random-secret" causes random, encrypted values to be used for all target secret fields (such as passwords). This allows the targets to be re-imported although they will fail validation. The administrator can then use the UI to supply the correct values. An alternative to this approach is to use the [`crypt`](#crypt) sub command to add the real passwords (encrypted) to the files before importing.
+
+**See also:**
+[`crypt`](#crypt),
+[`delete target`](#delete-target),
+[`export targets`](#import-targets),
+[`import target`](#import-target),
+[`list targets`](#list-targets),
+[`rediscover target`](#rediscover-target),
+[`validate target`](#validate-target)
+
 
 ### export template
 
@@ -919,7 +963,7 @@ If `all` is used with the plural variant, then system-generated templates are in
 **Usage:**
 
 ```
-tbutil [{cred}] export user [-j|-s ..|-y] {user_name_or_uuid}
+tbutil [{cred}] export user [-j|-s ..|-y] [-ask-secrets] [-secret ..] {user_name_or_uuid}
 ```
 
 **TODO**: add `-by-name` option.
@@ -930,7 +974,7 @@ Prints a JSON document containing the details required to import the user into a
 
 The options `-j`, `-s` or `-y` can be used to specify how the output is formatted (see "[common options](#common-options)"). If any of these is used, the output consists of the body returned by the API and is NOT suitable for re-importing using `import user`.
 
-Note: Turbonomic does not return the password for the user, so the resulting text needs to have a password added to it (encrypted) before it can be imported. See [`crypt`](#crypt) for more information.
+Note: Turbonomic does not return the password for the user. For local users; the resulting text needs to have a password added to it (encrypted) before it can be imported. See [`crypt`](#crypt) for more information. Alternatively: you can use `-ask-secrets` option to supply the password yourself interactively, or `-secret` to specifiy it on the command line. These options are ignored if the user is not a local user (ie: if it is an LDAP/AD one).
 
 
 **See also:**
@@ -939,6 +983,24 @@ Note: Turbonomic does not return the password for the user, so the resulting tex
 [`delete user`](#delete-user),
 [`import user`](#import-user),
 [`list users`](#list-users)
+
+
+### export users
+
+**Usage**
+
+```
+tbutil [{cred}] export [ad|local] users [-v] [-random-secret] {directory_name}
+```
+
+Exports details of all (or just "AD" or "Local") users to files in the named directory. The directory is created by the command, and so must not pre-exist.
+
+Option "-v" causes the command to write the full user DTO to the files - but this is **not** suitable for re-importing.
+
+Option "-random-secret" causes a random, encrypted, password to be stored in the export files for all local users. This allows the users to be re-imported, albeit with a random password.
+
+Note: for very good reasons, it is not possible to extract the actual local users' passwords and so there is no automated way to clone local users with their original passwords. You either need to clone them with random passwords (and then supply the real passwords using the UI), or add the passwords to the export files using the [`crypt`](#crypt) subcommand.
+
 
 ### get
 
@@ -1191,7 +1253,7 @@ Note: system-generated templates cannot be imported or overwritten, and not dele
 **Usage:**
 
 ```
-tbutil [{cred}] import user [-create|-edit] [-dry-run] {file_name}
+tbutil [{cred}] import user [-create|-edit] [-dry-run] [-ask-secrets] [-secret ..] {file_name}
 ```
 
 Creates a new user by importing details from a file that contains the output of the [`export user`](#export-user) command.
@@ -1212,6 +1274,10 @@ The usual process for exporting and re-importing a user is as follows..
     - Eg: `vi user1.json`
 - Import into the target Turbonomic instance
     - Eg: `tbutil @instance2 ` [`import user`](#import-user) ` -create user1.json`
+
+Altnatively, your can specify the password on the `import user` command line using the `-secret` option, or enter in interactively by using `-ask-secrets`. In both these cases, the password entered will override one held in the import file.
+
+The `-ask-secrets` and `-secret` options are only relevant for local users - they are ignored for LDAP/AD users.
 
 **See also:**
 [`create local user`](#create-local-user),
@@ -1630,7 +1696,7 @@ The command supports the following set of [common format_options](#common-option
 **Usage:**
 
 ```
-tbutil [{cred}] list [all] targets [-l|-j|-s ..|-y|-x ..] [-columns ..] [-jsfilter ..]
+tbutil [{cred}] list [all] [cloud|onprem] targets [-l|-j|-s ..|-y|-x ..] [-columns ..] [-jsfilter ..]
 ```
 
 **See also:**
@@ -1640,6 +1706,7 @@ tbutil [{cred}] list [all] targets [-l|-j|-s ..|-y|-x ..] [-columns ..] [-jsfilt
 [`import target`](#import-target),
 [`rediscover target`](#rediscover-target),
 [`validate target`](#validate-target)
+
 
 ### list target types
 
@@ -1880,6 +1947,7 @@ tbutil [{cred}] rediscover target [-by-name] {target_id_or_name} ...
 [`delete target`](#delete-target),
 [`export target`](#export-target),
 [`import target`](#import-target),
+[`import targets`](#import-targets),
 [`list targets`](#list-targets),
 [`validate target`](#validate-target)
 
@@ -2070,6 +2138,7 @@ tbutil [{cred}] validate target [-by-name] {target_id_or_name} ...
 [`delete target`](#delete-target),
 [`export target`](#export-target),
 [`import target`](#import-target),
+[`import targets`](#import-targets),
 [`list targets`](#list-targets),
 [`rediscover target`](#rediscover-target)
 

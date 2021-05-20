@@ -33,7 +33,7 @@ spec:
 
       containers:
       - name: tbutil-flexera
-        image: turbointegrations/tbutil-flexera:1.3g
+        image: turbointegrations/tbutil-flexera:1.3h
         imagePullPolicy: IfNotPresent
         env:
           - name: TURBO_MACHINE_ID_FILE

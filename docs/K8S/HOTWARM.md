@@ -1,10 +1,10 @@
-# TBUtil Hot/Warm Standby POD
+# TBUtil Hot/Warm Standby Pod
 
 | Label          | Value       |
 | -------------- | ----------- |
-| Date           | 5 May 2021 |
+| Date           | 20 May 2021 |
 | Author         | Chris Lowth - chris.lowth@turbonomic.com |
-| TBUtil version | 1.3g |
+| TBUtil version | 1.3h |
 | Script Version | Phase 1 of 2 |
 
 Important: This tool should be installed in the WARM instance K8S cluster.
@@ -43,21 +43,21 @@ The following points should be noted prior to deploying the hot/warm logic.
 
 ## Installation
 
-### Step 1: Install the POD
+### Step 1: Install the pod
 
-Install the container as a K8S POD by following [these instructions](INSTALL.md) with "hotwarm" as the POD flavour.
+Install the container as a K8S pod by following [these instructions](INSTALL.md) with "hotwarm" as the pod flavour.
 
 ### Step 2: Configure
 
 This step is not required if you are updating from the earlier release because the configuration is stored in the persistent volume (unless you have deleted the PV, of course).
 
-Log in to the POD using "bash"
+Log in to the pod using "bash"
 
 ```shell
 kubectl exec -it deploy/tbutil-hotwarm -- /bin/bash
 ```
 
-From inside the POD, run the command "hot-warm-setup" to set up the credentials for local (warm) and remote (hot) instances and define the time when the script should run.
+From inside the pod, run the command "hot-warm-setup" to set up the credentials for local (warm) and remote (hot) instances and define the time when the script should run.
 
 ```shell
 hot-warm-setup
@@ -65,7 +65,7 @@ hot-warm-setup
 
 Answer the questions asked.
 
-Once completed, exit the POD shell session by typing the command `exit`.
+Once completed, exit the pod shell session by typing the command `exit`.
 
 ## Fail over
 
@@ -74,7 +74,7 @@ If the "hot" system fails, the steps to take are.
 - If possible: turn all actions off in the hot system using the UI.
     - Settings / Policies / Defaults / Global Defaults / Disable all actions = on
 - Shut the hot system down completely (prevent it from restarting).
-- Scale down the tbutil-hotwarm POD on the warm system using the command:
+- Scale down the tbutil-hotwarm pod on the warm system using the command:
     - `kubectl scale --replicas=0 deploy/tbutil-hotwarm`
 - Turn actions on in the warm instance using the UI
     - Settings / Policies / Defaults / Global Defaults / Disable all actions = off
@@ -91,5 +91,5 @@ Once the "hot" is ready to be restarted, take these steps in this order..
     - Check that the system is fully functioning using the UI, but note: if "Disable all actions" is on then no actions will be seen.
 - Turn actions on in the "hot" instance (if they are currently off).
     - Settings / Policies / Defaults / Global Defaults / Disable all actions = off
-- Start the tbutil-hotwarm POD on the warm system using the command:
+- Start the tbutil-hotwarm pod on the warm system using the command:
     - `kubectl scale --replicas=1 deploy/tbutil-hotwarm`

@@ -30,7 +30,7 @@ spec:
 
       containers:
       - name: tbutil-base
-        image: turbointegrations/tbutil-base:1.3g
+        image: turbointegrations/tbutil-base:1.3h
         imagePullPolicy: IfNotPresent
         env:
           - name: TURBO_MACHINE_ID_FILE

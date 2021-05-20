@@ -1,6 +1,6 @@
 # SqLite3 Plugin for TBUtil
 
-*Last updated: 30 Apr 2021*
+*Last updated: 18 May 2021*
 
 ---
 
@@ -21,7 +21,7 @@ The plugin exposes the following functions..
 
 The open() method establishes a database connection and returns a DB access object.
 
-A read-only connection can optionally be established against a remote Turbonomic instance database using a built-in SSH tunnel by calling "open" with no arguments.
+
 
 Example usage:
 
