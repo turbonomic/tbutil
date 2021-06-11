@@ -1,6 +1,6 @@
-# TButil 1.3h - Building from source
+# TButil 2.0a - Building from source
 
-*Last updated: 18 May 2021*
+*Last updated: 1 Jun 2021*
 
 ## How to build "tbutil" from source.
 

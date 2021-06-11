@@ -28,9 +28,15 @@ spec:
           persistentVolumeClaim:
             claimName: tbutil-hotwarm-volume
 
+        - name: turbo-volume
+          configMap:
+            defaultMode: 420
+            name: global-properties-xl-example
+            optional: true
+
       containers:
       - name: tbutil-hotwarm
-        image: turbointegrations/tbutil-hotwarm:1.3h
+        image: turbointegrations/tbutil-hotwarm:2.0a
         imagePullPolicy: IfNotPresent
         env:
           - name: TURBO_MACHINE_ID_FILE
@@ -57,5 +63,8 @@ spec:
           - name: tbutil-hotwarm-volume
             subPath: etc-crontabs
             mountPath: /etc/crontabs
+
+          - name: turbo-volume
+            mountPath: /etc/turbonomic
 
 ---

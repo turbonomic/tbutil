@@ -234,6 +234,8 @@ The columns are..
 
 Run using: `tbscript [{cred}] pending-vm-rightsizes.js {output-excel-file-name.xlsx}`
 
+### reclamation.js
+
 ### reset-turbo.js
 
 ### run-plan-per-cluster.js

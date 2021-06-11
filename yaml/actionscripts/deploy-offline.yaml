@@ -28,9 +28,15 @@ spec:
           persistentVolumeClaim:
             claimName: tbutil-actionscripts-volume
 
+        - name: turbo-volume
+          configMap:
+            defaultMode: 420
+            name: global-properties-xl-example
+            optional: true
+
       containers:
       - name: tbutil-actionscripts
-        image: tbutil-actionscripts:1.3h
+        image: tbutil-actionscripts:2.0a
         imagePullPolicy: Never
         env:
           - name: TURBO_MACHINE_ID_FILE
@@ -58,6 +64,9 @@ spec:
           - name: tbutil-actionscripts-volume
             subPath: etc-crontabs
             mountPath: /etc/crontabs
+
+          - name: turbo-volume
+            mountPath: /etc/turbonomic
 
 ---
 kind: Service

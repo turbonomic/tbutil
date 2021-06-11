@@ -1,6 +1,6 @@
-# Add-ins available to TBUtil 1.3h JS formatters and TBScripts
+# Add-ins available to TBUtil 2.0a JS formatters and TBScripts
 
-*Last updated: 20 May 2021*
+*Last updated: 7 Jun 2021*
 
 Note: the selection of features and functions available to scripts depends on the context in which they are called. The following context types exist..
 
@@ -86,6 +86,8 @@ It returns false if the value is not present in the array.
 
 This function allows a tbutil subcommand that is coded in JavaScript to be called as if it were a subroutine. `call` locates and runs the subCommand code and passes the arguments to it in the `args` array. The function returns the code that the subCommand would otherwise return to the shell.
 
+The values in `arguments` can be scalars or arrays. The list is flattened before being passed to the command.
+
 The difference between this and `{client}.tbutil` is that the latter spawns a new process to handle the command where as `call` invokes the subCommand as a subroutine in the same JsVM as the caller.
 
 You can wrap the invokation of `call` using the `collect` function if you want to capture the standard input and standard error strings emitted by the subCommand.
@@ -120,6 +122,8 @@ The list of methods that can be called using this object includes...
 * The methods listed in the REFERENCE.md (and REFERENCE.pdf) files from the turbo-api-client-lib project.
 * The methods declared in the "jsmodules/client_addins.js" script.
 * The methods listed below.
+
+Note: `client` is implemented internally as an alias to a function call, so trying to set it's value results in a syntax error.
 
 
 ### {client}.close( )
@@ -305,7 +309,9 @@ try {
 
 ### {client}.lastTime( )
 
-Returns the time value contained in the response to the last API call made. This allows the script to know the time as known by the instance server.
+Returns the time value contained in the response to the last API call made. This allows the script to learn the time as known by the instance server.
+
+The value returned is the integer count of the number of seconds since the UNIX Epoch.
 
 
 ### {client}.nextCursor( )
@@ -362,6 +368,8 @@ A value of "0" turns the timeout feature off, meaning that the timeout drops bac
 > A duration string is a possibly signed sequence of decimal numbers, each with optional fraction and a unit suffix, such as "300ms", "-1.5h" or "2h45m". Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h". 
 
 This function overrides any values specified using the `TURBO_HTTP_TIMEOUT` environment variable.
+
+Note: the `newClient` function call performs some API queries so to specifiy a timeout early enough to impact those, you should use the `timeout` argument in the `newClient` function itself.
 
 
 ### {client}.ssh
@@ -581,7 +589,7 @@ print(files);
 
 ## credentials
 
-This variable contains the credentials string specified on the command line when tbscript was started. 
+This variable contains the credentials string specified on the command line when tbscript was started.
 
 
 ## {date}.format(format_string)
@@ -1235,7 +1243,7 @@ Creates the named directory. If allFlag is true, then any required parents are a
 Fails if the directory already exists or cannot otherwise be created.
 
 
-## newClient(credentials)
+## newClient(credentials[ ,options])
 
 Creates a client connection object to a Turbonomic instance other than the one specified on the command line. This can be used to access all the methods documented for the "client" object described earlier.
 
@@ -1277,6 +1285,13 @@ var groups = c2.getGroups();
 ```
 
 Note: `newClient` ignores the TURBO_CACHE_TIME and TURBO_CACHE_DIR environment variables. If you need to set up API caching for the client, then use the `setCache` method.
+
+If `options` is specified, then it should be a JavaScript object containing the options to apply to the connection. The following options are supported:
+
+| Option | Description |
+| ------ | ----------- |
+| timeout | see the `setTimeout` method |
+| skipSwagger | if true, then the client will not download the swagger description and so will not include the API methods declared in it. You can still use the "`client.http` and other built-in methods. |
 
 
 ## newJsvm([fileName])
@@ -1752,6 +1767,9 @@ If the strings ends with the sub_string then the return is the result of removin
 ## {string}.trimPrefix(sub_string)
 
 If the strings starts with the sub_string then the return is the result of removing it. Otherwise, the original string is returned.
+
+
+## {string}.wordWrap(len)
 
 
 ## subCommand

@@ -31,9 +31,23 @@ spec:
           persistentVolumeClaim:
             claimName: topology-processor
 
+        - name: api
+          persistentVolumeClaim:
+            claimName: api
+
+        - name: auth
+          persistentVolumeClaim:
+            claimName: auth
+
+        - name: turbo-volume
+          configMap:
+            defaultMode: 420
+            name: global-properties-xl-example
+            optional: true
+
       containers:
       - name: tbutil-flexera
-        image: tbutil-flexera:1.3h
+        image: tbutil-flexera:2.0a
         imagePullPolicy: Never
         env:
           - name: TURBO_MACHINE_ID_FILE
@@ -61,9 +75,22 @@ spec:
           - name: tbutil-flexera-volume
             subPath: etc-crontabs
             mountPath: /etc/crontabs
+
+          - name: turbo-volume
+            mountPath: /etc/turbonomic
           - name: topology-processor
             subPath: helper_dir
             mountPath: /home/turbonomic/data/helper_dir/topology-processor
+            readOnly: true
+
+          - name: api
+            subPath: helper_dir
+            mountPath: /home/turbonomic/data/helper_dir/api
+            readOnly: true
+
+          - name: auth
+            subPath: helper_dir
+            mountPath: /home/turbonomic/data/helper_dir/auth
             readOnly: true
 
 ---

@@ -1,24 +1,24 @@
-# TBUtil 1.3h Quick Install Guide.
+# TBUtil 2.0a Quick Install Guide.
 
-*Last updated: 20 May 2021*
+*Last updated: 1 Jun 2021*
 
 ## Installing from downloaded zip file.
 
 Download the correct zip file for your platform from ..
 
-`https://github.com/turbonomic/tbutil/blob/v1.3h/docs/release.md`
+`https://github.com/turbonomic/tbutil/blob/v2.0a/docs/release.md`
 
-Once downloaded, un-zip the file into a directory of your choice. For example (for version 1.3h, Linux)...
+Once downloaded, un-zip the file into a directory of your choice. For example (for version 2.0a, Linux)...
 
 ```
 $ cd $HOME
-$ unzip $HOME/Downloads/tbutil-1_3h-linux.zip    (or the location you have copied the zip file to)
+$ unzip $HOME/Downloads/tbutil-2_0a-linux.zip    (or the location you have copied the zip file to)
 ```
 
 Now "cd" into the directory that you unzipped into and run the "install.sh" or "install.bat" script from there. For example (on Linux) ...
 
 ```
-$ cd tbutil-1_3h
+$ cd tbutil-2_0a
 $ sh install.sh
 ```
 
@@ -42,7 +42,7 @@ In Windows, the directory could be:
 | 3 | %ProgramFiles%\Turbonomic\tbutil | if you want all users to be able to access the same copy of the tool (you'll need to have administrator access to set this up) |
 | 4 | Somewhere else | if you want to keep tbutil, tbscript, etc somewhere else |
 
-If this is a new installation of TButil (rather than being an upgrade of an existing installation) you should configure credentials for your default Turbonomic instance by following the steps in the section "Setting up credentials and testing", below.
+If this is a new installation of TButil (rather than being an upgrade of an existing installation) you should configure an unlock key and credentials for your default Turbonomic instance by following the steps in the sections "Obtain the unlock key" and "Setting up credentials and testing", below.
 
 ## Non-interactive installation.
 
@@ -77,6 +77,15 @@ grant select, execute on *.* to vmtreader@`%` identified by password '*0583FB97F
 ```
 
 You can replace the \`%\` with the name or IP of a specific host if you want to limit access to come only from there.
+
+
+## Obtain the unlock key.
+
+The `tbutil` binaries installed in the container require an "unlock key" file to be applied before they can be used. This is **not** a license (it confers no specific rights).
+
+In order to complete the installation, you will need to obtain a key. Please reach out to your Turbonomic field representative or support. They will supply you with a single line text file that includes your name or email address and the key string. Write this string to the file `.tbutilissue` in your home directory.
+
+**Note for Turbonomic employees**: You can obtain the required key when connected to the company VPN by browsing to https://tbutil.s3.eu-west-2.amazonaws.com/issue.html (this redirects to a private IP address so the redirect will fail work without a VPN connection).
 
 
 ## Setting up credentials and testing

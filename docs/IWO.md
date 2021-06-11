@@ -1,6 +1,6 @@
-# TBUtil 1.3h IWO Instance Credentials
+# TBUtil 2.0a IWO Instance Credentials
 
-*Last updated: 18 May 2021*
+*Last updated: 3 Jun 2021*
 
 Refer to section 1 of `QUICK-INSTALL.pdf` for information on installing `tbutil`. Once complete, you can then configure the credentials for your IWO instance following the notes below.
 
@@ -34,18 +34,18 @@ ClientSecret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## Run the configuration tool.
 
-Once you have these strings to hand, run the `tbiwocreds.js` script, passing it the name of the configuration block you wish to create in the `.tbutilrc` file. The name is traditionally a short lower case string consisting of letters, numbers and stops. If you use the name `default` then these will be the default credentials for `tbutil` and `tbscript`.
+Once you have these strings to hand, run the `save iwo credentials` command, passing it the name of the configuration block you wish to create in the `.tbutilrc` file. The name is traditionally a short lower case string consisting of letters, numbers and stops. If you use the name `default` then these will be the default credentials for `tbutil` and `tbscript`.
 
 The command line you should run is..
 
 ```
-tbscript tbiwocreds.js @block_name
+tbutil @block_name save iwo credentials
 ```
 
 Where "block_name" should be replaced by the name you wish to use. For example..
 
 ```
-tbscript tbiwocreds.js @default
+tbutil @default save iwo credentials
 ```
 
 The script will ask you to enter the IWO URL and name of the token file and perform some basic validation of your inputs. It will then create or update the `.tbutilrc` file to include the specified block.
@@ -53,7 +53,7 @@ The script will ask you to enter the IWO URL and name of the token file and perf
 ## Example of running the script.
 
 ```
-$ tbscript @null tbiwocreds.js @iwo2
+$ tbutil @iwo2 save iwo credentials
 
 ====================================================
 Configuring IWO credentials for @iwo2

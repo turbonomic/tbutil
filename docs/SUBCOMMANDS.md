@@ -1,6 +1,6 @@
-# TBUtil 1.3h Sub Commands
+# TBUtil 2.0a Sub Commands
 
-*Last updated: 20 May 2021*
+*Last updated: 1 Jun 2021*
 
 ## To do
 
@@ -69,7 +69,7 @@ If neither `-create` nor `-edit` are specified then the user will be created if 
 
 ## Credentials
 
-ADD INFO HERE ON THE HADLING OF CREDENTIALS.
+TODO: ADD INFO HERE ON THE HADLING OF CREDENTIALS.
 
 ## Formatter Scripts
 
@@ -90,13 +90,14 @@ Before writing your script, you will probably want to see what the data in `tree
 1. Using the `-j` option on the command line instead of `-s`.
 2. Write a script to dump the `tree` object using the `printJson` JS function. The simplest form of such a script just needs to contain the single line: `printJson(tree)`.
 
-When filter script finishes, it can use the JS `return` statement to indicate how the tool should exit. The actions taken depend on the data type returned, as follows..
+When formatter script finishes, it can use the JS `return` statement to indicate how the tool should exit. The actions taken depend on the data type returned, as follows..
 
 | Type | Action |
 | ---- | ------ |
 | integer | exit with the specified system exit code. By convention: 0 means "ok", 1 means "warning" and 2 means "error". Other codes between 0 and 255 can be used. |
 | string | the sting is printed to the standard output and the program exits with status 0. |
 | object | the object is dumped in JSON format and the program exits with status 0. |
+
 
 ## Filter scripts
 
@@ -336,7 +337,7 @@ The `-encode` option prints the encoded version of the supplied clear-text passw
 tbutil [{cred}] delete [-j|-s ..|-y] {path} < {json_body_file}
 ```
 
-The "delete" command calls the specified raw `DELETE` REST API endpoint and pass the conents of the `json_body_file` as the request body.
+The "delete" command calls the specified raw `DELETE` REST API endpoint and passes the conents of the `json_body_file` as the request body.
 
 **See also**:
 [`get`](#get),
@@ -369,7 +370,7 @@ Deletes a dashboard, identified by it's id or (if `-by-name` is specfied) name. 
 **Usage:**
 
 ```
-tbutil [{cred}] delete [{type}] group [-by-name] [-force] {group_id_or_name} ...
+tbutil [{cred}] delete [dynamic|static] group [-by-name] [-force] {group_id_or_name} ...
 tbutil [{cred}] delete my groups [-v]
 ```
 
@@ -450,6 +451,8 @@ The `all` variant deletes all the existing placement policies. Option `-v` makes
 
 ### delete report instance
 
+Note: only support on Turbonomic version 6.
+
 **Usage:**
 
 ```
@@ -469,6 +472,8 @@ Deletes the specified report instances from the Turbonomic file system. Use the 
 [`list report templates`](#list-report-templates)
 
 ### delete report schedule
+
+Note: only support on Turbonomic version 6.
 
 **Usage:**
 
@@ -590,6 +595,8 @@ Reverses the effect of [`upgrade credentials`](#upgrade-credentials) and returns
 
 ### download report instance
 
+Note: only support on Turbonomic version 6.
+
 **Usage:**
 
 ```
@@ -609,6 +616,8 @@ Downloads an existing report instance file. You can find the ID and file name fr
 [`list report templates`](#list-report-templates)
 
 ### execute report query
+
+Note: only support on Turbonomic version 6.
 
 **Usage:**
 
@@ -798,6 +807,8 @@ The `-defaults` option causes the exported data to contain the default values fo
 [`reset policy`](#reset-policy)
 
 ### export report
+
+Note: only support on Turbonomic version 6.
 
 **Usage:**
 
@@ -1209,7 +1220,7 @@ Imports the SMTP configuration for Turbonomic, from a JSON file created using [`
 **Usage:**
 
 ```
-tbutil [{cred}] import target [-j] [-create|-edit] [-dry-run] [-ask-secrets] {file_name}
+tbutil [{cred}] import target [-j] [-create|-edit] [-dry-run] [-ask-secrets] [-secret ..] [-retain-secret] {file_name}
 ```
 
 Note: The target configuration needs to have the passwords added to it (encrypted) before it can be imported. You have three choices to answer this requirement:
@@ -1217,6 +1228,8 @@ Note: The target configuration needs to have the passwords added to it (encrypte
 1. Run `export target` with the `-ask-secrets` option, which causes it to prompt you for the passwords as it runs. The passwords you enter are added to the exported JSON body. You can also pipe the passwords in on the standard input instead of typing them by hand.
 2. Use the `-ask-secrets` option with `import targets`, in which case the questions are asked when you import and do not need to be written to the file. You can also pipe the passwords in on the standard input instead of typing them by hand.
 3. Use the [`crypt`](#crypt) command to patch the passwords in to the file after exporting and before importing.
+
+If `-retain-secret` is specified and the target already exists, then the password (or other secrets) will not be changed even if a different one is stored in the import file.
 
 **See also:**
 [`crypt`](#crypt),
@@ -1253,7 +1266,7 @@ Note: system-generated templates cannot be imported or overwritten, and not dele
 **Usage:**
 
 ```
-tbutil [{cred}] import user [-create|-edit] [-dry-run] [-ask-secrets] [-secret ..] {file_name}
+tbutil [{cred}] import user [-create|-edit] [-dry-run] [-ask-secrets] [-secret ..] [-retain-secret] {file_name}
 ```
 
 Creates a new user by importing details from a file that contains the output of the [`export user`](#export-user) command.
@@ -1277,6 +1290,8 @@ The usual process for exporting and re-importing a user is as follows..
 
 Altnatively, your can specify the password on the `import user` command line using the `-secret` option, or enter in interactively by using `-ask-secrets`. In both these cases, the password entered will override one held in the import file.
 
+The `-retain-secret` option specifies that if the user is an existing local one, the password will not be changed even if a different one is stored in the import file.
+
 The `-ask-secrets` and `-secret` options are only relevant for local users - they are ignored for LDAP/AD users.
 
 **See also:**
@@ -1285,6 +1300,21 @@ The `-ask-secrets` and `-secret` options are only relevant for local users - the
 [`delete user`](#delete-user),
 [`export user`](#export-user),
 [`list users`](#list-users)
+
+### import users
+
+Usage:
+
+```
+tbutil [{cred}] import users {directory_name}
+```
+
+This command imports the user defitions held in the named directory, which should typically have been created with the [`export users`](#export-users) sub command.
+
+Note that, for safety, the `administrator` user will be skipped if he/she is included in the directory contents.
+
+The passwords of any local users that already exist will be unchanged (even if a different password is specified in the relevant import file). Passwords of local users that do not exist before the command is run will take the value held (encrypted) in the import file. New local users MUST have a password specified in the import file (even if it's a random one).
+
 
 ### license
 
@@ -1573,6 +1603,8 @@ If the `-jsfilter` option is specified then the tool loads and runs the specifie
 
 ### list report instances
 
+Note: only support on Turbonomic version 6.
+
 **Usage:**
 
 ```
@@ -1590,6 +1622,8 @@ tbutil [{cred}] list report instances [-l|-j|-s ..|-y|-x ..] [-columns ..]
 [`list report templates`](#list-report-templates)
 
 ### list report queries
+
+Note: only support on Turbonomic version 6.
 
 **Usage:**
 
@@ -1609,6 +1643,8 @@ tbutil [{cred}] list [all] report queries [-j|-s ..|-y|-x ..] [-columns ..] {tem
 
 ### list report schedules
 
+Note: only support on Turbonomic version 6.
+
 **Usage:**
 
 ```
@@ -1626,6 +1662,8 @@ tbutil [{cred}] list report schedules [-l|-j|-s ..|-y|-x ..] [-columns ..]
 [`list report templates`](#list-report-templates)
 
 ### list report templates
+
+Note: only support on Turbonomic version 6.
 
 **Usage:**
 
@@ -1696,8 +1734,10 @@ The command supports the following set of [common format_options](#common-option
 **Usage:**
 
 ```
-tbutil [{cred}] list [all] [cloud|onprem] targets [-l|-j|-s ..|-y|-x ..] [-columns ..] [-jsfilter ..]
+tbutil [{cred}] list [all] [scoped|unscoped] [cloud|onprem] targets [-l|-j|-s ..|-y|-x ..] [-columns ..] [-jsfilter ..]
 ```
+
+The word `all` allows derived targets to be included in the listing.
 
 **See also:**
 [`crypt`](#crypt),

@@ -1,6 +1,6 @@
-# TbUtil Version 1.3h
+# TbUtil Version 2.0a
 
-Released: 10 May 2021
+Released: 11 Jun 2021
 
 Unsupported software, Copyright (C) Turbonomic 2018 .. 2021
 
@@ -26,40 +26,39 @@ Refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on installing 
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
-| [tbutil-1_3h-linux.zip](https:/turbonomic/tbutil/releases/download/v1.3h/tbutil-1_3h-linux.zip) | 56ce28bce758dcadceefc3e1063589b4 | Download for x86_64 Linux |
-| [tbutil-1_3h-mac.zip](https:/turbonomic/tbutil/releases/download/v1.3h/tbutil-1_3h-mac.zip) | cea2f088c32dec889ded5c7ed2bb7496 | Download for MAC (64 bit) |
-| [tbutil-1_3h-windows.zip](https:/turbonomic/tbutil/releases/download/v1.3h/tbutil-1_3h-windows.zip) | 953cf964ba8692c5052bc6863fd1cf57 | Download for Windows (64 bit) |
+| [tbutil-2_0a-linux.zip](https:/turbonomic/tbutil/releases/download/v2.0a/tbutil-2_0a-linux.zip) | 303b1fe36b3efc5ce6f323dab9101eb9 | Download for x86_64 Linux |
+| [tbutil-2_0a-mac.zip](https:/turbonomic/tbutil/releases/download/v2.0a/tbutil-2_0a-mac.zip) | fe0f4a5c7b3f1678770db799a6514c8c | Download for MAC (64 bit) |
+| [tbutil-2_0a-windows.zip](https:/turbonomic/tbutil/releases/download/v2.0a/tbutil-2_0a-windows.zip) | 88d55d54fb331046ac6369bad219a5b0 | Download for Windows (64 bit) |
 
 
 ## MarkDown Documents
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
-| [API-REFERENCE.md](../docs/API-REFERENCE.md) | 3cd1df0883aa69201e07fbaea6c4b848 | REST API Reference (For Turbonomic 6.4.35) |
-| [BUILDING.md](../docs/BUILDING.md) | 33d93f0f84d410f3d3957413a0ce2e93 | TButil 1.3h - Building from source |
-| [EXAMPLES.md](../docs/EXAMPLES.md) | ce9a11f73dea14c09b65e0cd6447ec96 | TButil (VERSION) - Example scripts |
-| [IWO.md](../docs/IWO.md) | 9f32e6a5f5863fa41d7175d71b059c11 | TBUtil 1.3h IWO Instance Credentials |
-| [JS-ADDINS.md](../docs/JS-ADDINS.md) | 9e392ad0e7b54a8bd4dfabc9680727e4 | Add-ins available to TBUtil 1.3h JS formatters and TBScripts |
-| [K8S/ACTIONSCRIPTS.md](../docs/K8S/ACTIONSCRIPTS.md) | 38d25cf258dcbe19f90a8e72e382fc93 | TBUtil Action Scripts Pod |
-| [K8S/FLEXERA.md](../docs/K8S/FLEXERA.md) | 4c53c02027206da3ed648e17f4b1dcdd | TBUtil Flexera intergration POD |
-| [K8S/HOTWARM.md](../docs/K8S/HOTWARM.md) | 08153916a2ce865dd00525180d2f5e35 | TBUtil Hot/Warm Standby Pod |
-| [K8S/INSTALL.md](../docs/K8S/INSTALL.md) | 01c25d604a32d21a597824a61398da40 | Installing TBUtil PODs |
+| [BUILDING.md](../docs/BUILDING.md) | 5b38824f19e063050bc8cb372a68cf11 | TButil 2.0a - Building from source |
+| [EXAMPLES.md](../docs/EXAMPLES.md) | 3a4044400965ce4fca4279f271e280d8 | TButil (VERSION) - Example scripts |
+| [IWO.md](../docs/IWO.md) | 53856a6dd62598adae436f0ee2d88d67 | TBUtil 2.0a IWO Instance Credentials |
+| [JS-ADDINS.md](../docs/JS-ADDINS.md) | dbceabcd195b8dfd43f2cfc8509fc202 | Add-ins available to TBUtil 2.0a JS formatters and TBScripts |
+| [K8S/ACTIONSCRIPTS.md](../docs/K8S/ACTIONSCRIPTS.md) | 79ae32aafb8aa6ea28e33262183453d1 | TBUtil Action Scripts Pod |
+| [K8S/FLEXERA.md](../docs/K8S/FLEXERA.md) | 1f6b9b26dbd9d0e5b4ee37555a15ba42 | TBUtil Flexera intergration POD |
+| [K8S/HOTWARM.md](../docs/K8S/HOTWARM.md) | 36e85244bd5635d375a00017e3914fd9 | TBUtil Hot/Warm Standby Pod |
+| [K8S/INSTALL.md](../docs/K8S/INSTALL.md) | 4dc32985e846aa40a5330400742708d5 | Installing TBUtil PODs |
 | [K8S/INTERNALS.md](../docs/K8S/INTERNALS.md) | ecbcb11f5c1328065e76cf2507a6fc7b | TBUtil POD Internals. |
 | [PLUGINS.md](../docs/PLUGINS.md) | ed6652618f7b1bde8364cffe69e6565c | TB Script Plugins |
-| [QUICK-INSTALL.md](../docs/QUICK-INSTALL.md) | e5fe93d43fdec8722b9af590e31e7237 | TBUtil 1.3h Quick Install Guide. |
-| [README.md](../docs/README.md) | 44bd5642d8d2958371fd9aaab67825e7 | TButil 1.3h - Turbonomic Command-Line Utility |
+| [QUICK-INSTALL.md](../docs/QUICK-INSTALL.md) | e6eeb3914b8566282492b80ddd9f8fbb | TBUtil 2.0a Quick Install Guide. |
+| [README.md](../docs/README.md) | 59df5ba7c413d8befe7c0f375732be56 | TButil 2.0a - Turbonomic Command-Line Utility |
 | [RUNNING-PLANS.md](../docs/RUNNING-PLANS.md) | f6e688f29d478064d40cfd6c81809d23 | Running plans with tbutil 1.1n or later. |
-| [SUBCOMMANDS.md](../docs/SUBCOMMANDS.md) | d6400e31b1dadd86d032a96013685a30 | TBUtil 1.3h Sub Commands |
-| [apiv1-plugin.md](../docs/apiv1-plugin.md) | 27ed3c9d2cdbec08f81fd822bab8ea2a | API V1 plugin for TBUtil |
-| [arangodb-plugin.md](../docs/arangodb-plugin.md) | ed02bf8b2f2ab2f1b3eff4c4cdeb17b0 | ArangoDB plugin for TBUtil |
-| [excel-plugin.md](../docs/excel-plugin.md) | cf7b9afbdeb58f296f2c2f89b53f15f9 | EXCEL plugin for TBUtil |
-| [mysql-plugin.md](../docs/mysql-plugin.md) | 664f70782384e739b12e0c1bb719974e | MySQL Plugin for TBUtil |
-| [pdf-plugin.md](../docs/pdf-plugin.md) | 0b18fd231f07d65b33a7b302f2eb2f01 | PDF Plugin for TBUtil |
-| [smtp-plugin.md](../docs/smtp-plugin.md) | 71acc2bf0783100e542fb9bb53e4e686 | SMTP Plugin for TBUtil |
-| [sqlite3-plugin.md](../docs/sqlite3-plugin.md) | 610f5081ddba9f12306fe408dd5aa566 | SqLite3 Plugin for TBUtil |
-| [sys-plugin.md](../docs/sys-plugin.md) | 27d8dc082c2bb0a34b519e4c3a6629ed | SYS Plugin for TBUtil |
-| [vcenter-plugin.md](../docs/vcenter-plugin.md) | 51aa53e3156f2787b7e6cd90513c9e95 | vCenter plugin for TBUtil |
-| [xml-plugin.md](../docs/xml-plugin.md) | 15ffd69581b8e391976330207a596d60 | XML Plugin for TBUtil |
+| [SUBCOMMANDS.md](../docs/SUBCOMMANDS.md) | 15007d3040768451f7248aa1f8a869ba | TBUtil 2.0a Sub Commands |
+| [apiv1-plugin.md](../docs/apiv1-plugin.md) | 64621c70e36cad25c95d31b0775e7c2d | API V1 plugin for TBUtil |
+| [arangodb-plugin.md](../docs/arangodb-plugin.md) | 0818044a7f82cf5ef4542bc458cc5c9d | ArangoDB plugin for TBUtil |
+| [excel-plugin.md](../docs/excel-plugin.md) | 16840a8e061179604a9121ad042b8549 | EXCEL plugin for TBUtil |
+| [mysql-plugin.md](../docs/mysql-plugin.md) | a24ae3e0e7d87329601e1aca305a671b | MySQL Plugin for TBUtil |
+| [pdf-plugin.md](../docs/pdf-plugin.md) | b05688a37a126461c2fa3237107f5cff | PDF Plugin for TBUtil |
+| [smtp-plugin.md](../docs/smtp-plugin.md) | 20fe08d8818442ac9a1cd13e120b6fe3 | SMTP Plugin for TBUtil |
+| [sqlite3-plugin.md](../docs/sqlite3-plugin.md) | 0723761207cc626e3eb6a5d61d489f40 | SqLite3 Plugin for TBUtil |
+| [sys-plugin.md](../docs/sys-plugin.md) | bdb7612638df01977c69e33ef30770b4 | SYS Plugin for TBUtil |
+| [vcenter-plugin.md](../docs/vcenter-plugin.md) | 2a4ec85b97455d26b8846ad707dee73f | vCenter plugin for TBUtil |
+| [xml-plugin.md](../docs/xml-plugin.md) | 90173ac91b852ed969c32f97b1bd8099 | XML Plugin for TBUtil |
 
 
 ## Open-source Licenses

@@ -1,6 +1,6 @@
 # PDF Plugin for TBUtil
 
-*Last updated: 18 May 2021*
+*Last updated: 1 Jun 2021*
 
 ---
 

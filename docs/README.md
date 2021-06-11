@@ -1,6 +1,6 @@
-# TButil 1.3h - Turbonomic Command-Line Utility
+# TButil 2.0a - Turbonomic Command-Line Utility
 
-*Last updated: 18 May 2021*
+*Last updated: 1 Jun 2021*
 
 ## Introduction
 
@@ -16,7 +16,7 @@ TButil includes an embedded JavaScript engine that can be used to format the out
 
 Download from the project's S3 site..
 
-https://github.com/turbonomic/tbutil/blob/v1.3h/docs/release.md
+https://github.com/turbonomic/tbutil/blob/v2.0a/docs/release.md
 
 Once you've downloaded the relevant ZIP, follow the instructions contained in the QUICK-INSTALL.pdf file it contains. This takes you through the process step by step.
 
@@ -369,36 +369,26 @@ Just run "tbutil" with no arguments.
 ```text
 TBUTIL: Unsupported Software, Copyright (C) Turbonomic 2018,2019,2020,2021
 Issued To   : chris.lowth@turbonomic.com
-GIT Tag     : 1.3h
-Commit Hash : 53cfd4afea3cc8797782675edaf7f0347a9ca840
-Commit Time : 2021-05-10 14:34:54 +0100
-Build Time  : 2021-05-20 09:30:37 +0100
-API Version : 6.4.35
+GIT Tag     : 2.0a
+Commit Hash : 3db2ee5873bbd3d93531e8e68a71581fe25f6c68
+Commit Time : 2021-06-11 16:59:27 +0100
+Build Time  : 2021-06-11 17:00:17 +0100
 (use "tbutil -version" for more version info)
 
 Usage:
   tbutil [{cred}] accept|reject action {action_uuid}
-  tbutil [{cred}] create [-help] ...
-  tbutil [{cred}] delete [-help] ...
-  tbutil [{cred}] export [-help] ...
+  tbutil [{cred}] create|delete|export|import|list|logging|print|psql|reset [-help] ...
+  tbutil [{cred}] delete|post|put [-j|-s ..|-y] [-jsfilter ..] {path} < {json_body_file}
   tbutil [{cred}] get swagger
   tbutil [{cred}] get [anon] [-j|-s ..|-y] [-jsfilter ..] {path}
-  tbutil [{cred}] import [-help] ...
-  tbutil [{cred}] list [-help] ...
-  tbutil [{cred}] logging [-help] ...
-  tbutil [{cred}] ping [-sql|-ssh|-isXL]
-  tbutil [{cred}] post [-j|-s ..|-y] [-jsfilter ..] {path} < {json_body_file}
-  tbutil [{cred}] print [-help] ...
-  tbutil [{cred}] psql [-help] ...
-  tbutil [{cred}] put [-j|-s ..|-y] [-jsfilter ..] {path} < {json_body_file}
+  tbutil [{cred}] ping [-sql|-ssh|-isXL|-isIWO]
   tbutil [{cred}] rediscover|validate target [-by-name] {target_id_or_name} ...
-  tbutil [{cred}] reset [-help] ...
-  tbutil [{cred}] shell {arguments ....}
+  tbutil [{cred}] shell {arguments} ...
   tbutil [{cred}] sql [-help|-test] [-j|-s ..|-y|-x ..] [-columns ..] [-o {csv_file}] {sql_file} [{arg} ...]
+  tbutil [{cred}] what {method} {url}
   tbutil crypt [ -create-key | -delete-key | -target {file} | -user {file} | -proxy {file} | -encode [{clear_text}] ]
-  tbutil help [{keyword} | all | env-vars]
+  tbutil help [{keyword}|all|env_vars|functions]
   tbutil opensource licenses
-  tbutil what [-help] {method} {url}
 
   tbutil [{cred}] -s|script [-p] {js-file-name} [{arguments} ...]
 
@@ -409,8 +399,9 @@ Options:
   -delete-key : delete the encryption key file
   -encode     : display the encoded version of the clear text
   -help       : display help about the sub command (only those with the option shown)
+  -isIWO      : print 'true' if the instance is IWO, or 'false' otherwise
   -isXL       : print 'true' if the instance is running Turbonomic XL, or 'false' if classic
-  -j          : output to stdout in JSON format
+  -j          : output to stdout in JSON format (use capital -J to exclude indentation spaces)
   -jsfilter   : use the specified JS script or expression to filter the rows displayed
   -o          : write output to the CSV file directly
   -proxy      : edit a 'http proxy' export file
@@ -430,7 +421,7 @@ The optional '{cred}' argument provides the credentials for the connection with 
 * Absent but no TURBO_CREDENTIALS defined: the "@default" block from .tbutilrc is used.
 
 Download code and docs from:
-   https://github.com/turbonomic/tbutil/blob/v1.3h/docs/release.md
+   https://github.com/turbonomic/tbutil/blob/v2.0a/docs/release.md
 ```
 
 ### Get the list of clusters
