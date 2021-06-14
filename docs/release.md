@@ -22,7 +22,15 @@ Refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on installing 
 
 ## Downloads for OVA or Laptop installation
 
-**NOTE: The files in this section are not yet available**
+If using "curl" to download these files, please be sure to use both the "-O" and "-L" options, like this..
+
+```
+curl -O -L https://...........
+
+```
+
+And then check the md5sum afterwards.
+
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
