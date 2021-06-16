@@ -38,7 +38,7 @@ Please note: `github` uses URL redirection for released files (such as those lis
 curl -O -L https://...........
 ```
 
-And **always** check the MD5 sum of any files downloaded before attempting to use them. You can do this by running the `md5sum` command and comparing the last eight characters of the hex string it displays against <span style="color: orange">the value shown in orange</span> for the relevant file in the table below. The Linux command for this is..
+And **always** check the MD5 sum of any files downloaded before attempting to use them. You can do this by running the `md5sum` command and comparing the last eight characters of the hex string it displays against the value shown in for the relevant file in the table below. The Linux command for this is..
 
 ```base
 md5sum FILE-NAME-GOES-HERE
