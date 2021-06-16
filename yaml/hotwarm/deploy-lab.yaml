@@ -45,6 +45,9 @@ spec:
           - name: TURBO_K8S_SERVICE_NAME
             value: tbutil-hotwarm
 
+          - name: TZ
+            value: GMT
+
         ports:
 
         volumeMounts:

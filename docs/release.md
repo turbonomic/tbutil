@@ -1,6 +1,6 @@
 # TbUtil Version 2.0a
 
-Released: 11 Jun 2021
+Released: 16 Jun 2021
 
 Unsupported software, Copyright (C) Turbonomic 2018 .. 2021
 
@@ -22,14 +22,27 @@ Refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on installing 
 
 ## Downloads for OVA or Laptop installation
 
-**NOTE: The files in this section are not yet available**
+Please note: `github` uses URL redirection for released files (such as those listed in the table below). This means that if you download using the `curl` Linux command, you need to use the options "-O" and "-L" (not just "-O") when downloading. For example:
+
+```bash
+curl -O -L https://...........
+```
+
+**ALWAYS** check the MD5 sum of any files downloaded before attempting to use them. You can do this by running the `md5sum` command and comparing the hex string it displays against the value shown for the relevant file in the table below. The Linux command for this is..
+
+```base
+md5sum FILE-NAME-GOES-HERE
+```
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
-| [tbutil-2_0a-linux.zip](https:/turbonomic/tbutil/releases/download/v2.0a/tbutil-2_0a-linux.zip) | 303b1fe36b3efc5ce6f323dab9101eb9 | Download for x86_64 Linux |
-| [tbutil-2_0a-mac.zip](https:/turbonomic/tbutil/releases/download/v2.0a/tbutil-2_0a-mac.zip) | fe0f4a5c7b3f1678770db799a6514c8c | Download for MAC (64 bit) |
-| [tbutil-2_0a-windows.zip](https:/turbonomic/tbutil/releases/download/v2.0a/tbutil-2_0a-windows.zip) | 88d55d54fb331046ac6369bad219a5b0 | Download for Windows (64 bit) |
+| [tbutil-2_0a-linux.zip](https:/turbonomic/tbutil/releases/download/v2.0a/tbutil-2_0a-linux.zip) | 9a8219d498c116f1718596e628615087 | Download for x86_64 Linux |
+| [tbutil-2_0a-mac.zip](https:/turbonomic/tbutil/releases/download/v2.0a/tbutil-2_0a-mac.zip) | 2f8b31b526e3207520ba4bdeb4c14e9e | Download for MAC (64 bit) |
+| [tbutil-2_0a-windows.zip](https:/turbonomic/tbutil/releases/download/v2.0a/tbutil-2_0a-windows.zip) | b1bddde67ea2c80794976766c354dd3f | Download for Windows (64 bit) |
 
+## Downloads for K8S POD installation
+
+Please refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on downloading and installing a TBUtil POD into a V8 system.
 
 ## MarkDown Documents
 
@@ -39,14 +52,14 @@ Refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on installing 
 | [EXAMPLES.md](../docs/EXAMPLES.md) | 3a4044400965ce4fca4279f271e280d8 | TButil (VERSION) - Example scripts |
 | [IWO.md](../docs/IWO.md) | 53856a6dd62598adae436f0ee2d88d67 | TBUtil 2.0a IWO Instance Credentials |
 | [JS-ADDINS.md](../docs/JS-ADDINS.md) | dbceabcd195b8dfd43f2cfc8509fc202 | Add-ins available to TBUtil 2.0a JS formatters and TBScripts |
-| [K8S/ACTIONSCRIPTS.md](../docs/K8S/ACTIONSCRIPTS.md) | 79ae32aafb8aa6ea28e33262183453d1 | TBUtil Action Scripts Pod |
-| [K8S/FLEXERA.md](../docs/K8S/FLEXERA.md) | 1f6b9b26dbd9d0e5b4ee37555a15ba42 | TBUtil Flexera intergration POD |
-| [K8S/HOTWARM.md](../docs/K8S/HOTWARM.md) | 36e85244bd5635d375a00017e3914fd9 | TBUtil Hot/Warm Standby Pod |
-| [K8S/INSTALL.md](../docs/K8S/INSTALL.md) | 4dc32985e846aa40a5330400742708d5 | Installing TBUtil PODs |
+| [K8S/ACTIONSCRIPTS.md](../docs/K8S/ACTIONSCRIPTS.md) | 55542e37fd40f06da7aebc2b3eb8ba17 | TBUtil Action Scripts Pod |
+| [K8S/FLEXERA.md](../docs/K8S/FLEXERA.md) | 2b30780d2581e3abc978b1931ee5ba72 | TBUtil Flexera intergration POD |
+| [K8S/HOTWARM.md](../docs/K8S/HOTWARM.md) | acddda1225cf7632491709b9881ef9f5 | TBUtil Hot/Warm Standby Pod |
+| [K8S/INSTALL.md](../docs/K8S/INSTALL.md) | 9e2831edf2fd8d9f16c8c7c4bbfb09f3 | Installing TBUtil PODs |
 | [K8S/INTERNALS.md](../docs/K8S/INTERNALS.md) | ecbcb11f5c1328065e76cf2507a6fc7b | TBUtil POD Internals. |
 | [PLUGINS.md](../docs/PLUGINS.md) | ed6652618f7b1bde8364cffe69e6565c | TB Script Plugins |
 | [QUICK-INSTALL.md](../docs/QUICK-INSTALL.md) | e6eeb3914b8566282492b80ddd9f8fbb | TBUtil 2.0a Quick Install Guide. |
-| [README.md](../docs/README.md) | 59df5ba7c413d8befe7c0f375732be56 | TButil 2.0a - Turbonomic Command-Line Utility |
+| [README.md](../docs/README.md) | 6469e44da748f9ed64622a6024f43953 | TButil 2.0a - Turbonomic Command-Line Utility |
 | [RUNNING-PLANS.md](../docs/RUNNING-PLANS.md) | f6e688f29d478064d40cfd6c81809d23 | Running plans with tbutil 1.1n or later. |
 | [SUBCOMMANDS.md](../docs/SUBCOMMANDS.md) | 15007d3040768451f7248aa1f8a869ba | TBUtil 2.0a Sub Commands |
 | [apiv1-plugin.md](../docs/apiv1-plugin.md) | 64621c70e36cad25c95d31b0775e7c2d | API V1 plugin for TBUtil |

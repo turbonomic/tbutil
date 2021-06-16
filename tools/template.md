@@ -25,7 +25,17 @@ Refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on installing 
 
 ## Downloads for OVA or Laptop installation
 
-**NOTE: The files in this section are not yet available**
+Please note: `github` uses URL redirection for released files (such as those listed in the table below). This means that if you download using the `curl` Linux command, you need to use the options "-O" and "-L" (not just "-O") when downloading. For example:
+
+```bash
+curl -O -L https://...........
+```
+
+**ALWAYS** check the MD5 sum of any files downloaded before attempting to use them. You can do this by running the `md5sum` command and comparing the hex string it displays against the value shown for the relevant file in the table below. The Linux command for this is..
+
+```base
+md5sum FILE-NAME-GOES-HERE
+```
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
@@ -34,29 +44,10 @@ Refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on installing 
 | [tbutil-{{reltag}}-windows.zip]({{urlbase}}/tbutil-{{reltag}}-windows.zip) | {{ zipsum "windows" }} | Download for Windows (64 bit) |
 
 {{- end }}
-{{/*- if tgzExists "*" }}
 
 ## Downloads for K8S POD installation
 
-| File Name | MD5 Checksum | Notes |
-| --------- | ------------ | ----- |
-{{- if tgzExists "base" }}
-| [tbutil-base-k8s-{{release}}.tgz]({{urlbase}}/tbutil-base-k8s-{{release}}.tgz) | {{ tgzsum "base" }} | Base POD from which all others are built. |
-{{- end }}
-{{- if tgzExists "actionscripts" }}
-| [tbutil-actionscripts-k8s-{{release}}.tgz]({{urlbase}}/tbutil-actionscripts-k8s-{{release}}.tgz) | {{ tgzsum "actionscripts" }} | Template POD for action script implementation |
-{{- end }}
-{{- if tgzExists "flexera" }}
-| [tbutil-flexera-k8s-{{release}}.tgz]({{urlbase}}/tbutil-flexera-k8s-{{release}}.tgz) | {{ tgzsum "flexera" }} | Flexera integration POD |
-{{- end }}
-{{- if tgzExists "hotwarm" }}
-| [tbutil-hotwarm-k8s-{{release}}.tgz]({{urlbase}}/tbutil-hotwarm-k8s-{{release}}.tgz) | {{ tgzsum "hotwarm" }} | Turbonomic Hot/Warm standby POD. |
-{{- end }}
-{{- if tgzExists "full" }}
-| [tbutil-full-k8s-{{release}}.tgz]({{urlbase}}/tbutil-full-k8s-{{release}}.tgz) | {{ tgzsum "full" }} | POD containing all TbUtil K8S POD features in one. |
-{{- end }}
-
-{{- end */}}
+Please refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on downloading and installing a TBUtil POD into a V8 system.
 
 {{- if mdExists "*" }}
 
