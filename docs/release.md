@@ -1,6 +1,6 @@
-# TbUtil Version 2.0a
+# TbUtil Version 2.0c
 
-Released: 16 Jun 2021
+Released: 22 Jul 2021
 
 Unsupported software, Copyright (C) Turbonomic 2018 .. 2021
 
@@ -36,9 +36,9 @@ md5sum FILE-NAME-GOES-HERE
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
-| [tbutil-2_0a-linux.zip](https:/turbonomic/tbutil/releases/download/v2.0a/tbutil-2_0a-linux.zip) | 9a8219d498c116f1718596e628615087 | Download for x86_64 Linux |
-| [tbutil-2_0a-mac.zip](https:/turbonomic/tbutil/releases/download/v2.0a/tbutil-2_0a-mac.zip) | 2f8b31b526e3207520ba4bdeb4c14e9e | Download for MAC (64 bit) |
-| [tbutil-2_0a-windows.zip](https:/turbonomic/tbutil/releases/download/v2.0a/tbutil-2_0a-windows.zip) | b1bddde67ea2c80794976766c354dd3f | Download for Windows (64 bit) |
+| [tbutil-2_0c-linux.zip](https:/turbonomic/tbutil/releases/download/v2.0c/tbutil-2_0c-linux.zip) | 3ee876e170e90ccf8bfe1d0615967660 | Download for x86_64 Linux |
+| [tbutil-2_0c-mac.zip](https:/turbonomic/tbutil/releases/download/v2.0c/tbutil-2_0c-mac.zip) | 704ab01c6cc6ebb4936f2b94dcfc5c68 | Download for MAC (64 bit) |
+| [tbutil-2_0c-windows.zip](https:/turbonomic/tbutil/releases/download/v2.0c/tbutil-2_0c-windows.zip) | 8e5c07428c7df9576fea0fb66487c4aa | Download for Windows (64 bit) |
 
 ## Downloads for K8S POD installation
 
@@ -48,20 +48,20 @@ Please refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on down
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
-| [BUILDING.md](../docs/BUILDING.md) | 5b38824f19e063050bc8cb372a68cf11 | TButil 2.0a - Building from source |
+| [BUILDING.md](../docs/BUILDING.md) | ebf98032f19dbd1aea1913993e8e8185 | TButil 2.0c - Building from source |
 | [EXAMPLES.md](../docs/EXAMPLES.md) | 3a4044400965ce4fca4279f271e280d8 | TButil (VERSION) - Example scripts |
-| [IWO.md](../docs/IWO.md) | 53856a6dd62598adae436f0ee2d88d67 | TBUtil 2.0a IWO Instance Credentials |
-| [JS-ADDINS.md](../docs/JS-ADDINS.md) | dbceabcd195b8dfd43f2cfc8509fc202 | Add-ins available to TBUtil 2.0a JS formatters and TBScripts |
-| [K8S/ACTIONSCRIPTS.md](../docs/K8S/ACTIONSCRIPTS.md) | 55542e37fd40f06da7aebc2b3eb8ba17 | TBUtil Action Scripts Pod |
-| [K8S/FLEXERA.md](../docs/K8S/FLEXERA.md) | 2b30780d2581e3abc978b1931ee5ba72 | TBUtil Flexera intergration POD |
-| [K8S/HOTWARM.md](../docs/K8S/HOTWARM.md) | acddda1225cf7632491709b9881ef9f5 | TBUtil Hot/Warm Standby Pod |
-| [K8S/INSTALL.md](../docs/K8S/INSTALL.md) | 9e2831edf2fd8d9f16c8c7c4bbfb09f3 | Installing TBUtil PODs |
+| [IWO.md](../docs/IWO.md) | 0f0224b79cb5ac8472f3ee7621ae7b1e | TBUtil 2.0c IWO Instance Credentials |
+| [JS-ADDINS.md](../docs/JS-ADDINS.md) | 11ba5d2abd880154c7cd86558373ddc5 | Add-ins available to TBUtil 2.0c JS formatters and TBScripts |
+| [K8S/ACTIONSCRIPTS.md](../docs/K8S/ACTIONSCRIPTS.md) | 88f7fbdfb90d4d688a42766daaf6edbd | TBUtil Action Scripts Pod |
+| [K8S/FLEXERA.md](../docs/K8S/FLEXERA.md) | 6d50d030c5754b56979092619a2cdb5e | TBUtil Flexera intergration POD |
+| [K8S/HOTWARM.md](../docs/K8S/HOTWARM.md) | 34796930ebd85b76622e9c8415d3435f | TBUtil Hot/Warm Standby Pod |
+| [K8S/INSTALL.md](../docs/K8S/INSTALL.md) | 73b2a732f60dcb488add8d30fc32b708 | Installing TBUtil PODs |
 | [K8S/INTERNALS.md](../docs/K8S/INTERNALS.md) | ecbcb11f5c1328065e76cf2507a6fc7b | TBUtil POD Internals. |
 | [PLUGINS.md](../docs/PLUGINS.md) | ed6652618f7b1bde8364cffe69e6565c | TB Script Plugins |
-| [QUICK-INSTALL.md](../docs/QUICK-INSTALL.md) | e6eeb3914b8566282492b80ddd9f8fbb | TBUtil 2.0a Quick Install Guide. |
-| [README.md](../docs/README.md) | 6469e44da748f9ed64622a6024f43953 | TButil 2.0a - Turbonomic Command-Line Utility |
+| [QUICK-INSTALL.md](../docs/QUICK-INSTALL.md) | 9195fe499cf1aae296abaeb59277ffce | TBUtil 2.0c Quick Install Guide. |
+| [README.md](../docs/README.md) | e54816aa531dff607b3a647bd37dc6fc | TButil 2.0c - Turbonomic Command-Line Utility |
 | [RUNNING-PLANS.md](../docs/RUNNING-PLANS.md) | f6e688f29d478064d40cfd6c81809d23 | Running plans with tbutil 1.1n or later. |
-| [SUBCOMMANDS.md](../docs/SUBCOMMANDS.md) | 15007d3040768451f7248aa1f8a869ba | TBUtil 2.0a Sub Commands |
+| [SUBCOMMANDS.md](../docs/SUBCOMMANDS.md) | 13c2a3784821dd1c645a19a32c4d42b8 | TBUtil 2.0c Sub Commands |
 | [apiv1-plugin.md](../docs/apiv1-plugin.md) | 64621c70e36cad25c95d31b0775e7c2d | API V1 plugin for TBUtil |
 | [arangodb-plugin.md](../docs/arangodb-plugin.md) | 0818044a7f82cf5ef4542bc458cc5c9d | ArangoDB plugin for TBUtil |
 | [excel-plugin.md](../docs/excel-plugin.md) | 16840a8e061179604a9121ad042b8549 | EXCEL plugin for TBUtil |

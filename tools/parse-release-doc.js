@@ -1,3 +1,8 @@
+if (args.length !== 1) {
+	println("Usage is : tbscript parse-release-doc.js {version}");
+	exit(2);
+}
+
 var release = args[0].trimPrefix("v");
 
 var reltag = release.replace(/\./g, "_");

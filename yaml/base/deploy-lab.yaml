@@ -23,20 +23,9 @@ spec:
       securityContext:
         fsGroup: 2000
 
-      volumes:
-        - name: tbutil-base-volume
-          persistentVolumeClaim:
-            claimName: tbutil-base-volume
-
-        - name: turbo-volume
-          configMap:
-            defaultMode: 420
-            name: global-properties-xl-example
-            optional: true
-
       containers:
       - name: tbutil-base
-        image: labdocker:5000/tbutil-base:2.0a
+        image: labdocker:5000/tbutil-base:2.0c
         imagePullPolicy: IfNotPresent
         env:
           - name: TURBO_MACHINE_ID_FILE
@@ -45,29 +34,60 @@ spec:
           - name: TURBO_K8S_SERVICE_NAME
             value: tbutil-base
 
+          # Set this to true to auto-configure volumes and mounts.
+          #
+          # Set to false to bye-pass auto-configuration. In this case
+          # you will need to uncomment/edit the volumeMounts and volumes
+          # sections below and create the tbutil-base-volume PVC
+          # before applying this yaml config.
+
+          - name: TURBO_AUTOCONFIGURE_K8S
+            value: "true"
+
           - name: TZ
             value: GMT
 
         ports:
 
-        volumeMounts:
-          - name: tbutil-base-volume
-            subPath: tbutil
-            mountPath: /home/tbutil
 
-          - name: tbutil-base-volume
-            subPath: tbexport
-            mountPath: /home/tbexport
+        # For trouble-shooting the boostratp, just uncomment these two lines (command
+        # and args). This causes the boostrap to be bye-passed
 
-          - name: tbutil-base-volume
-            subPath: etc-ssh
-            mountPath: /etc/ssh
+#        command: [ "/bin/sleep" ]
+#        args: [ "infinity" ]
 
-          - name: tbutil-base-volume
-            subPath: etc-crontabs
-            mountPath: /etc/crontabs
 
-          - name: turbo-volume
-            mountPath: /etc/turbonomic
+#        volumeMounts:
+#          - name: tbutil-base-volume
+#            subPath: tbutil
+#            mountPath: /home/tbutil
+#
+#          - name: tbutil-base-volume
+#            subPath: tbexport
+#            mountPath: /home/tbexport
+#
+#          - name: tbutil-base-volume
+#            subPath: etc-ssh
+#            mountPath: /etc/ssh
+#
+#          - name: tbutil-base-volume
+#            subPath: etc-crontabs
+#            mountPath: /etc/crontabs
+#
+#          - name: turbo-volume
+#            mountPath: /etc/turbonomic
+#
+
+#      volumes:
+#        - name: tbutil-base-volume
+#          persistentVolumeClaim:
+#            claimName: tbutil-base-volume
+#
+#        - name: turbo-volume
+#          configMap:
+#            defaultMode: 420
+#            name: global-properties-xl-example
+#            optional: true
+#
 
 ---

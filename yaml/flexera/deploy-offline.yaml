@@ -23,31 +23,9 @@ spec:
       securityContext:
         fsGroup: 2000
 
-      volumes:
-        - name: tbutil-flexera-volume
-          persistentVolumeClaim:
-            claimName: tbutil-flexera-volume
-        - name: topology-processor
-          persistentVolumeClaim:
-            claimName: topology-processor
-
-        - name: api
-          persistentVolumeClaim:
-            claimName: api
-
-        - name: auth
-          persistentVolumeClaim:
-            claimName: auth
-
-        - name: turbo-volume
-          configMap:
-            defaultMode: 420
-            name: global-properties-xl-example
-            optional: true
-
       containers:
       - name: tbutil-flexera
-        image: tbutil-flexera:2.0a
+        image: tbutil-flexera:2.0c
         imagePullPolicy: Never
         env:
           - name: TURBO_MACHINE_ID_FILE
@@ -56,45 +34,71 @@ spec:
           - name: TURBO_K8S_SERVICE_NAME
             value: tbutil-flexera
 
+          # Set this to true to auto-configure volumes and mounts.
+          #
+          # Set to false to bye-pass auto-configuration. In this case
+          # you will need to uncomment/edit the volumeMounts and volumes
+          # sections below and create the tbutil-flexera-volume PVC
+          # before applying this yaml config.
+
+          - name: TURBO_AUTOCONFIGURE_K8S
+            value: "true"
+
           - name: TZ
             value: GMT
 
         ports:
           - containerPort: 22
 
-        volumeMounts:
-          - name: tbutil-flexera-volume
-            subPath: tbutil
-            mountPath: /home/tbutil
 
-          - name: tbutil-flexera-volume
-            subPath: tbexport
-            mountPath: /home/tbexport
+        # For trouble-shooting the boostratp, just uncomment these two lines (command
+        # and args). This causes the boostrap to be bye-passed
 
-          - name: tbutil-flexera-volume
-            subPath: etc-ssh
-            mountPath: /etc/ssh
+#        command: [ "/bin/sleep" ]
+#        args: [ "infinity" ]
 
-          - name: tbutil-flexera-volume
-            subPath: etc-crontabs
-            mountPath: /etc/crontabs
 
-          - name: turbo-volume
-            mountPath: /etc/turbonomic
-          - name: topology-processor
-            subPath: helper_dir
-            mountPath: /home/turbonomic/data/helper_dir/topology-processor
-            readOnly: true
+#        volumeMounts:
+#          - name: tbutil-flexera-volume
+#            subPath: tbutil
+#            mountPath: /home/tbutil
+#
+#          - name: tbutil-flexera-volume
+#            subPath: tbexport
+#            mountPath: /home/tbexport
+#
+#          - name: tbutil-flexera-volume
+#            subPath: etc-ssh
+#            mountPath: /etc/ssh
+#
+#          - name: tbutil-flexera-volume
+#            subPath: etc-crontabs
+#            mountPath: /etc/crontabs
+#
+#          - name: turbo-volume
+#            mountPath: /etc/turbonomic
+#
+#          - name: topology-processor
+#            subPath: helper_dir
+#            mountPath: /home/turbonomic/data/helper_dir/topology-processor
+#            readOnly: true
 
-          - name: api
-            subPath: helper_dir
-            mountPath: /home/turbonomic/data/helper_dir/api
-            readOnly: true
 
-          - name: auth
-            subPath: helper_dir
-            mountPath: /home/turbonomic/data/helper_dir/auth
-            readOnly: true
+#      volumes:
+#        - name: tbutil-flexera-volume
+#          persistentVolumeClaim:
+#            claimName: tbutil-flexera-volume
+#
+#        - name: turbo-volume
+#          configMap:
+#            defaultMode: 420
+#            name: global-properties-xl-example
+#            optional: true
+#
+#        - name: topology-processor
+#          persistentVolumeClaim:
+#            claimName: topology-processor
+
 
 ---
 kind: Service

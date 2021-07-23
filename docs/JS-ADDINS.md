@@ -1,6 +1,6 @@
-# Add-ins available to TBUtil 2.0a JS formatters and TBScripts
+# Add-ins available to TBUtil 2.0c JS formatters and TBScripts
 
-*Last updated: 7 Jun 2021*
+*Last updated: 16 Jul 2021*
 
 Note: the selection of features and functions available to scripts depends on the context in which they are called. The following context types exist..
 
@@ -155,6 +155,8 @@ If credentials were specified on the command line or in the TURBO_CREDENTIALS en
 ### {client}.getFact(fact_name)
 
 Returns the specified persistent fact string for the client connection. Facts are typically used internally by the API code to differentiate between different Turbonomic instance types.
+
+Note: facts are stored during the API login phase. If no REST API calls have yet been made on the client connection, then the fact will come back empty.
 
 
 ### {client}.getGroupByNameOrUuid()
@@ -1201,6 +1203,11 @@ var data = loadXml("/srv/tomcat/data/topology/DefaultGroups.group.topology");
 ```
 
 The "print-default-group-tree.js" example script shows a use case for this command.
+
+
+## loadYaml(fileName)
+
+Reads and parses the specified YAML file and returns its contents as a JS object. The return is an array, each element of which contains the mapped content of one of the blocks in the file.
 
 
 ## Logger( ... ) / logger

@@ -1,4 +1,4 @@
-# TButil 2.0a - Turbonomic Command-Line Utility
+# TButil 2.0c - Turbonomic Command-Line Utility
 
 *Last updated: 1 Jun 2021*
 
@@ -16,7 +16,7 @@ TButil includes an embedded JavaScript engine that can be used to format the out
 
 Download from the project's S3 site..
 
-https://github.com/turbonomic/tbutil/blob/v2.0a/docs/release.md
+https://github.com/turbonomic/tbutil/blob/v2.0c/docs/release.md
 
 Once you've downloaded the relevant ZIP, follow the instructions contained in the QUICK-INSTALL.pdf file it contains. This takes you through the process step by step.
 
@@ -369,28 +369,28 @@ Just run "tbutil" with no arguments.
 ```text
 TBUTIL: Unsupported Software, Copyright (C) Turbonomic 2018,2019,2020,2021
 Issued To   : chris.lowth@turbonomic.com
-GIT Tag     : 2.0a
-Commit Hash : 47c0222b6b0fd2309fad2e0313310a4af135c987
-Commit Time : 2021-06-16 10:06:51 +0100
-Build Time  : 2021-06-16 10:08:51 +0100
+GIT Tag     : 2.0c
+Commit Hash : c904dcaa76942e2aad0112c016ee6c10db1d91e5
+Commit Time : 2021-07-22 17:47:49 +0100
+Build Time  : 2021-07-22 17:49:04 +0100
 (use "tbutil -version" for more version info)
 
 Usage:
-  tbutil [{cred}] accept|reject action {action_uuid}
-  tbutil [{cred}] create|delete|export|import|list|logging|print|psql|reset [-help] ...
-  tbutil [{cred}] delete|post|put [-j|-s ..|-y] [-jsfilter ..] {path} < {json_body_file}
-  tbutil [{cred}] get swagger
-  tbutil [{cred}] get [anon] [-j|-s ..|-y] [-jsfilter ..] {path}
-  tbutil [{cred}] ping [-sql|-ssh|-isXL|-isIWO]
-  tbutil [{cred}] rediscover|validate target [-by-name] {target_id_or_name} ...
-  tbutil [{cred}] shell {arguments} ...
-  tbutil [{cred}] sql [-help|-test] [-j|-s ..|-y|-x ..] [-columns ..] [-o {csv_file}] {sql_file} [{arg} ...]
-  tbutil [{cred}] what {method} {url}
-  tbutil crypt [ -create-key | -delete-key | -target {file} | -user {file} | -proxy {file} | -encode [{clear_text}] ]
-  tbutil help [{keyword}|all|env_vars|functions]
-  tbutil opensource licenses
+  tbutil [{cred}] [32maccept[0m|[32mreject[0m [32maction[0m {action_uuid}
+  tbutil [{cred}] [32mcreate[0m|[32mdelete[0m|[32mexport[0m|[32mimport[0m|[32mlist[0m|[32mlogging[0m|[32mprint[0m|[32mpsql[0m|[32mreset[0m [[36m-help[0m] ...
+  tbutil [{cred}] [32mdelete[0m|[32mpost[0m|[32mput[0m [[36m-j[0m|[36m-s ..[0m|[36m-y[0m] [[36m-jsfilter ..[0m] {path} < {json_body_file}
+  tbutil [{cred}] [32mget swagger[0m
+  tbutil [{cred}] [32mget[0m [[36manon[0m] [[36m-j[0m|[36m-s ..[0m|[36m-y[0m] [[36m-jsfilter ..[0m] {path}
+  tbutil [{cred}] [32mping[0m [[36m-sql[0m|[36m-ssh[0m|[36m-isXL[0m|[36m-isIWO[0m]
+  tbutil [{cred}] [32mrediscover[0m|[32mvalidate[0m [32mtarget[0m [[36m-by-name[0m] {target_id_or_name} ...
+  tbutil [{cred}] [32mshell[0m {arguments} ...
+  tbutil [{cred}] [32msql[0m [[36m-help[0m|[36m-test[0m] [[36m-j[0m|[36m-s ..[0m|[36m-y[0m|[36m-x ..[0m] [[36m-columns ..[0m] [[36m-o {csv_file}[0m] {sql_file} [{arg} ...]
+  tbutil [{cred}] [32mwhat[0m {method} {url}
+  tbutil [32mcrypt[0m [ [36m-create-key[0m | [36m-delete-key[0m | [36m-target[0m {file} | [36m-user[0m {file} | [36m-proxy[0m {file} | [36m-encode[0m [{clear_text}] ]
+  tbutil [32mhelp[0m [{keyword}|[36mall[0m|[36menv_vars[0m|[36mfunctions[0m]
+  tbutil [32mopensource licenses[0m
 
-  tbutil [{cred}] -s|script [-p] {js-file-name} [{arguments} ...]
+  tbutil [{cred}] [32m-s[0m|[32mscript[0m [[36m-p[0m] {js-file-name} [[36m{arguments} ...[0m]
 
 Options:
   -by-name    : the item is specified by display name rather than uuid
@@ -421,7 +421,7 @@ The optional '{cred}' argument provides the credentials for the connection with 
 * Absent but no TURBO_CREDENTIALS defined: the "@default" block from .tbutilrc is used.
 
 Download code and docs from:
-   https://github.com/turbonomic/tbutil/blob/v2.0a/docs/release.md
+   https://github.com/turbonomic/tbutil/blob/v2.0c/docs/release.md
 ```
 
 ### Get the list of clusters

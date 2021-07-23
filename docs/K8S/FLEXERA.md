@@ -2,9 +2,9 @@
 
 | Label          | Value       |
 | -------------- | ----------- |
-| Date           | 16 Jun 2021 |
+| Date           | 22 Jul 2021 |
 | Author         | Chris Lowth - chris.lowth@turbonomic.com |
-| TBUtil version | 2.0a |
+| TBUtil version | 2.0c |
 
 ## Installation
 
