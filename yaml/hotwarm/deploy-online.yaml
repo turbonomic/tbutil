@@ -25,7 +25,7 @@ spec:
 
       containers:
       - name: tbutil-hotwarm
-        image: turbointegrations/tbutil-hotwarm:2.0c
+        image: turbointegrations/tbutil-hotwarm:2.0d
         imagePullPolicy: IfNotPresent
         env:
           - name: TURBO_MACHINE_ID_FILE

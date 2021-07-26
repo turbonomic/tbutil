@@ -2,9 +2,9 @@
 
 | Label          | Value       |
 | -------------- | ----------- |
-| Date           | 22 Jul 2021 |
+| Date           | 26 Jul 2021 |
 | Author         | Chris Lowth - chris.lowth@turbonomic.com |
-| TBUtil version | 2.0c |
+| TBUtil version | 2.0d |
 
 
 The TBUtil actionscript flavoured pod provides a useful base for writing Turbonomic actions scripts, and a tool to assist in deploying them.
