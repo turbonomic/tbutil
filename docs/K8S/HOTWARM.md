@@ -1,5 +1,8 @@
 # TBUtil Hot/Warm Standby Pod
 
+**NOTE: Please dont use this version of the HOTWARM TbUtil pod .. it is a work in progress**
+
+
 | Label          | Value       |
 | -------------- | ----------- |
 | Date           | 26 Jul 2021 |
