@@ -2,9 +2,9 @@
 
 | Info | Value |
 | ---- | ----- |
-| Date | 26 Jul 2021 |
+| Date | 2 Aug 2021 |
 | Author | Chris Lowth - chris.lowth@turbonomic.com |
-| TBUtil Version | 2.0d |
+| TBUtil Version | 2.0e |
 
 TBUtil is a command-line utility for accessing various features of Turbonomic/CWOM. It also includes a customised JavaScript 5 programming environment to allow users to develop custom scripts and reports.
 
@@ -48,11 +48,11 @@ md5sum FILE-NAME-GOES-HERE
 
 | Flavour | Zip | deploy-online.yaml |
 | ------- | --- | ------------------ |
-| base | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0d/tbutil-base-k8s-2.0d.zip)<br><span style="color: orange">cf8e4d0d</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0d/yaml/base/deploy-online.yaml)<br><span style="color: orange">c2802a61</span> |
-| actionscripts | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0d/tbutil-actionscripts-k8s-2.0d.zip)<br><span style="color: orange">e6961fb7</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0d/yaml/actionscripts/deploy-online.yaml)<br><span style="color: orange">2052cea2</span> |
-| hotwarm | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0d/tbutil-hotwarm-k8s-2.0d.zip)<br><span style="color: orange">fe404796</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0d/yaml/hotwarm/deploy-online.yaml)<br><span style="color: orange">41839bab</span> |
-| flexera | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0d/tbutil-flexera-k8s-2.0d.zip)<br><span style="color: orange">37f79f5f</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0d/yaml/flexera/deploy-online.yaml)<br><span style="color: orange">e58278c7</span> |
-| full | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0d/tbutil-full-k8s-2.0d.zip)<br><span style="color: orange">56867b84</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0d/yaml/full/deploy-online.yaml)<br><span style="color: orange">967eb017</span> |
+| base | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0e/tbutil-base-k8s-2.0e.zip)<br><span style="color: orange">80d59267</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0e/yaml/base/deploy-online.yaml)<br><span style="color: orange">203bd060</span> |
+| actionscripts | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0e/tbutil-actionscripts-k8s-2.0e.zip)<br><span style="color: orange">e41fdf77</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0e/yaml/actionscripts/deploy-online.yaml)<br><span style="color: orange">d6a53a7e</span> |
+| hotwarm | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0e/tbutil-hotwarm-k8s-2.0e.zip)<br><span style="color: orange">7347f96a</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0e/yaml/hotwarm/deploy-online.yaml)<br><span style="color: orange">0fefb58d</span> |
+| flexera | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0e/tbutil-flexera-k8s-2.0e.zip)<br><span style="color: orange">24f1e618</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0e/yaml/flexera/deploy-online.yaml)<br><span style="color: orange">1262a5b0</span> |
+| full | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0e/tbutil-full-k8s-2.0e.zip)<br><span style="color: orange">81b73064</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0e/yaml/full/deploy-online.yaml)<br><span style="color: orange">4922bb79</span> |
 
 
 
@@ -84,14 +84,14 @@ In order to complete the installation, you will need to obtain a key. Please rea
 
 Off-line installation is the process of deploying a TBUtil container POD into a Kubernetes environment that has no direct connection to the public (or private) docker hub. This will be the case on some Turbonomic OVA installations.
 
-1. Download the container `tbutil-{FLAVOUR}-k8s-2.0d.zip` file by clicking on the relevant entry in the "Zip" column in the "Downloads" table above. This should download it onto your laptop/desktop system.
+1. Download the container `tbutil-{FLAVOUR}-k8s-2.0e.zip` file by clicking on the relevant entry in the "Zip" column in the "Downloads" table above. This should download it onto your laptop/desktop system.
 
 2. Copy the downloaded zip file into the `/tmp` directory on the Turbonomic OVA system using WinSCP (on Windows), scp or sftp (on Linux or MAC) or equivalent.
 
 > For example (copying the 'hotwarm' zip file from a linux desktop)..
 > <pre>
-> [chris@song1 ]$ <b>scp tbutil-hotwarm-k8s-2.0d.zip turbo@10.11.19.111:/tmp</b>
-> tbutil-hotwarm-k8s-2.0d.zip                 100%   16MB   2.1MB/s   00:08  </pre>
+> [chris@song1 ]$ <b>scp tbutil-hotwarm-k8s-2.0e.zip turbo@10.11.19.111:/tmp</b>
+> tbutil-hotwarm-k8s-2.0e.zip                 100%   16MB   2.1MB/s   00:08  </pre>
 
 3. Log in to the Turbonomic system as user "turbo" using SSH (the popular free "putty" app is a good tool for this for windows users).
 4. Unzip the file using the `unzip` command (or your equivalent). This will create some new files in the current directory.
@@ -99,29 +99,29 @@ Off-line installation is the process of deploying a TBUtil container POD into a 
 > For example (unzipping the 'hotwarm' zip file)..
 > <pre>
 > [turbo@node1 ~]$ <b>cd /opt/turbonomic</b>
-> [turbo@node1 ~]$ <b>unzip /tmp/tbutil-hotwarm-k8s-2.0d.zip </b>
-> Archive:  tbutil-hotwarm-k8s-2.0d.zip
+> [turbo@node1 ~]$ <b>unzip /tmp/tbutil-hotwarm-k8s-2.0e.zip </b>
+> Archive:  tbutil-hotwarm-k8s-2.0e.zip
 >   inflating: README.md               
 >   inflating: deploy-lab.yaml         
 >   inflating: deploy-offline.yaml     
 >   inflating: deploy-online.yaml      
->   inflating: tbutil-hotwarm-2.0d.tgz  </pre>
+>   inflating: tbutil-hotwarm-2.0e.tgz  </pre>
 
 5. Push the container image into the local docker using the commands:
-    - `gunzip -v tbutil-{FLAVOUR}-2.0d.tgz`
-    - `sudo docker image load -i tbutil-{FLAVOUR}-2.0d.tar`
+    - `gunzip -v tbutil-{FLAVOUR}-2.0e.tgz`
+    - `sudo docker image load -i tbutil-{FLAVOUR}-2.0e.tar`
     - `sudo docker images | fgrep tbutil-{FLAVOUR}`
 
 > For example (loading and checking the 'hotwarm' image)..
 > <pre>
-> [turbo@node1 ~]$ <b>gunzip -v tbutil-hotwarm-2.0d.tgz </b>
-> tbutil-hotwarm-2.0d.tgz:  58.8% -- replaced with tbutil-hotwarm-2.0d.tar
+> [turbo@node1 ~]$ <b>gunzip -v tbutil-hotwarm-2.0e.tgz </b>
+> tbutil-hotwarm-2.0e.tgz:  58.8% -- replaced with tbutil-hotwarm-2.0e.tar
 > 
-> [turbo@node1 ~]$ <b>sudo docker image load -i tbutil-hotwarm-2.0d.tar </b>
-> Loaded image: tbutil-hotwarm:2.0d
+> [turbo@node1 ~]$ <b>sudo docker image load -i tbutil-hotwarm-2.0e.tar </b>
+> Loaded image: tbutil-hotwarm:2.0e
 > 
 > [turbo@node1 ~]$ <b>sudo docker images | fgrep tbutil-hotwarm </b>
-> tbutil-hotwarm    2.0d       6d127268e6dd        2 minutes ago        41.7MB  </pre>
+> tbutil-hotwarm    2.0e       6d127268e6dd        2 minutes ago        41.7MB  </pre>
 
 
 Now, jump to the steps listed in the section "Installing the K8S components", below.
@@ -132,7 +132,7 @@ Now, jump to the steps listed in the section "Installing the K8S components", be
 On-line installation is the process of deploying the latest TBUtil container POD into a Kubernetes environment that has direct connection to the public docker hub via the internet, or access to a private repository into which the container images has been loaded.
 
 1. Download the `deploy-online.yaml` file using "`wget`" or equivalent.
-   - `wget https://raw.githubusercontent.com/turbonomic/tbutil/v2.0d/yaml/{FLAVOUR}/deploy-online.yaml`
+   - `wget https://raw.githubusercontent.com/turbonomic/tbutil/v2.0e/yaml/{FLAVOUR}/deploy-online.yaml`
 
 Now, continue with the steps listed in the section "Installing the K8S components", below.
 
@@ -234,7 +234,7 @@ kubectl get pvc -n turbonomic
 > tbutil@tbutil-hotwarm-85df445bfb-nzqv6:~ $ <b>tbutil -V</b>
 > TBUTIL: Unsupported Software, Copyright (C) Turbonomic 2018,2019,2020,2021
 > Issued To   : mickey.mouse@mail.example.com
-> GIT Tag     : 2.0d
+> GIT Tag     : 2.0e
 > Commit Hash : fd883c00e0634c4b15b13df26b83d305d603e47f
 > Commit Time : 2021-05-05 12:14:47 +0100
 > Build Time  : 2021-05-05 12:16:14 +0100

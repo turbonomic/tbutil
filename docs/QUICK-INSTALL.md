@@ -1,4 +1,4 @@
-# TBUtil 2.0d Quick Install Guide.
+# TBUtil 2.0e Quick Install Guide.
 
 *Last updated: 1 Jun 2021*
 
@@ -6,19 +6,19 @@
 
 Download the correct zip file for your platform from ..
 
-`https://github.com/turbonomic/tbutil/blob/v2.0d/docs/release.md`
+`https://github.com/turbonomic/tbutil/blob/v2.0e/docs/release.md`
 
-Once downloaded, un-zip the file into a directory of your choice. For example (for version 2.0d, Linux)...
+Once downloaded, un-zip the file into a directory of your choice. For example (for version 2.0e, Linux)...
 
 ```
 $ cd $HOME
-$ unzip $HOME/Downloads/tbutil-2_0d-linux.zip    (or the location you have copied the zip file to)
+$ unzip $HOME/Downloads/tbutil-2_0e-linux.zip    (or the location you have copied the zip file to)
 ```
 
 Now "cd" into the directory that you unzipped into and run the "install.sh" or "install.bat" script from there. For example (on Linux) ...
 
 ```
-$ cd tbutil-2_0d
+$ cd tbutil-2_0e
 $ sh install.sh
 ```
 

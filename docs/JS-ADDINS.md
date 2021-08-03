@@ -1,6 +1,6 @@
-# Add-ins available to TBUtil 2.0d JS formatters and TBScripts
+# Add-ins available to TBUtil 2.0e JS formatters and TBScripts
 
-*Last updated: 16 Jul 2021*
+*Last updated: 2 Aug 2021*
 
 Note: the selection of features and functions available to scripts depends on the context in which they are called. The following context types exist..
 
@@ -35,29 +35,6 @@ Unlike ES6, you cannot prepend the name of a function to the string to specify c
 The default "interpolate" function works like the ES6 template parser.
 
 See "interpolate" function for more details.
-
-
-## addRow(format_string, value ...)
-
-This adds a row to the currently open table or sheet. The format_string indicates how to format the cells in the row, and each value is placed in the cells of the new row, starting at the first column.
-
-The format string consits of a number of specifications separated by single spaces. The first specificaion refers to column A, the second to B, .. etc. If there are fewer specifications than columns, then the last specification refers to ALL remaining columns.
-
-The format specifications consist of one or more of the following (blank specifications are not supported). Not all of these are supported by all table types. Excel tables support them all.
-
-| Format | Meaning |
-| ------ | ------- |
-| l      | left align (the default) |
-| r      | right align |
-| c      | centered |
-| b      | bold text |
-| h      | colour blue (used traditionally for primary headers) |
-| g      | colour green (suggested for secondary headers) |
-| mN     | merge this cell with the next N cells to it's right (N must be an integer number) |
-
-- the letter "h" stands for header and implies "blue". "b" is used for "bold" so could not also be used for "blue".
-- the format "lbh" is recommended for cells in the primary header row.
-- merged header cells tend to look best if centered (eg: "cbhm2")
 
 
 ## args[ ]
@@ -385,6 +362,7 @@ var data = client.ssh.loadCsv("/tmp/data-file.csv");
 This mechanism supports the following methods..
 
 - download
+- executeShellCommand
 - loadCsv
 - loadJson
 - loadGrep
@@ -392,7 +370,7 @@ This mechanism supports the following methods..
 - loadDiscoveryData
 - loadXml
 
-The file name in each case must the name of a file on the remote file system OR a shell command line, ending with a pipe character ("`|`""). In this latter case, the shell command is executed and its standard output is treated as if it was the content of the file. For example:
+The file name in each "load...()" case must the name of a file on the remote file system OR a shell command line, ending with a pipe character ("`|`""). In this latter case, the shell command is executed and its standard output is treated as if it was the content of the file. For example:
 
 ```javascript
 var files = client.ssh.loadText("ls -l /srv/tomcat/data |");
@@ -400,80 +378,29 @@ var files = client.ssh.loadText("ls -l /srv/tomcat/data |");
 
 Note: You must define the SSH credentials for the client connection using "tbutil [@key] save ssh credentials", and the mechanism only works for connections estalished using a credential key set up in this way (specified either on the tbscript command line or as the parameter to the `newClient` function).
 
-You can also use the client.ssh feature to drive Turbonomic's "mailAttachment" feature using the functions
 
-- writeTempFile
-- deleteTempFile
-- emailAttachment
-
-
-## {client}.ssh.download(remote_source_file_name, local_target_file_name, may_unzip)
-
-
-## {client}.ssh.deleteTempFile(file_uuid)
-
-Deletes the temporary file from the Turbonomic instance /tmp directory that was created using the "`writeTempFile`" function. The argument to the function is the file uuid string returned by "`writeTempFile`".
-
-See the description of "`emailAttachment`" for a full example.
-
-
-### {client}.ssh.emailAttachment(configuration_object)
-
-NB: This feature only works on Turbonomic V6 instances. Please refer to the `smtp-plugin` for an equivalent mechanism that works for both V6 and V7+ (XL) instance types.
-
-Sends an email containing an attachment using Turbonomic's emailer (configured via Turbonomic's admin settings). The configuration_object parameter is a javaScript object that contains fields that define all the needed information. The fields of this object are..
-
-| Field name | Type   | Description |
-| ---------- | ------ | ----------- |
-| to         | string | The email address of the person to whom the email should be sent. |
-| from       | string | The email address that appears in the "from" header of the email. | 
-| subject    | string | The email subject line |
-| message    | string | The UUID of a file containing the email message in plain text, saved using the writeTempFile function. |
-| attachment | string | The UUID of a file containing the attachment to send. This must be saved using the writeTempFile function. |
-| cleanup    | bool   | Whether or not to delete the temporary attachment file after the email has been sent. The default value is true. Note that the Turbonomic emailer deletes the message file regardless, and this fields does not impact that logic. |
-
-Since the content of these fields are processed by the bash shell on the Turbonomic instance, tbutil only allows a limit set of characters to be used (for safety). So you can only include the following in any of them..
-
-- letters
-- digits
-- "@" sign
-- forward slash
-- full stop, comma, hyphen, plus sign, underbar, space
-
-Here's an example of emailing an excel spreadsheet.
-
-```javascript
-var wb = plugin("excel-plugin").open();
-
-// code omitted to create the workbook contents (see excel-plugin.md for documentation)
-
-var sheet = wb.get();
-wb.close();
-
-var attachmentFileUuid = client.ssh.writeTempFile(sheet, "xlsx");
-var messageFileUuid = client.ssh.writeTempFile("Hi Chris,\n\nHere's this week's report", "txt");
-
-client.ssh.emailAttachment({
-	from: "labinstance@turbonomic.com",
-	to: "chris.lowth@turbonomic.com",
-	subject: "Weekly report",
-	message: messageFileUuid,
-	attachment: attachmentFileUuid,
-	cleanup: true
-});
-```
+### {client}.ssh.download(remote_source_file_name, local_target_file_name, may_unzip)
 
 
 ### {client}.ssh.executeShellCommand(command [, standard_input ])
 
 
-### {client}.ssh.writeTempFile(content, file_extension)
+### {client}.ssh.loadCsv( ... )
 
-Writes the content string (or byte array) to a file in the /tmp folder of the Turbonomic instance. The path name of the file is built from a randomly generated UUID, and the UUID is the return value of the function. This UUID can then be passed to the "`deleteTempFile`"" function, or in the "message" and "attachment" fields of the "`emailAttachment`" function argument.
 
-A typical use of this function is to store an excel spreadsheet on the instance platform, ready to be emailed as an attachment.
+### {client}.ssh.loadJson( ... )
 
-See the description of "`emailAttachment`" for a full example.
+
+### {client}.ssh.loadGrep( ... )
+
+
+### {client}.ssh.loadText( ... )
+
+
+### {client}.ssh.loadDiscoveryData( ... )
+
+
+### {client}.ssh.loadXml( ... )
 
 
 ### {client}.tbutil(sub_command, capture_stdout, arguments_list)
@@ -568,7 +495,47 @@ Runs the specified JS function and collects and returns an array that contains f
 Note: if the function aborts the script using `exit` or `woops` etc, then that is genuinely the end of the script's life and the collect() function does not return to the caller.
 
 
-## colour(colourName)
+## colour([colourName ...])
+
+When the console or terminal supports colours, this command can be used to select the colour of the text that follows.
+
+NOTE: "colour" has the British/English spelling.
+
+Recognised colour names are..
+* green
+* blue
+* red
+* yellow
+* cyan
+* magenta
+* white
+* black
+
+The names can be specified in any combination of letter case, so "GREEN", "Green" and "green" all mean the same thing.
+
+Prepending the string "hi" to a colour name causes the bright version of that colour to be used. Example: "hiBlue".
+
+Prepending "bg" causes the background colour to be set. To use both "bg" and "hi", the "bg" must come first. So "bgHiBlue" is valid bit "hiBgBlue" is not.
+
+You can also use the following special codes to set different attributes of the text to be displayed. Support for these attributes is limited on many terminals (including putty), but "bold" and "underline" are supported on many. Use of the others is probably best avoided.
+* bold
+* faint
+* italic
+* underline
+* blinkslow
+* blinkrapid
+* reversevideo
+* concealed
+* crossedout
+
+Multiple non-conflicting codes can be used in the same command, for example:
+
+```
+colour("blue", "bgHiCyan", "underline")
+
+```
+
+Calling `colour()` with no arguments resets the following output to the default terminal profile (typically white text on a black background).
 
 
 ## commandPipe(command, arguments)
@@ -732,6 +699,15 @@ The `filepath` object gives acess to a subset of the GOLang filepath features, a
 ### {F}.compareStrings(a, b)
 
 
+### {F}.extendedOptions
+
+
+### {F}.findStat
+
+
+### {F}.getFilterFunc
+
+
 ### {F}.getUniquePaths(tree)
 
 
@@ -739,6 +715,15 @@ The `filepath` object gives acess to a subset of the GOLang filepath features, a
 
 
 ### {F}.printTree(args_object, tree)
+
+
+### {F}.sortBy
+
+
+### {F}.sortByDisplayName
+
+
+### {F}.sortByStringProperty
 
 
 ### {F}.sortTable(rows, byColumn)
@@ -779,6 +764,7 @@ Some special env_var_name strings are handled...
 | @IS_WINDOWS | Boolean: is this a Windows platform? |
 | @IS_XL_OVA_PLATFORM | Boolean: is this an XL OVA-built platform? |
 | @IS_XL_CONTAINER | Boolean: is this an XL K8S pod? |
+| @ISSUEDTO | The name (or email address) of the person to whom this copy of tbutil has been issued to |
 | @LOCAL_IP | The local IP address (if possible to determine), or null. |
 | @MACHINE_ID | The real (or synthetic) machine ID. |
 | @PATH | The system path, as a list of directory names. |
@@ -1565,9 +1551,6 @@ When running a script who's file name is specified on the tbutil or tbscript com
 
 
 ## setenv(name, value)
-
-
-## setSheetName(name)
 
 
 ## sshConnect(client_or_credential_key)

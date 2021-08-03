@@ -14,11 +14,19 @@ Refer to [QUICK-INSTALL.md](../docs/QUICK-INSTALL.md) for:
 - Installing directly onto the OVA of Turbonomic V8 systems
 - Installing onto non-Turbonomic systems (such as your laptop).
 
+Refer to [K8S.md](../docs/K8S.md) for information on installing as a pod into a V8 system's Kubernetes namespace.
+
 Refer to [IWO.md](../docs/IWO.md) for information about installing TBUtil for use with IWO.
 
-Refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on installing as a POD into a V8 system.
-
 **Turbonomic employees**: Refer to the ["#tbutil" slack channel](https://turbonomic.slack.com/messages/CQCSKJN3Y) for updates, support and discussion.
+
+## TbUtil K8S PODs - Markdown Documents
+
+| File Name | MD5 Checksum | Notes |
+| --------- | ------------ | ----- |
+{{- range getK8SMdNames }}
+| [{{ . }}](../docs/K8S/{{.}}) | {{ mdsum (strcat "K8S/" .) }} | {{ getMdNote (strcat "K8S/" .) }} |
+{{- end }}
 
 
 {{- if zipExists "*" }}
@@ -45,13 +53,9 @@ md5sum FILE-NAME-GOES-HERE
 
 {{- end }}
 
-## Downloads for K8S POD installation
-
-Please refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on downloading and installing a TBUtil POD into a V8 system.
-
 {{- if mdExists "*" }}
 
-## MarkDown Documents
+## Other MarkDown Documents
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |

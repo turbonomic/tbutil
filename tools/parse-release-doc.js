@@ -1,5 +1,5 @@
-if (args.length !== 1) {
-	println("Usage is : tbscript parse-release-doc.js {version}");
+if (args.length !== 2) {
+	println("Usage is : tbscript parse-release-doc.js {version} {template-file}");
 	exit(2);
 }
 
@@ -94,11 +94,21 @@ function getMdNames() {
 		var p = path.split("/");
 		return p[p.length-1];
 	});
-	var files2 = readDir("../docs/K8S/*.md").map(path => {
+//	var files2 = readDir("../docs/K8S/*.md").map(path => {
+//		var p = path.split("/");
+//		return "K8S/" + p[p.length-1];
+//	});
+//	var files = _.flatten([files1, files2]);
+	var files = files1;
+	files.sort();
+	return files;
+}
+
+function getK8SMdNames() {
+	var files = readDir("../docs/K8S/*.md").map(path => {
 		var p = path.split("/");
-		return "K8S/" + p[p.length-1];
+		return p[p.length-1];
 	});
-	var files = _.flatten([files1, files2]);
 	files.sort();
 	return files;
 }
@@ -137,7 +147,15 @@ function getUrlBase() {
 	return "https:/turbonomic/tbutil/releases/download/v" + release;
 }
 
-debugger;
+//=======================================================================================
+
+function strcat() {
+	var rtn = [ ];
+	for (var i=0; i < arguments.length; i+=1) {
+		rtn.push(arguments[i]);
+	}
+	return rtn.join("");
+}
 
 //=======================================================================================
 
@@ -170,8 +188,11 @@ var funcs = {
 	mdsum: getMdSum,
 	mdExists: mdExists,
 	getMdNames: getMdNames,
-	getMdNote: getMdNote
+	getK8SMdNames: getK8SMdNames,
+	getMdNote: getMdNote,
+
+	strcat: strcat
 };
 
-print(template("template.md", {}, funcs));
+print(template(args[1], {}, funcs));
 

@@ -25,7 +25,7 @@ spec:
 
       containers:
       - name: tbutil-hotwarm
-        image: turbointegrations/tbutil-hotwarm:2.0d
+        image: turbointegrations/tbutil-hotwarm:2.0e
         imagePullPolicy: IfNotPresent
         env:
           - name: TURBO_MACHINE_ID_FILE
@@ -48,6 +48,7 @@ spec:
             value: GMT
 
         ports:
+          - containerPort: 22
 
 
         # For trouble-shooting the boostratp, just uncomment these two lines (command
@@ -77,6 +78,11 @@ spec:
 #          - name: turbo-volume
 #            mountPath: /etc/turbonomic
 #
+#          - name: topology-processor
+#            subPath: helper_dir
+#            mountPath: /home/turbonomic/data/helper_dir/topology-processor
+#            readOnly: true
+
 
 #      volumes:
 #        - name: tbutil-hotwarm-volume
@@ -89,5 +95,23 @@ spec:
 #            name: global-properties-xl-example
 #            optional: true
 #
+#        - name: topology-processor
+#          persistentVolumeClaim:
+#            claimName: topology-processor
+
 
 ---
+kind: Service
+apiVersion: v1
+metadata:
+  name: tbutil-hotwarm
+spec:
+  type: NodePort
+  ports:
+    - name: ssh
+      port: 22
+      targetPort: 22
+      nodePort: 31322
+
+  selector:
+    app: tbutil-hotwarm

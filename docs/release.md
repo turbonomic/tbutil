@@ -1,6 +1,6 @@
-# TbUtil Version 2.0d
+# TbUtil Version 2.0e
 
-Released: 26 Jul 2021
+Released: 2 Aug 2021
 
 Unsupported software, Copyright (C) Turbonomic 2018 .. 2021
 
@@ -14,11 +14,21 @@ Refer to [QUICK-INSTALL.md](../docs/QUICK-INSTALL.md) for:
 - Installing directly onto the OVA of Turbonomic V8 systems
 - Installing onto non-Turbonomic systems (such as your laptop).
 
+Refer to [K8S.md](../docs/K8S.md) for information on installing as a pod into a V8 system's Kubernetes namespace.
+
 Refer to [IWO.md](../docs/IWO.md) for information about installing TBUtil for use with IWO.
 
-Refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on installing as a POD into a V8 system.
-
 **Turbonomic employees**: Refer to the ["#tbutil" slack channel](https://turbonomic.slack.com/messages/CQCSKJN3Y) for updates, support and discussion.
+
+## TbUtil K8S PODs - Markdown Documents
+
+| File Name | MD5 Checksum | Notes |
+| --------- | ------------ | ----- |
+| [ACTIONSCRIPTS.md](../docs/K8S/ACTIONSCRIPTS.md) | f1d14f26b957579e3536a78404672c00 | TBUtil Action Scripts Pod |
+| [FLEXERA.md](../docs/K8S/FLEXERA.md) | 331d513fec3a8b08d4c0659cebf48d2a | TBUtil Flexera intergration POD |
+| [HOTWARM.md](../docs/K8S/HOTWARM.md) | a8519eda4d8c942dc62dbe877773a083 | TBUtil Hot/Warm Standby Pod |
+| [INSTALL.md](../docs/K8S/INSTALL.md) | 33fa644b857aaed095af3214f3f1c935 | Installing TBUtil PODs |
+| [INTERNALS.md](../docs/K8S/INTERNALS.md) | ecbcb11f5c1328065e76cf2507a6fc7b | TBUtil POD Internals. |
 
 ## Downloads for OVA or Laptop installation
 
@@ -36,37 +46,27 @@ md5sum FILE-NAME-GOES-HERE
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
-| [tbutil-2_0d-linux.zip](https:/turbonomic/tbutil/releases/download/v2.0d/tbutil-2_0d-linux.zip) | 7a175c9568f95cc4b8cf9b152b85d748 | Download for x86_64 Linux |
-| [tbutil-2_0d-mac.zip](https:/turbonomic/tbutil/releases/download/v2.0d/tbutil-2_0d-mac.zip) | 71f30f2dcca25e5633b24197ceec352d | Download for MAC (64 bit) |
-| [tbutil-2_0d-windows.zip](https:/turbonomic/tbutil/releases/download/v2.0d/tbutil-2_0d-windows.zip) | d29611f010f8f1b035523348511732d8 | Download for Windows (64 bit) |
+| [tbutil-2_0e-linux.zip](https:/turbonomic/tbutil/releases/download/v2.0e/tbutil-2_0e-linux.zip) | 42bf2821f750875fc18bf8b07225776a | Download for x86_64 Linux |
+| [tbutil-2_0e-mac.zip](https:/turbonomic/tbutil/releases/download/v2.0e/tbutil-2_0e-mac.zip) | 5099607f6cfb8657f256153ab102e1ea | Download for MAC (64 bit) |
+| [tbutil-2_0e-windows.zip](https:/turbonomic/tbutil/releases/download/v2.0e/tbutil-2_0e-windows.zip) | 55094dff775128911362974169a52c7d | Download for Windows (64 bit) |
 
-## Downloads for K8S POD installation
-
-Please refer to [K8S/INSTALL.md](../docs/K8S/INSTALL.md) for information on downloading and installing a TBUtil POD into a V8 system.
-
-## MarkDown Documents
+## Other MarkDown Documents
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
-| [BUILDING.md](../docs/BUILDING.md) | 41571101039d1c02469310d783b430a7 | TButil 2.0d - Building from source |
 | [EXAMPLES.md](../docs/EXAMPLES.md) | 3a4044400965ce4fca4279f271e280d8 | TButil (VERSION) - Example scripts |
-| [IWO.md](../docs/IWO.md) | 6f87a36695058d48d18064c3a3612da9 | TBUtil 2.0d IWO Instance Credentials |
-| [JS-ADDINS.md](../docs/JS-ADDINS.md) | 50f7d4761cf21cf030f927b77dd9f9dc | Add-ins available to TBUtil 2.0d JS formatters and TBScripts |
-| [K8S/ACTIONSCRIPTS.md](../docs/K8S/ACTIONSCRIPTS.md) | 8e75798927c62ae52da4b0bc0944857a | TBUtil Action Scripts Pod |
-| [K8S/FLEXERA.md](../docs/K8S/FLEXERA.md) | 1884b6fc0da156aa5357a2a44cb0a8b8 | TBUtil Flexera intergration POD |
-| [K8S/HOTWARM.md](../docs/K8S/HOTWARM.md) | 868b386440b832905159ae847d369323 | TBUtil Hot/Warm Standby Pod |
-| [K8S/INSTALL.md](../docs/K8S/INSTALL.md) | b6fe0024ed55fe2c1cb580e9697d2d4d | Installing TBUtil PODs |
-| [K8S/INTERNALS.md](../docs/K8S/INTERNALS.md) | ecbcb11f5c1328065e76cf2507a6fc7b | TBUtil POD Internals. |
+| [IWO.md](../docs/IWO.md) | e0410a82542bcc4fd41e7187ae6255ca | TBUtil 2.0e IWO Instance Credentials |
+| [JS-ADDINS.md](../docs/JS-ADDINS.md) | 34c1eb00a2a2c97067813b138eeacd32 | Add-ins available to TBUtil 2.0e JS formatters and TBScripts |
 | [PLUGINS.md](../docs/PLUGINS.md) | ed6652618f7b1bde8364cffe69e6565c | TB Script Plugins |
-| [QUICK-INSTALL.md](../docs/QUICK-INSTALL.md) | 898476d82974c46b5919caa2ebe26cd2 | TBUtil 2.0d Quick Install Guide. |
-| [README.md](../docs/README.md) | 04df87e3f614cc3db37c7dde83d1a874 | TButil 2.0d - Turbonomic Command-Line Utility |
+| [QUICK-INSTALL.md](../docs/QUICK-INSTALL.md) | b48aac32e122641d9cbf4ed383781cc7 | TBUtil 2.0e Quick Install Guide. |
+| [README.md](../docs/README.md) | 8ab96ec6b74553f1be7ed4f8b770578e | TButil 2.0e - Turbonomic Command-Line Utility |
 | [RUNNING-PLANS.md](../docs/RUNNING-PLANS.md) | f6e688f29d478064d40cfd6c81809d23 | Running plans with tbutil 1.1n or later. |
-| [SUBCOMMANDS.md](../docs/SUBCOMMANDS.md) | 64c3d3c2f847d8696b383da23bcc739e | TBUtil 2.0d Sub Commands |
 | [apiv1-plugin.md](../docs/apiv1-plugin.md) | 64621c70e36cad25c95d31b0775e7c2d | API V1 plugin for TBUtil |
 | [arangodb-plugin.md](../docs/arangodb-plugin.md) | 0818044a7f82cf5ef4542bc458cc5c9d | ArangoDB plugin for TBUtil |
 | [excel-plugin.md](../docs/excel-plugin.md) | 16840a8e061179604a9121ad042b8549 | EXCEL plugin for TBUtil |
 | [mysql-plugin.md](../docs/mysql-plugin.md) | a24ae3e0e7d87329601e1aca305a671b | MySQL Plugin for TBUtil |
 | [pdf-plugin.md](../docs/pdf-plugin.md) | b05688a37a126461c2fa3237107f5cff | PDF Plugin for TBUtil |
+| [release.md](../docs/release.md) | d41d8cd98f00b204e9800998ecf8427e | <no value> |
 | [smtp-plugin.md](../docs/smtp-plugin.md) | 20fe08d8818442ac9a1cd13e120b6fe3 | SMTP Plugin for TBUtil |
 | [sqlite3-plugin.md](../docs/sqlite3-plugin.md) | 0723761207cc626e3eb6a5d61d489f40 | SqLite3 Plugin for TBUtil |
 | [sys-plugin.md](../docs/sys-plugin.md) | bdb7612638df01977c69e33ef30770b4 | SYS Plugin for TBUtil |

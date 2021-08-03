@@ -25,7 +25,7 @@ spec:
 
       containers:
       - name: tbutil-actionscripts
-        image: labdocker:5000/tbutil-actionscripts:2.0d
+        image: labdocker:5000/tbutil-actionscripts:2.0e
         imagePullPolicy: IfNotPresent
         env:
           - name: TURBO_MACHINE_ID_FILE

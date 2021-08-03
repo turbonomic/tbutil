@@ -1,4 +1,4 @@
-# TButil 2.0d - Turbonomic Command-Line Utility
+# TButil 2.0e - Turbonomic Command-Line Utility
 
 *Last updated: 1 Jun 2021*
 
@@ -16,7 +16,7 @@ TButil includes an embedded JavaScript engine that can be used to format the out
 
 Download from the project's S3 site..
 
-https://github.com/turbonomic/tbutil/blob/v2.0d/docs/release.md
+https://github.com/turbonomic/tbutil/blob/v2.0e/docs/release.md
 
 Once you've downloaded the relevant ZIP, follow the instructions contained in the QUICK-INSTALL.pdf file it contains. This takes you through the process step by step.
 
@@ -369,10 +369,10 @@ Just run "tbutil" with no arguments.
 ```text
 TBUTIL: Unsupported Software, Copyright (C) Turbonomic 2018,2019,2020,2021
 Issued To   : chris.lowth@turbonomic.com
-GIT Tag     : 2.0d
-Commit Hash : 774b0c34ba8dff7ff9f9d231003dbb795641ce72
-Commit Time : 2021-07-26 13:27:51 +0100
-Build Time  : 2021-07-26 13:29:33 +0100
+GIT Tag     : 2.0e
+Commit Hash : 58db395671654790731ca98b4a290353f5a11fb3
+Commit Time : 2021-08-02 14:52:41 +0100
+Build Time  : 2021-08-02 16:25:54 +0100
 (use "tbutil -version" for more version info)
 
 Usage:
@@ -421,7 +421,7 @@ The optional '{cred}' argument provides the credentials for the connection with 
 * Absent but no TURBO_CREDENTIALS defined: the "@default" block from .tbutilrc is used.
 
 Download code and docs from:
-   https://github.com/turbonomic/tbutil/blob/v2.0d/docs/release.md
+   https://github.com/turbonomic/tbutil/blob/v2.0e/docs/release.md
 ```
 
 ### Get the list of clusters
