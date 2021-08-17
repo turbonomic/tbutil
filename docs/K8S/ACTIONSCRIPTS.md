@@ -2,9 +2,9 @@
 
 | Label          | Value       |
 | -------------- | ----------- |
-| Date           | 2 Aug 2021 |
+| Date           | 17 Aug 2021 |
 | Author         | Chris Lowth - chris.lowth@turbonomic.com |
-| TBUtil version | 2.0e |
+| TBUtil version | 2.0f |
 
 
 The TBUtil actionscript flavoured pod provides a useful base for writing Turbonomic actions scripts, and a tool to assist in deploying them.
@@ -50,12 +50,12 @@ The scripts need to be placed in one of two locations (described below) and incl
 
 The action scripts in the pod live in one of two directories.
 
-| Directory | Customisable? | Description |
-| --------- | ------------- | ----------- |
-| /usr/local/actionScripts | No | Contains scripts that are supplied with the container image (or images that are based on it). Any edits made to these files will be reversed if the pod is ever deleted (for example: during an update). To edit one of these, first copy it to /home/tbutil/actionScripts (using the same base name) and edit the copy. |
-| /home/tbutil/actionScripts | Yes | Custom scripts, or editted versions of the supplied scripts.|
+| Directory | Customisable? | Persisted? | Description |
+| --------- | ------------- | ---------- | ----------- |
+| /usr/local/actionScripts | No | No | Contains scripts that are supplied with the container image (or images that are based on it). Any edits made to these files will be reversed if the pod is ever deleted (for example: during an update). To edit one of these, first copy it to /home/tbutil/actionScripts (using the same base name) and edit the copy. |
+| /home/tbutil/actionScripts | Yes | Yes | Custom scripts, or editted versions of the supplied scripts.|
 
-If a script in /home/tbutil/actionScripts has the same name as one in /usr/local/actionScripts then the `add-actionscript-target` utility (described below) causes the former one to be used in place of the latter. The latter folder is persisted in a K8S PVC and so will survive container restarts (the latter will not).
+If a script in /home/tbutil/actionScripts has the same name as one in /usr/local/actionScripts then the `add-actionscript-target` utility (described below) causes the former one to be used in place of the latter. The former folder is persisted in a K8S PVC and so will survive container restarts. The latter will not.
 
 
 ## Script format
@@ -141,7 +141,7 @@ Here's a valid example...
 
 When using the TBUtil action script pod, we recommend writing your scripts using the BASH shell language and following the conventions that allow the `add-actionscript-target` tool to recognise them. You should...
 
-- Place your script in /home/tbutil/actionScripts.
+- Place your script in the directory /home/tbutil/actionScripts (create it if it doesnt exist).
 - Make it executable:
     - Give it execution rights using `chmod +x FILENAME`
     - Give it a first line, reading `#! /bin/bash`
@@ -163,18 +163,21 @@ Your code should:
 
 If your script needs Alpine linux packages that are not installed in the supplied pod, then you can create your own container using ours as the "FROM" base in the Dockerfile, and add the packages you need to that.
 
+If you use our pod as the FROM base of your own, then you may choose to place your action scripts in /usr/local/actionsScripts so that they are part of the pod static content.
+
 
 ## Registering the script server
 
 Turbonomic needs to discover the pod and the scripts it contains, but first you should configure the Turbonomic credentials for the pod.
 
 1. Log in to the pod using the command `kubectl exec -ti deploy/tbutil-actionscripts -- /bin/bash`
-2. Configure credentials using the command `tbutil save credentials`.
+2. If you have not already provided a `tbutil` unlock key, then do so now.
+3. Configure credentials using the command `tbutil save credentials`.
     - **IP address or hostname**: For an OVA deployment, the answer is almost certainly "`nginx`" (this is the default).
     - **API/UI User name**: Give the name of a user with admin rights. The default of `administrator` is usually good.
     - **password**: Give the administrator user's password
-3. Ensure that the action scripts you want to register are correctly formatted, as described above.
-4. Register the script server by running the command: `add-actionscript-target`
+4. Ensure that the action scripts you want to register are correctly formatted, as described above.
+5. Register the script server by running the command: `add-actionscript-target`
 
 
 Note that it can take 10 or so minutes for the scripts you have defined to be visible to the Turbonomic policy editor UI.

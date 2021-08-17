@@ -1,6 +1,6 @@
-# TbUtil Version 2.0e - Kubernetes POD deployments
+# TbUtil Version 2.0f - Kubernetes POD deployments
 
-Released: 2 Aug 2021
+Released: 17 Aug 2021
 
 Unsupported software, Copyright (C) Turbonomic 2018 .. 2021
 
@@ -14,8 +14,8 @@ The following documents are available on this subject ...
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
-| [ACTIONSCRIPTS.md](../docs/K8S/ACTIONSCRIPTS.md) | f1d14f26b957579e3536a78404672c00 | TBUtil Action Scripts Pod |
-| [FLEXERA.md](../docs/K8S/FLEXERA.md) | 331d513fec3a8b08d4c0659cebf48d2a | TBUtil Flexera intergration POD |
-| [HOTWARM.md](../docs/K8S/HOTWARM.md) | a8519eda4d8c942dc62dbe877773a083 | TBUtil Hot/Warm Standby Pod |
-| [INSTALL.md](../docs/K8S/INSTALL.md) | 33fa644b857aaed095af3214f3f1c935 | Installing TBUtil PODs |
+| [ACTIONSCRIPTS.md](../docs/K8S/ACTIONSCRIPTS.md) | 9927c4a55d27e9f6d6a49c1328bff713 | TBUtil Action Scripts Pod |
+| [FLEXERA.md](../docs/K8S/FLEXERA.md) | ce95faf39b9a462c92db5fc57381ebf0 | TBUtil Flexera intergration POD |
+| [HOTWARM.md](../docs/K8S/HOTWARM.md) | dfc1cb0ec2f7f2deb48203de28c80431 | TBUtil Hot/Warm Standby Pod |
+| [INSTALL.md](../docs/K8S/INSTALL.md) | 45d5ff7ae886f9b6f39d202546bfbd59 | Installing TBUtil PODs |
 | [INTERNALS.md](../docs/K8S/INTERNALS.md) | ecbcb11f5c1328065e76cf2507a6fc7b | TBUtil POD Internals. |

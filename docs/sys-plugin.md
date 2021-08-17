@@ -1,12 +1,12 @@
 # SYS Plugin for TBUtil
 
-*Last updated: 1 Jun 2021*
+*Last updated: 5 Aug 2021*
 
 ---
 
 This plugin allows access to a limited subset of local file system and OS features.
 
-Note: The binary for this plugin does NOT form part of the binary release downloadable from GreenCircle (in order to keep the size of the zip file down). Please either build from source or email me if you want a pre-compiled copy.
+Note: The binary for this plugin does NOT form part of the downloadable release. Please either build from source or email me if you want a pre-compiled copy.
 
 
 ... Documentation is pending ...

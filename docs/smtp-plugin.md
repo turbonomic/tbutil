@@ -1,6 +1,6 @@
 # SMTP Plugin for TBUtil
 
-*Last updated: 1 Jun 2021*
+*Last updated: 3 Aug 2021*
 
 ---
 
@@ -29,7 +29,7 @@ Where `config` is an object that contains the follow fields..
 | enableSsl  | Boolean: should an SSL-encrypted connection to the server be used? |
 | enableTls  | Boolean: should a TLS-encrypted connection to the server be used? |
 | from       | The email address of the sender of the email. |
-| headers    | A JS object containing additinal headers for the email. This must be a string-to-string map. The following headers should NOT be specified here because they are populate using other fields.. to, cc, bcc, subject, from, date, mime-version, content-type, x-sent-using. |
+| headers    | A JS object containing additional headers for the email. This must be a string-to-string map. The following headers should NOT be specified here because they are populated using other fields.. `to`, `cc`, `bcc`, `subject`, `from`, `date`, `mime-version`, `content-type`, `x-sent-using`. |
 | host       | If authtype is "plain", then this is the name of the host. |
 | identity   | If authtype is "plain", then this is the optional identity string. |
 | parts      | An array of email content objects. See below. |

@@ -2,9 +2,9 @@
 
 | Label          | Value       |
 | -------------- | ----------- |
-| Date           | 2 Aug 2021 |
+| Date           | 17 Aug 2021 |
 | Author         | Chris Lowth - chris.lowth@turbonomic.com |
-| TBUtil version | 2.0e |
+| TBUtil version | 2.0f |
 
 
 ## Introduction
@@ -180,7 +180,7 @@ In addition to these common settings, the following advanced options are availab
 
 *Note#1: If you are cloning dashboards (and hence have a copy of the pod installed on the hot instance) then the JS code file and any files it refers to need to be stored on the file system of the HOT instance - ideally in the persistent volume. If you are not cloning dashboards then these files should live on the WARM instance.*
 
-*Note#2: The format of the required file is described in the appendix at the end of this document.*
+*Note#2: The format of the required file is described in [here](https://github.com/turbonomic/tbutil/wiki/_target-secrets-file)*
 
 The configuration file also contains a section called "unsafe" that includes options that should NOT normally be set to true. In some rare cases you may consider turning them on, however we suggest that you seek advise from Turbonomic's professional services team first.
 
@@ -231,104 +231,3 @@ Once the "hot" is ready to be restarted, take these steps in this order..
 - Re-Start the tbutil-hotwarm pod on the warm system using the command:
     - `kubectl scale --replicas=1 deploy/tbutil-hotwarm`
 - If your use-case involves mirroing dashboards then make sure the tbutil-hotwarm pod is present and running on the hot instance too. If it's not, then re-install it and re-run the configuration step from the warm (see the instructions above).
-
-
-## Appendix: Target secrets file.
-
-If you specify a "secrets_file" value in the "targets" block of the configuration file, you should point it to a JSON file on the file system of the warm instance pod or (if you are cloning dashboards too) the hot.
-
-In order to understand the format of the file, lets first understand some concepts..
-
-Each target in Turbonomic is identified by a combination of three strings:
-* A "category". Possible values include "Applications and Databases", "Cloud Native", "Hypervisor" etc. The exact set recognised by your installation depends on the probes enabled in it's configuration, but you can see them in the "Category" column when you run "`tbutil list target types`".
-* A "type". Different categories support different types. Here again, the "`tbutil list target types`" command gives you all the supported values.
-* A "display name". This is the name of the target seen in the UI and in the output of "`tbutil list targets -l`"
-
-Targets have zero or more "secrets" which have a name and a value. The names of the secrets for each possible target type are also shown by the "`tbutil list target types`" command.
-
-The target secrets file combines all these bits of information into a JSON object structure that is formatted as follows..
-
-```json
-{
-    "category_name": {
-        "type_name": {
-            "display_name": {
-                "secret_name": "value"
-            }
-        }
-    }
-}
-```
-
-Here's small example that supplies the passwords and keys for seven targets..
-
-```json
-{
-    "Applications and Databases": {
-        "AppDynamics": {
-            "appd.example.com": {
-                "password": "xxxxxxxxxxxxxxxxxxxx"
-            }
-        },
-        "Datadog": {
-            "ddog.example.com": {
-                "apiKey": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-                "applicationKey": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-            }
-        },
-        "Dynatrace": {
-            "dtrace.example.com": {
-                "apiToken": "xxxxxxxxxxxxxxxxxxxxxxxxxxx"
-            }
-        }
-    },
-    "Hypervisor": {
-        "Hyper-V": {
-            "hp-cluster.example.com": {
-                "password": "xxxxxxxxxxxxxxxxxxxxxx"
-            },
-            "hpv0001.example.com": {
-                "password": "xxxxxxxxxxxxxxxxxxxxxx"
-            }
-        },
-        "vCenter": {
-            "vsphere1.example.com": {
-                "password": "xxxxxxxxxxxxxxxxxxxxxx"
-            },
-            "vsphere2.example.com": {
-                "password": "xxxxxxxxxxxxxxxxxxxxxx"
-            }
-        }
-    }
-}
-
-```
-
-If you wish to store the passwords in the file in an encrypted form, then prepend the secret name with a dollar sign and use the encypted value returned by the command "`tbutil crypt -encode PASSWORD-GOES-HERE`" as the value.
-
-For example: for a vCenter target called "example.com" which has a password "betYouCantGuess" ..
-
-First, obtain the encrypted form of the password by running the command...
-
-```bash
-tbutil crypt -encode "betYouCantGuess"
-```
-
-This will return a long hexadecimal string. Now take this and add it to the secrets JSON file like this...
-
-```json
-{
-    "Hypervisor": {
-        "vCenter": {
-            "example.com": {
-                "$password": "5dcbee0a7f501854858fb161a0a61004d8c7ebd91476b302b68fc750cc86d34b72aa2b3960e5a33b34e309a533f44980"
-            }
-        }
-    }
-}
-
-```
-
-Note that the "password" field has had a leading dollar added to it's name - this is how the software knows that the value is encrypted.
-
-Now the updated file can be used during the export phase.

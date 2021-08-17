@@ -1,0 +1,93 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tbutil-chromedp
+  labels:
+    app: tbutil-chromedp
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: tbutil-chromedp
+
+  template:
+
+    metadata:
+      labels:
+        app: tbutil-chromedp
+
+    spec:
+      serviceAccountName: turbo-user
+
+      securityContext:
+        fsGroup: 2000
+
+      containers:
+      - name: tbutil-chromedp
+        image: tbutil-chromedp:2.0f
+        imagePullPolicy: Never
+        env:
+          - name: TURBO_MACHINE_ID_FILE
+            value: /home/tbutil/.tbutilmachine-id
+
+          - name: TURBO_K8S_SERVICE_NAME
+            value: tbutil-chromedp
+
+          # Set this to true to auto-configure volumes and mounts.
+          #
+          # Set to false to bye-pass auto-configuration. In this case
+          # you will need to uncomment/edit the volumeMounts and volumes
+          # sections below and create the tbutil-chromedp-volume PVC
+          # before applying this yaml config.
+
+          - name: TURBO_AUTOCONFIGURE_K8S
+            value: "true"
+
+          - name: TZ
+            value: GMT
+
+        ports:
+
+
+        # For trouble-shooting the boostratp, just uncomment these two lines (command
+        # and args). This causes the boostrap to be bye-passed
+
+#        command: [ "/bin/sleep" ]
+#        args: [ "infinity" ]
+
+
+#        volumeMounts:
+#          - name: tbutil-chromedp-volume
+#            subPath: tbutil
+#            mountPath: /home/tbutil
+#
+#          - name: tbutil-chromedp-volume
+#            subPath: tbexport
+#            mountPath: /home/tbexport
+#
+#          - name: tbutil-chromedp-volume
+#            subPath: etc-ssh
+#            mountPath: /etc/ssh
+#
+#          - name: tbutil-chromedp-volume
+#            subPath: etc-crontabs
+#            mountPath: /etc/crontabs
+#
+#          - name: turbo-volume
+#            mountPath: /etc/turbonomic
+#
+
+#      volumes:
+#        - name: tbutil-chromedp-volume
+#          persistentVolumeClaim:
+#            claimName: tbutil-chromedp-volume
+#
+#        - name: turbo-volume
+#          configMap:
+#            defaultMode: 420
+#            name: global-properties-xl-example
+#            optional: true
+#
+
+---

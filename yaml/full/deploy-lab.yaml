@@ -25,7 +25,7 @@ spec:
 
       containers:
       - name: tbutil-full
-        image: labdocker:5000/tbutil-full:2.0e
+        image: labdocker:5000/tbutil-full:2.0f
         imagePullPolicy: IfNotPresent
         env:
           - name: TURBO_MACHINE_ID_FILE

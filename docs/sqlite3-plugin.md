@@ -1,6 +1,6 @@
 # SqLite3 Plugin for TBUtil
 
-*Last updated: 1 Jun 2021*
+*Last updated: 3 Aug 2021*
 
 ---
 
@@ -30,7 +30,7 @@ var p = plugin("sqlite3-plugin");
 var db = p.open(dbDef)
 ```
 
-The `dbDef` is optional, and specifies the name of the sqlite3 file or the connection for the MySQL databases. For example:
+The `dbDef` is optional, and specifies the name of the sqlite3 file. For example:
 
 | Example                | Notes  |
 |----------------------- | ------ |

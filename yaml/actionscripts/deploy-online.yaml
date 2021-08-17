@@ -25,7 +25,7 @@ spec:
 
       containers:
       - name: tbutil-actionscripts
-        image: turbointegrations/tbutil-actionscripts:2.0e
+        image: turbointegrations/tbutil-actionscripts:2.0f
         imagePullPolicy: IfNotPresent
         env:
           - name: TURBO_MACHINE_ID_FILE

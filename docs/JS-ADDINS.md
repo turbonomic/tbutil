@@ -1,6 +1,6 @@
-# Add-ins available to TBUtil 2.0e JS formatters and TBScripts
+# Add-ins available to TBUtil 2.0f JS formatters and TBScripts
 
-*Last updated: 2 Aug 2021*
+*Last updated: 16 Aug 2021*
 
 Note: the selection of features and functions available to scripts depends on the context in which they are called. The following context types exist..
 
@@ -120,6 +120,11 @@ Searches for an instance with the specified type and/or display name. Returns th
 ### {client}.findInstances(type, displayName)
 
 Searches for instances with the specified type and/or display name. Returns the instance list - which may be empty. This call leverages the "search" endpoint with the "types" and "q" fields set.
+
+
+### {client}.getCookie(name)
+
+Gets the value of the named cookie used in the communication with Turbonomic. Note that this should be called AFTER access to a REST API method to ensure that the cookie is up to date.
 
 
 ### {client}.getCredentialKey( )
