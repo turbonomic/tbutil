@@ -28,7 +28,7 @@ Refer to [IWO.md](../docs/IWO.md) for information about installing TBUtil for us
 | [CHROMEDP.md](../docs/K8S/CHROMEDP.md) | c1ed21390b1354a5c240c0cfb541cf29 | TBUtil ChromeDP integration pod. |
 | [FLEXERA.md](../docs/K8S/FLEXERA.md) | 1ec3f034bb385b11da3c1b742e925491 | TBUtil Flexera intergration Pod |
 | [HOTWARM.md](../docs/K8S/HOTWARM.md) | dfc1cb0ec2f7f2deb48203de28c80431 | TBUtil Hot/Warm Standby Pod |
-| [INSTALL.md](../docs/K8S/INSTALL.md) | 032e2eaff5875f3a7c300f569c4b0a60 | Installing TBUtil PODs |
+| [INSTALL.md](../docs/K8S/INSTALL.md) | 35f2e120c6d95ffbf3e9cfbc61870826 | Installing TBUtil PODs |
 | [INTERNALS.md](../docs/K8S/INTERNALS.md) | ecbcb11f5c1328065e76cf2507a6fc7b | TBUtil POD Internals. |
 
 ## Downloads for OVA or Laptop installation
@@ -47,9 +47,9 @@ md5sum FILE-NAME-GOES-HERE
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
-| [tbutil-2_0f-linux.zip](https:/turbonomic/tbutil/releases/download/v2.0f/tbutil-2_0f-linux.zip) | 20482c6824357d451a75812debc9cb77 | Download for x86_64 Linux |
-| [tbutil-2_0f-mac.zip](https:/turbonomic/tbutil/releases/download/v2.0f/tbutil-2_0f-mac.zip) | a9c81acaf6f58104df4552a781d1db62 | Download for MAC (64 bit) |
-| [tbutil-2_0f-windows.zip](https:/turbonomic/tbutil/releases/download/v2.0f/tbutil-2_0f-windows.zip) | 9ab66d898fc381d5f0e9f3f6df975ce2 | Download for Windows (64 bit) |
+| [tbutil-2_0f-linux.zip](https:/turbonomic/tbutil/releases/download/v2.0f/tbutil-2_0f-linux.zip) | fd5147ee85eda40625e26e9ffe195d9f | Download for x86_64 Linux |
+| [tbutil-2_0f-mac.zip](https:/turbonomic/tbutil/releases/download/v2.0f/tbutil-2_0f-mac.zip) | 8637fd16a9719f8544ad7be94a3b3d07 | Download for MAC (64 bit) |
+| [tbutil-2_0f-windows.zip](https:/turbonomic/tbutil/releases/download/v2.0f/tbutil-2_0f-windows.zip) | 0d6a952ba9822e1a95368ac735b99cba | Download for Windows (64 bit) |
 
 ## Other MarkDown Documents
 
@@ -60,11 +60,11 @@ md5sum FILE-NAME-GOES-HERE
 | [JS-ADDINS.md](../docs/JS-ADDINS.md) | 607330773c4be5a9022cae64f9500473 | Add-ins available to TBUtil 2.0f JS formatters and TBScripts |
 | [PLUGINS.md](../docs/PLUGINS.md) | ed6652618f7b1bde8364cffe69e6565c | TB Script Plugins |
 | [QUICK-INSTALL.md](../docs/QUICK-INSTALL.md) | c7a31b151911a7d8276009936adcf7e1 | TBUtil 2.0f Quick Install Guide. |
-| [README.md](../docs/README.md) | 6fcc158084c79e842cac040319de1c46 | TButil 2.0f - Turbonomic Command-Line Utility |
+| [README.md](../docs/README.md) | 4e93aad0dbcf78bb4348760c13b5f54c | TButil 2.0f - Turbonomic Command-Line Utility |
 | [RUNNING-PLANS.md](../docs/RUNNING-PLANS.md) | f6e688f29d478064d40cfd6c81809d23 | Running plans with tbutil 1.1n or later. |
 | [apiv1-plugin.md](../docs/apiv1-plugin.md) | d08527538dad5ff9fb626b38afec03da | API V1 plugin for TBUtil |
 | [arangodb-plugin.md](../docs/arangodb-plugin.md) | 0818044a7f82cf5ef4542bc458cc5c9d | ArangoDB plugin for TBUtil |
-| [chromedp-plugin.md](../docs/chromedp-plugin.md) | 5f43ce5846dee68f59bb36cc24994f0c | ChromeDP Plugin for TBUtil |
+| [chromedp-plugin.md](../docs/chromedp-plugin.md) | 4a3cc3d6f721006f7633368cc2d5b736 | ChromeDP Plugin for TBUtil |
 | [excel-plugin.md](../docs/excel-plugin.md) | 16840a8e061179604a9121ad042b8549 | EXCEL plugin for TBUtil |
 | [kafka-plugin.md](../docs/kafka-plugin.md) | b0af359a196945b3c38b24a98b9cf0bc | Kafka plugin for TBUtil |
 | [mysql-plugin.md](../docs/mysql-plugin.md) | 20e993f0ab3139da3bcd0d7dd6a0e34c | MySQL Plugin for TBUtil |

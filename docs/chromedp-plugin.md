@@ -11,7 +11,7 @@ This document does not attempt to describe the underlying module itself but deta
 
 ## Initialisation
 
-```
+```javascript
 var p = plugin("chromedp-plugin");
 p.open(width, height [, client]);
 p.verbose(boolean_flag);
