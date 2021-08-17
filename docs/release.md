@@ -25,9 +25,10 @@ Refer to [IWO.md](../docs/IWO.md) for information about installing TBUtil for us
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
 | [ACTIONSCRIPTS.md](../docs/K8S/ACTIONSCRIPTS.md) | 9927c4a55d27e9f6d6a49c1328bff713 | TBUtil Action Scripts Pod |
-| [FLEXERA.md](../docs/K8S/FLEXERA.md) | ce95faf39b9a462c92db5fc57381ebf0 | TBUtil Flexera intergration POD |
+| [CHROMEDP.md](../docs/K8S/CHROMEDP.md) | c1ed21390b1354a5c240c0cfb541cf29 | TBUtil ChromeDP integration pod. |
+| [FLEXERA.md](../docs/K8S/FLEXERA.md) | 1ec3f034bb385b11da3c1b742e925491 | TBUtil Flexera intergration Pod |
 | [HOTWARM.md](../docs/K8S/HOTWARM.md) | dfc1cb0ec2f7f2deb48203de28c80431 | TBUtil Hot/Warm Standby Pod |
-| [INSTALL.md](../docs/K8S/INSTALL.md) | 45d5ff7ae886f9b6f39d202546bfbd59 | Installing TBUtil PODs |
+| [INSTALL.md](../docs/K8S/INSTALL.md) | 032e2eaff5875f3a7c300f569c4b0a60 | Installing TBUtil PODs |
 | [INTERNALS.md](../docs/K8S/INTERNALS.md) | ecbcb11f5c1328065e76cf2507a6fc7b | TBUtil POD Internals. |
 
 ## Downloads for OVA or Laptop installation
@@ -46,9 +47,9 @@ md5sum FILE-NAME-GOES-HERE
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
-| [tbutil-2_0f-linux.zip](https:/turbonomic/tbutil/releases/download/v2.0f/tbutil-2_0f-linux.zip) | 1ea775b9152920940f894bad81799f1b | Download for x86_64 Linux |
-| [tbutil-2_0f-mac.zip](https:/turbonomic/tbutil/releases/download/v2.0f/tbutil-2_0f-mac.zip) | 943f23b3019cf372d81beae95642872e | Download for MAC (64 bit) |
-| [tbutil-2_0f-windows.zip](https:/turbonomic/tbutil/releases/download/v2.0f/tbutil-2_0f-windows.zip) | 6b05453438da5549a4ea56be059f3509 | Download for Windows (64 bit) |
+| [tbutil-2_0f-linux.zip](https:/turbonomic/tbutil/releases/download/v2.0f/tbutil-2_0f-linux.zip) | 20482c6824357d451a75812debc9cb77 | Download for x86_64 Linux |
+| [tbutil-2_0f-mac.zip](https:/turbonomic/tbutil/releases/download/v2.0f/tbutil-2_0f-mac.zip) | a9c81acaf6f58104df4552a781d1db62 | Download for MAC (64 bit) |
+| [tbutil-2_0f-windows.zip](https:/turbonomic/tbutil/releases/download/v2.0f/tbutil-2_0f-windows.zip) | 9ab66d898fc381d5f0e9f3f6df975ce2 | Download for Windows (64 bit) |
 
 ## Other MarkDown Documents
 

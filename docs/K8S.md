@@ -15,7 +15,8 @@ The following documents are available on this subject ...
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
 | [ACTIONSCRIPTS.md](../docs/K8S/ACTIONSCRIPTS.md) | 9927c4a55d27e9f6d6a49c1328bff713 | TBUtil Action Scripts Pod |
-| [FLEXERA.md](../docs/K8S/FLEXERA.md) | ce95faf39b9a462c92db5fc57381ebf0 | TBUtil Flexera intergration POD |
+| [CHROMEDP.md](../docs/K8S/CHROMEDP.md) | c1ed21390b1354a5c240c0cfb541cf29 | TBUtil ChromeDP integration pod. |
+| [FLEXERA.md](../docs/K8S/FLEXERA.md) | 1ec3f034bb385b11da3c1b742e925491 | TBUtil Flexera intergration Pod |
 | [HOTWARM.md](../docs/K8S/HOTWARM.md) | dfc1cb0ec2f7f2deb48203de28c80431 | TBUtil Hot/Warm Standby Pod |
-| [INSTALL.md](../docs/K8S/INSTALL.md) | 45d5ff7ae886f9b6f39d202546bfbd59 | Installing TBUtil PODs |
+| [INSTALL.md](../docs/K8S/INSTALL.md) | 032e2eaff5875f3a7c300f569c4b0a60 | Installing TBUtil PODs |
 | [INTERNALS.md](../docs/K8S/INTERNALS.md) | ecbcb11f5c1328065e76cf2507a6fc7b | TBUtil POD Internals. |

@@ -23,10 +23,10 @@ The following flavours are currently available:
 | ------- | ----------- |
 | base | A basic TBUtil installation with no plugins or other extended features. This forms the basis of all other flavours. |
 | [actionscripts](ACTIONSCRIPTS.md) | This adds some skeleton action scripts (and an openssh server) to the base flavour. You can use this as the starting point for building your own real actions script integrations. |
-| chromedp | An experimental TBUtil container with features that allow a headless Chrome browser to be controlled. This can be used to extract PNG images of Turbo UI widgets - etc. |
+| [chromedp](CHROMEDP.md) | An experimental TBUtil container with features that allow a headless Chrome browser to be controlled. This can be used to extract PNG images of Turbo UI widgets - etc. This is quite a big pod because it includes the "chromium" browser package. |
 | [hotwarm](HOTWARM.md) | A TBUtil container with features for hot/warm standby backup of the Turbonomic system. |
 | [flexera](FLEXERA.md) | A TButil container with features for extracting VM, Host and Cluster details into CSV files that can be imported into Flexera. |
-| full | All the above the features, merged into a single container. |
+| full | All the above the features, merged into a single container. Note: if you want to use the "chromedp" plugin, then you will need to add the "chromium" package to the pod. It is omitted from the standard pod in order to reduce its size. |
 
 
 

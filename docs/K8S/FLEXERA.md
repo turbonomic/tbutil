@@ -1,4 +1,4 @@
-# TBUtil Flexera intergration POD
+# TBUtil Flexera intergration Pod
 
 | Label          | Value       |
 | -------------- | ----------- |
