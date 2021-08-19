@@ -370,9 +370,9 @@ Just run "tbutil" with no arguments.
 TBUTIL: Unsupported Software, Copyright (C) Turbonomic 2018,2019,2020,2021
 Issued To   : chris.lowth@turbonomic.com
 GIT Tag     : 2.0f
-Commit Hash : 327ae00ae04ffb9622dcb1650cb8cefacb441ee9
-Commit Time : 2021-08-17 16:10:47 +0100
-Build Time  : 2021-08-17 17:11:07 +0100
+Commit Hash : 8e16af934afd323cdfc732935c9ae0cdd77c5b0b
+Commit Time : 2021-08-19 16:46:16 +0100
+Build Time  : 2021-08-19 16:47:27 +0100
 (use "tbutil -version" for more version info)
 
 Usage:

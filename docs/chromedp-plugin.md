@@ -1,6 +1,6 @@
 # ChromeDP Plugin for TBUtil
 
-*Last updated: 17 Aug 2021*
+*Last updated: 18 Aug 2021*
 
 ---
 
@@ -36,7 +36,8 @@ Many of the remaining functions use a selector and an options list. The options 
 | byJSPath    | [ByJSPath](https://pkg.go.dev/github.com/chromedp/chromedp#ByJSPath) | - |
 | byNodeID    | [ByNodeID](https://pkg.go.dev/github.com/chromedp/chromedp#ByNodeID) | The selector must be specified as a single integer number |
 
-Note: you should only specify ONE of the "by..."" options. "BySearch" is the default.
+Note: you should only specify ONE of the "by..."" options. "ByQueryAll" is the default (note: this is different from 
+the GO library which uses "BySearch" as the default).
 
 ## Query options
 
@@ -275,6 +276,13 @@ the selected elements to the specified file.
 
 If no selector or options are specified then a screen-shot of the visible screen is written to the file.
 
+The `fileName` **must** have an extension of ".png".
+
+Example:
+
+```javascript
+p.screenShot("widget.png", widget.nodeId, [ "byNodeID" ]);
+```
 
 ### waitQuiet(num_seconds)
 

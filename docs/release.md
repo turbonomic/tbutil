@@ -1,6 +1,6 @@
 # TbUtil Version 2.0f
 
-Released: 17 Aug 2021
+Released: 19 Aug 2021
 
 Unsupported software, Copyright (C) Turbonomic 2018 .. 2021
 
@@ -24,11 +24,11 @@ Refer to [IWO.md](../docs/IWO.md) for information about installing TBUtil for us
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
-| [ACTIONSCRIPTS.md](../docs/K8S/ACTIONSCRIPTS.md) | 9927c4a55d27e9f6d6a49c1328bff713 | TBUtil Action Scripts Pod |
-| [CHROMEDP.md](../docs/K8S/CHROMEDP.md) | c1ed21390b1354a5c240c0cfb541cf29 | TBUtil ChromeDP integration pod. |
-| [FLEXERA.md](../docs/K8S/FLEXERA.md) | 1ec3f034bb385b11da3c1b742e925491 | TBUtil Flexera intergration Pod |
-| [HOTWARM.md](../docs/K8S/HOTWARM.md) | dfc1cb0ec2f7f2deb48203de28c80431 | TBUtil Hot/Warm Standby Pod |
-| [INSTALL.md](../docs/K8S/INSTALL.md) | 35f2e120c6d95ffbf3e9cfbc61870826 | Installing TBUtil PODs |
+| [ACTIONSCRIPTS.md](../docs/K8S/ACTIONSCRIPTS.md) | 01e6331a95fc57afd00900455c97b329 | TBUtil Action Scripts Pod |
+| [CHROMEDP.md](../docs/K8S/CHROMEDP.md) | 39b2d6623afd6876ba78b9c29af002f7 | TBUtil ChromeDP integration pod. |
+| [FLEXERA.md](../docs/K8S/FLEXERA.md) | e8e37e60b115c3271bdaa78130bdf035 | TBUtil Flexera intergration Pod |
+| [HOTWARM.md](../docs/K8S/HOTWARM.md) | 428c1b7c3d45d0dbfb97bd02787e791b | TBUtil Hot/Warm Standby Pod |
+| [INSTALL.md](../docs/K8S/INSTALL.md) | c010d754612d8909d70a855406f7d475 | Installing TBUtil PODs |
 | [INTERNALS.md](../docs/K8S/INTERNALS.md) | ecbcb11f5c1328065e76cf2507a6fc7b | TBUtil POD Internals. |
 
 ## Downloads for OVA or Laptop installation
@@ -47,9 +47,9 @@ md5sum FILE-NAME-GOES-HERE
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
-| [tbutil-2_0f-linux.zip](https:/turbonomic/tbutil/releases/download/v2.0f/tbutil-2_0f-linux.zip) | fd5147ee85eda40625e26e9ffe195d9f | Download for x86_64 Linux |
-| [tbutil-2_0f-mac.zip](https:/turbonomic/tbutil/releases/download/v2.0f/tbutil-2_0f-mac.zip) | 8637fd16a9719f8544ad7be94a3b3d07 | Download for MAC (64 bit) |
-| [tbutil-2_0f-windows.zip](https:/turbonomic/tbutil/releases/download/v2.0f/tbutil-2_0f-windows.zip) | 0d6a952ba9822e1a95368ac735b99cba | Download for Windows (64 bit) |
+| [tbutil-2_0f-linux.zip](https:/turbonomic/tbutil/releases/download/v2.0f/tbutil-2_0f-linux.zip) | df9e68f5028ee1d66add27f2ecd7b242 | Download for x86_64 Linux |
+| [tbutil-2_0f-mac.zip](https:/turbonomic/tbutil/releases/download/v2.0f/tbutil-2_0f-mac.zip) | 72b8544d8c6ce6a025ab5b5959bbedfb | Download for MAC (64 bit) |
+| [tbutil-2_0f-windows.zip](https:/turbonomic/tbutil/releases/download/v2.0f/tbutil-2_0f-windows.zip) | b6b319a915cd205aa70a50791bcc66b0 | Download for Windows (64 bit) |
 
 ## Other MarkDown Documents
 
@@ -60,11 +60,11 @@ md5sum FILE-NAME-GOES-HERE
 | [JS-ADDINS.md](../docs/JS-ADDINS.md) | 607330773c4be5a9022cae64f9500473 | Add-ins available to TBUtil 2.0f JS formatters and TBScripts |
 | [PLUGINS.md](../docs/PLUGINS.md) | ed6652618f7b1bde8364cffe69e6565c | TB Script Plugins |
 | [QUICK-INSTALL.md](../docs/QUICK-INSTALL.md) | c7a31b151911a7d8276009936adcf7e1 | TBUtil 2.0f Quick Install Guide. |
-| [README.md](../docs/README.md) | 4e93aad0dbcf78bb4348760c13b5f54c | TButil 2.0f - Turbonomic Command-Line Utility |
+| [README.md](../docs/README.md) | 0cb2f6bf6a557691264571aff2f31fa7 | TButil 2.0f - Turbonomic Command-Line Utility |
 | [RUNNING-PLANS.md](../docs/RUNNING-PLANS.md) | f6e688f29d478064d40cfd6c81809d23 | Running plans with tbutil 1.1n or later. |
 | [apiv1-plugin.md](../docs/apiv1-plugin.md) | d08527538dad5ff9fb626b38afec03da | API V1 plugin for TBUtil |
 | [arangodb-plugin.md](../docs/arangodb-plugin.md) | 0818044a7f82cf5ef4542bc458cc5c9d | ArangoDB plugin for TBUtil |
-| [chromedp-plugin.md](../docs/chromedp-plugin.md) | 4a3cc3d6f721006f7633368cc2d5b736 | ChromeDP Plugin for TBUtil |
+| [chromedp-plugin.md](../docs/chromedp-plugin.md) | 58d4a3d7bc2a59f4b5426a9023b42f8a | ChromeDP Plugin for TBUtil |
 | [excel-plugin.md](../docs/excel-plugin.md) | 16840a8e061179604a9121ad042b8549 | EXCEL plugin for TBUtil |
 | [kafka-plugin.md](../docs/kafka-plugin.md) | b0af359a196945b3c38b24a98b9cf0bc | Kafka plugin for TBUtil |
 | [mysql-plugin.md](../docs/mysql-plugin.md) | 20e993f0ab3139da3bcd0d7dd6a0e34c | MySQL Plugin for TBUtil |
