@@ -1,6 +1,6 @@
 # ChromeDP Plugin for TBUtil
 
-*Last updated: 18 Aug 2021*
+*Last updated: 21 Aug 2021*
 
 ---
 
@@ -195,6 +195,7 @@ Allows a number of different data about a node to be returned. The value of `wha
 | value | [Value](https://pkg.go.dev/github.com/chromedp/chromedp#Value) | returns a string |
 | dimensions | [Dimensions](https://pkg.go.dev/github.com/chromedp/chromedp#Dimensions) | returns an object |
 | computedStyle | [ComputedStyle](https://pkg.go.dev/github.com/chromedp/chromedp#ComputedStyle) | returns an object |
+| attributes | [Attributes](https://pkg.go.dev/github.com/chromedp/chromedp#Attributes) | returns an object |
 
 Example:
 
@@ -231,6 +232,10 @@ The special case of numbers 1 or 2 will result in nothing being sent if the `cli
 
 Equivalent to the GOLang "[JavascriptAttribute](https://pkg.go.dev/github.com/chromedp/chromedp#JavascriptAttribute) 
 function.
+
+
+### setJavascriptAttribute(selector, attr, value [, options])
+
 
 
 ### nodes(selector [, options] )
@@ -289,3 +294,34 @@ p.screenShot("widget.png", widget.nodeId, [ "byNodeID" ]);
 This is not a standard chromedp method.
 
 This waits for all the requests to URLs on the navigated-to host to complete (for a maximum of `num_seconds` seconds).
+
+
+### attributeValue(selector, name [, options])
+
+If `name` is null, then a map of all attributes is returned, otherwise just the named attribute.
+
+
+### setAttributeValue(selector, name, value [, options])
+
+If `value` is null then RemoveAttribute is called, otherwise `SetAttributeValue`.
+
+
+### focus(selection [, options])
+
+
+### blur(selection [, options])
+
+
+### clear(selection [, options])
+
+
+### reset(selection [, options])
+
+
+### submit(selection [, options])
+
+
+### scrollIntoView(selection [, options])
+
+
+### setCookie(cookieObject)

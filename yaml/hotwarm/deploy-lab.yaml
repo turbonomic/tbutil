@@ -25,7 +25,7 @@ spec:
 
       containers:
       - name: tbutil-hotwarm
-        image: labdocker:5000/tbutil-hotwarm:2.0f
+        image: labdocker:5000/tbutil-hotwarm:2.0g
         imagePullPolicy: IfNotPresent
         env:
           - name: TURBO_MACHINE_ID_FILE

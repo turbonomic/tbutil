@@ -25,7 +25,7 @@ spec:
 
       containers:
       - name: tbutil-base
-        image: tbutil-base:2.0f
+        image: tbutil-base:2.0g
         imagePullPolicy: Never
         env:
           - name: TURBO_MACHINE_ID_FILE

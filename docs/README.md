@@ -1,4 +1,4 @@
-# TButil 2.0f - Turbonomic Command-Line Utility
+# TButil 2.0g - Turbonomic Command-Line Utility
 
 *Last updated: 1 Jun 2021*
 
@@ -16,7 +16,7 @@ TButil includes an embedded JavaScript engine that can be used to format the out
 
 Download from the project's S3 site..
 
-https://github.com/turbonomic/tbutil/blob/v2.0f/docs/release.md
+https://github.com/turbonomic/tbutil/blob/v2.0g/docs/release.md
 
 Once you've downloaded the relevant ZIP, follow the instructions contained in the QUICK-INSTALL.pdf file it contains. This takes you through the process step by step.
 
@@ -369,15 +369,15 @@ Just run "tbutil" with no arguments.
 ```text
 TBUTIL: Unsupported Software, Copyright (C) Turbonomic 2018,2019,2020,2021
 Issued To   : chris.lowth@turbonomic.com
-GIT Tag     : 2.0f
-Commit Hash : 8e16af934afd323cdfc732935c9ae0cdd77c5b0b
-Commit Time : 2021-08-19 16:46:16 +0100
-Build Time  : 2021-08-19 16:47:27 +0100
+GIT Tag     : 2.0g
+Commit Hash : 098d750495c40b3a9af462b03c0bc7ebf01edc19
+Commit Time : 2021-08-23 16:00:18 +0100
+Build Time  : 2021-08-23 16:02:14 +0100
 (use "tbutil -version" for more version info)
 
 Usage:
   tbutil [{cred}] [32maccept[0m|[32mreject[0m [32maction[0m {action_uuid}
-  tbutil [{cred}] [32mcreate[0m|[32mdelete[0m|[32mexport[0m|[32mimport[0m|[32mlist[0m|[32mlogging[0m|[32mprint[0m|[32mpsql[0m|[32mreset[0m [[36m-help[0m] ...
+  tbutil [{cred}] [32mcreate[0m|[32mdelete[0m|[32mexport[0m|[32mimport[0m|[32mlist[0m|[32mlogging[0m|[32mprint[0m|[32mpsql[0m|[32mreset[0m|[32mscreenshot[0m [[36m-help[0m] ...
   tbutil [{cred}] [32mdelete[0m|[32mpost[0m|[32mput[0m [[36m-j[0m|[36m-s ..[0m|[36m-y[0m] [[36m-jsfilter ..[0m] {path} < {json_body_file}
   tbutil [{cred}] [32mget swagger[0m
   tbutil [{cred}] [32mget[0m [[36manon[0m] [[36m-j[0m|[36m-s ..[0m|[36m-y[0m] [[36m-jsfilter ..[0m] {path}
@@ -421,7 +421,7 @@ The optional '{cred}' argument provides the credentials for the connection with 
 * Absent but no TURBO_CREDENTIALS defined: the "@default" block from .tbutilrc is used.
 
 Download code and docs from:
-   https://github.com/turbonomic/tbutil/blob/v2.0f/docs/release.md
+   https://github.com/turbonomic/tbutil/blob/v2.0g/docs/release.md
 ```
 
 ### Get the list of clusters

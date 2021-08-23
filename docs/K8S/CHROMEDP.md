@@ -2,9 +2,9 @@
 
 | Label          | Value       |
 | -------------- | ----------- |
-| Date           | 19 Aug 2021 |
+| Date           | 23 Aug 2021 |
 | Author         | Chris Lowth - chris.lowth@turbonomic.com |
-| TBUtil version | 2.0f |
+| TBUtil version | 2.0g |
  
 This is a pod that comes with `tbutil`, the `chromedp` plugin and the `chromium` browser (which the plugin requires). For information about the features of the plugin, [refer to this document](../chromedp-plugin.md).
 
