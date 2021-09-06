@@ -29,6 +29,8 @@ Formatter scripts perform no API actions themselves but are used to process the 
 
 ### actions-by-type.js
 
+(Works with all classic and XL versions)
+
 Formats the output of the "list actions" sub-command to show the number of actions by type and severity. The output is presented as a small JSON document.
 
 Run using: `tbutil list actions -s actions-by-type.js Market`
@@ -44,6 +46,8 @@ Run using: `tbutil {sub-command} -s count.js |`
 ### customer-summary.js
 
 ### export-dynamic-groups.js
+
+(Works with all classic and XL versions)
 
 Formats the output of "list my groups" to show the filters used for all the configured dynamic user groups.
 
@@ -498,10 +502,17 @@ Scripts of this type are written in JS, but work by making MySQL queries and pro
 
 ### collect-actions.js
 
+(Classic only - does not work with XL).
+
+
 ### create-group-from-sql-query.js
+
+(Classic only - does not work with XL).
 
 
 ### failed-moves.js
+
+(Classic only - does not work with XL).
 
 Creates a list (excel, by default) of the failed attempts to move VMs in the last 7 (by default) days. Data is taken from the audit_log_entries table.
 
@@ -532,9 +543,19 @@ Where:
 
 ### idle-vms.js
 
+(Classic only - does not work with XL).
+
+Use "tbutil list idle vms -l" instead of this script.
+
+
 ### members-to-mysql.js
 
+(Classic only - does not work with XL).
+
+
 ### num-vcpus-per-vm.js
+
+(Classic only - does not work with XL).
 
 Display the number of VCPUs per VM.
 
@@ -552,11 +573,15 @@ Where:
 
 ### pm-stats.js
 
+(Classic only - does not work with XL).
+
 Displays the range of VMs counts per host over the time period stored in the daily-stats MySQL table.
 
 Run using: `tbscript pm-stats.js`
 
 ### rightsize-actions-log.js
+
+(Classic only - does not work with XL).
 
 Lists the VMem and VCPU right-sizing actions that have been executed or failed over a specified time period.
 
@@ -587,7 +612,10 @@ Usage is:
 
 ### store-settings.js
 
+
 ### top-ready-queue-vms.js
+
+(Classic only - does not work with XL).
 
 Collects and presents information about the VMs with top ready-queue utilization.
 
@@ -613,11 +641,15 @@ These scripts are written in pure SQL, augmented with directives specified in sp
 
 ### all-vm-memory-stats.sql
 
+(Classic only - does not work with XL).
+
 Shows the VMem usage of all VMs over the specified number of days (which must be less that or equal to the number of days worth of day data stored in MySQL).
 
 Run using: `tbutil sql all-vm-memory-stats.sql {number-of-days}`
 
 ### all-vm-memory-utilization.sql
+
+(Classic only - does not work with XL).
 
 Lists the %age memory utilization for all known VMs over a specified number of days past.
 
@@ -629,15 +661,23 @@ Run using: `tbutil sql all-vm-memory-utilization-sql {number-of-days}`
 
 ### count-known-days.sql
 
+(Classic only - does not work with XL).
+
 Counts the number of days worth of data stored for a specified VM over the specified time period (in days back from today).
 
 Run using: `tbutil sql count-known-days.sql {vm_uuid} {n_days}`
 
 ### getDesiredState.sql
 
+(Classic only - does not work with XL).
+
 ### getPersistenceConfig.sql
 
+(Classic only - does not work with XL).
+
 ### powered-off-vms.sql
+
+(Classic only - does not work with XL).
 
 Reports the VMs that are powered down, the cluster they are on, the amount of storage space associated with them and the number of days for which they have been down.
 
@@ -646,6 +686,8 @@ DISCLAIMER: Take care when using this tool, and double check that the VMs listed
 Run using: `tbutil sql powered-off-vms.sql`
 
 ### socket-count.sql
+
+(Classic only - does not work with XL).
 
 Reports the number of sockets per known host. This SQL has been exported from the `weekly_socket_audit_report` report using "tbutil export report query" and modified to print a subset of the available columns.
 
@@ -659,11 +701,15 @@ Run using: `tbutil sql socket-count.sql`
 
 ### unused-storage-by-datastore.sql
 
+(Classic only - does not work with XL).
+
 Prints the number of MB that was free on all known data stores yesterday.
 
 Run using: `tbutil sql unused-storage-by-datastore.sql`
 
 ### user-logins.sql
+
+(Classic only - does not work with XL).
 
 Prints the user login summary for the last 90 days. If shows the user names and their first and last login times from 90 days ago until today.
 
@@ -671,11 +717,15 @@ Run using: `tbutil sql user-logins.sql`
 
 ### vm-memory-stats.sql
 
+(Classic only - does not work with XL).
+
 Shows the VMem usage of VMs in a specified group over the specified number of days (which must be less that or equal to the number of days worth of day data stored in MySQL).
 
 Run using: `tbutil sql vm-memory-stats.sql {group_name} {number-of-days}`
 
 ### wasted-storage-by-datastore.sql
+
+(Classic only - does not work with XL).
 
 Taken from the "daily_digest_storage_top_unused_grid" report template.
 
@@ -684,6 +734,8 @@ It lists the wasted space (and number of files) per data store.
 Run using: `tbutil sql wasted-storage-by-datastore.sql`
 
 ### wasted-storage-files.sql
+
+(Classic only - does not work with XL).
 
 Taken from the "daily_digest_storage_top_unused_grid" report template.
 
@@ -709,6 +761,8 @@ The scripts load and parse data from XML or other files located on the local (or
 See the separate "COOK.md" or "COOK.pdf" document.
 
 ### health-check.sh
+
+(Classic only - does not work with XL).
 
 This script is a wrapper that collects a variety of health check information into a named directory. The usage is..
 

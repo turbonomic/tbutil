@@ -1,6 +1,6 @@
 # SMTP Plugin for TBUtil
 
-*Last updated: 3 Aug 2021*
+*Last updated: 25 Aug 2021*
 
 ---
 
@@ -23,26 +23,26 @@ Where `config` is an object that contains the follow fields..
 
 | Field name | Description |
 | ---------- | ----------- |
-| authtype   | The type of authentication to use. Valid values are "none", "plain" (default if password is specified) or "cramMd5" (default if secret is specified). |
+| authType   | The type of authentication to use. Valid values are "none", "plain" (default if password is specified) or "cramMd5" (default if secret is specified). |
 | bcc        | An array of strings containing blind-carbon-copy recipient email addresses. |
 | cc         | An array of strings containing carbon-copy recipient email addresses. |
 | enableSsl  | Boolean: should an SSL-encrypted connection to the server be used? |
 | enableTls  | Boolean: should a TLS-encrypted connection to the server be used? |
 | from       | The email address of the sender of the email. |
 | headers    | A JS object containing additional headers for the email. This must be a string-to-string map. The following headers should NOT be specified here because they are populated using other fields.. `to`, `cc`, `bcc`, `subject`, `from`, `date`, `mime-version`, `content-type`, `x-sent-using`. |
-| host       | If authtype is "plain", then this is the name of the host. |
-| identity   | If authtype is "plain", then this is the optional identity string. |
+| host       | If authType is "plain", then this is the name of the host. |
+| identity   | If authType is "plain", then this is the optional identity string. |
 | parts      | An array of email content objects. See below. |
-| password   | If authtype is "plain", then this is the password. |
-| secret     | If authtype is "cramMd5", then this is the authentication secret. |
+| password   | If authType is "plain", then this is the password. |
+| secret     | If authType is "cramMd5", then this is the authentication secret. |
 | server     | The SMTP server and port (delimited by a colon) to connect to. |
 | subject    | The subject for the email. |
 | to         | An array of strings containing recipient email addresses. |
-| user       | If authtype is "plain" or "cramMd5", then this is the user name. |
+| user       | If authType is "plain" or "cramMd5", then this is the user name. |
 
 If any of the `to`, `cc` or `bcc` fields only need to contain a single address, then they an be specified as a simple string instead of an array.
 
-The `authtype` field determines which of the authentication fields are relevant as follows..
+The `authType` field determines which of the authentication fields are relevant as follows..
 
 | Auth type | Relevant fields |
 | --------- | --------------- |
@@ -80,7 +80,7 @@ Note 4: If the "`client`" argument is specified to the "`send`" function then th
 - from
 - enableSsl
 - enableTls
-- authtype will be set to "basic" if password is populated.
+- authType will be set to "basic" if password is populated.
 
 ## Example
 

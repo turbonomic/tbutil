@@ -1,6 +1,6 @@
-# Add-ins available to TBUtil 2.0g JS formatters and TBScripts
+# Add-ins available to TBUtil 2.0h JS formatters and TBScripts
 
-*Last updated: 16 Aug 2021*
+*Last updated: 6 Sep 2021*
 
 Note: the selection of features and functions available to scripts depends on the context in which they are called. The following context types exist..
 
@@ -1147,11 +1147,13 @@ var data = client.ssh.loadJson("/etc/patterns.json");
 See notes for "{client}.ssh" for information about using and configuring this approach.
 
 
-## loadScript(fileName)
+## loadScript(fileNameOrCode)
 
 Loads a JS script from the specified file, pre-processes it to convert the V6 extensions info the format that can be executed by OTTO's V5 engine and returns the cooked script as a string.
 
 The syntax "cooking" handles V6 arrow functions and back-ticked strings.
+
+If the `fileNameOrCode` contains "{" and "}" characters then the argument is assumed to contain the JS code rather than the name of a file containing the code. In this case the `fileNameOrCode` is pre-processed to "cook" the V6 elements and convert to V5.
 
 
 ## loadText(fileName)
@@ -1423,7 +1425,9 @@ Prints the specified values on the standard output one after the other, followed
 The "headers" parameter is an array of strings that are used as column headers. The following special header formats are understood..
 - If a header string starts with ">", then content of the column is right-justified.
 - If a header starts with "#", then the content is dispayed as a right-justified integer.
-- If a header starts with a "{...}" specification, then this is stripped and ignored (this syntax is used for Excel output formatting by `writeTable()` but is ignored by `printTable()`). To find the correct format string use Excel's "Format Cell" dialogue and select number/custom.
+- If a header starts with a "{...}" specification, then this is stripped and ignored (this syntax is used for Excel output formatting by `writeTable()` but is ignored by `printTable()`).
+  - To find the correct format string use Excel's "Format Cell" dialogue and select number/custom.
+  - Example: to format a number with 2 digit precision you could use "{0.00}".
 - A header starting  with ">{...}" is equivalent to "{...}" but the column is right-justified.
 
 The "rows" parameter is an array of arrays. The number of cells in each sub-array MUST be the same as the number of header strings.
@@ -1977,3 +1981,5 @@ Writes the table to the specified file. The file extension determines the type o
 See the "printTable" function for information on how the "headers" and "rows" parameters are handled.
 
 For CSV files only: if the headers argument is missing, null or an empty list then no header line is prepended to the output.
+
+If the env var TURBO_TABLE_TITLE is set when writing an Excel file, then the title string it contains is written to the top of the spreadsheet along with the Turbonomic logo.

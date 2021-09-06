@@ -1,4 +1,4 @@
-# TButil 2.0g - Turbonomic Command-Line Utility
+# TButil 2.0h - Turbonomic Command-Line Utility
 
 *Last updated: 1 Jun 2021*
 
@@ -16,7 +16,7 @@ TButil includes an embedded JavaScript engine that can be used to format the out
 
 Download from the project's S3 site..
 
-https://github.com/turbonomic/tbutil/blob/v2.0g/docs/release.md
+https://github.com/turbonomic/tbutil/blob/v2.0h/docs/release.md
 
 Once you've downloaded the relevant ZIP, follow the instructions contained in the QUICK-INSTALL.pdf file it contains. This takes you through the process step by step.
 
@@ -369,10 +369,10 @@ Just run "tbutil" with no arguments.
 ```text
 TBUTIL: Unsupported Software, Copyright (C) Turbonomic 2018,2019,2020,2021
 Issued To   : chris.lowth@turbonomic.com
-GIT Tag     : 2.0g
-Commit Hash : 098d750495c40b3a9af462b03c0bc7ebf01edc19
-Commit Time : 2021-08-23 16:00:18 +0100
-Build Time  : 2021-08-23 16:02:14 +0100
+GIT Tag     : 2.0h
+Commit Hash : d66574fa8572b33b9c8819c977dae1768ee36af1
+Commit Time : 2021-09-06 11:43:07 +0100
+Build Time  : 2021-09-06 11:56:32 +0100
 (use "tbutil -version" for more version info)
 
 Usage:
@@ -385,7 +385,7 @@ Usage:
   tbutil [{cred}] [32mrediscover[0m|[32mvalidate[0m [32mtarget[0m [[36m-by-name[0m] {target_id_or_name} ...
   tbutil [{cred}] [32mshell[0m {arguments} ...
   tbutil [{cred}] [32msql[0m [[36m-help[0m|[36m-test[0m] [[36m-j[0m|[36m-s ..[0m|[36m-y[0m|[36m-x ..[0m] [[36m-columns ..[0m] [[36m-o {csv_file}[0m] {sql_file} [{arg} ...]
-  tbutil [{cred}] [32mwhat[0m {method} {url}
+  tbutil [{cred}] [32mwhat[0m [[36m-help[0m] {method} {url}
   tbutil [32mcrypt[0m [ [36m-create-key[0m | [36m-delete-key[0m | [36m-target[0m {file} | [36m-user[0m {file} | [36m-proxy[0m {file} | [36m-encode[0m [{clear_text}] ]
   tbutil [32mhelp[0m [{keyword}|[36mall[0m|[36menv_vars[0m|[36mfunctions[0m]
   tbutil [32mopensource licenses[0m
@@ -421,7 +421,7 @@ The optional '{cred}' argument provides the credentials for the connection with 
 * Absent but no TURBO_CREDENTIALS defined: the "@default" block from .tbutilrc is used.
 
 Download code and docs from:
-   https://github.com/turbonomic/tbutil/blob/v2.0g/docs/release.md
+   https://github.com/turbonomic/tbutil/blob/v2.0h/docs/release.md
 ```
 
 ### Get the list of clusters

@@ -18,14 +18,14 @@ spec:
         app: tbutil-full
 
     spec:
-      serviceAccountName: turbo-user
+      serviceAccountName: tbutil-full-user
 
       securityContext:
         fsGroup: 2000
 
       containers:
       - name: tbutil-full
-        image: turbointegrations/tbutil-full:2.0g
+        image: turbointegrations/tbutil-full:2.0h
         imagePullPolicy: IfNotPresent
         env:
           - name: TURBO_MACHINE_ID_FILE
@@ -47,17 +47,28 @@ spec:
           - name: TZ
             value: GMT
 
+          - name: "SSHNODEPORT"
+            value: "31222"
+
+          - name: "HTTPNODEPORT"
+            value: "31280"
         ports:
           - containerPort: 22
           - containerPort: 80
 
 
-        # For trouble-shooting the boostratp, just uncomment these two lines (command
-        # and args). This causes the boostrap to be bye-passed
+# For trouble-shooting the boostratp, just uncomment these two lines (command
+# and args). This causes the boostrap script to be bye-passed so that the pod
+# starts and you can "exec" a shell to investigate the problem.
 
 #        command: [ "/bin/sleep" ]
 #        args: [ "infinity" ]
 
+
+# If the auto-creation of volumes doesnt work (eg: not compatible with your cluster
+# setup), then you will need to create the tbutil-full-volume volume by hand and
+# configure the "volumeMounts" and "volumes" sections for this deployment. Uncommenting
+# the lines below could be a good starting point for the latter step.
 
 #        volumeMounts:
 #          - name: tbutil-full-volume
@@ -83,12 +94,30 @@ spec:
 #            subPath: helper_dir
 #            mountPath: /home/turbonomic/data/helper_dir/topology-processor
 #            readOnly: true
-
+#
+#          # NB: The "api" and "auth" mounts should only be uncommented if the matching
+#          # PVCs already exist in the turbonomic namespace. You can check using:
+#          #     kubectl get pvc api -n turbonomic
+#          #     kubectl get pvc auth -n turbonomic
+#
+#          - name: api
+#            subPath: helper_dir
+#            mountPath: /home/turbonomic/data/helper_dir/api
+#            readOnly: true
+#
+#          - name: auth
+#            subPath: helper_dir
+#            mountPath: /home/turbonomic/data/helper_dir/auth
+#            readOnly: true
 
 #      volumes:
 #        - name: tbutil-full-volume
 #          persistentVolumeClaim:
 #            claimName: tbutil-full-volume
+#
+#        # NB: The confgMap name field below should match the existing config map. You can
+#        # determine the needed name by using the command:
+#        #     kubectl get configMap -n turbonomic | grep global-properties
 #
 #        - name: turbo-volume
 #          configMap:
@@ -99,9 +128,23 @@ spec:
 #        - name: topology-processor
 #          persistentVolumeClaim:
 #            claimName: topology-processor
-
+#
+#        # NB: The "api" and "auth" volumes should only be uncommented if the matching
+#        # PVCs already exist in the turbonomic namespace. You can check using:
+#        #     kubectl get pvc api -n turbonomic
+#        #     kubectl get pvc auth -n turbonomic
+#
+#        - name: api
+#          persistentVolumeClaim:
+#            claimName: api
+#
+#        - name: auth
+#          persistentVolumeClaim:
+#            claimName: auth
+#
 
 ---
+
 kind: Service
 apiVersion: v1
 metadata:
@@ -120,3 +163,35 @@ spec:
 
   selector:
     app: tbutil-full
+
+---
+
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: tbutil-full-user
+
+---
+
+kind: ClusterRoleBinding
+
+# For OpenShift 3.4-3.7 use apiVersion: v1
+# For kubernetes 1.9 use rbac.authorization.k8s.io/v1
+# For kubernetes 1.8 use rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
+
+metadata:
+  name: tbutil-full-binding
+
+subjects:
+  - kind: ServiceAccount
+    name: tbutil-full-user
+    namespace: turbonomic
+
+roleRef:
+  # User creating this resource must have permissions to add this policy to the SA
+  kind: ClusterRole
+  name: cluster-admin
+
+  # For OpenShift v3.4 remove apiGroup line
+  apiGroup: rbac.authorization.k8s.io
