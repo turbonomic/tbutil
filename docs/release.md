@@ -47,9 +47,9 @@ md5sum FILE-NAME-GOES-HERE
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
-| [tbutil-2_0h-linux.zip](https:/turbonomic/tbutil/releases/download/v2.0h/tbutil-2_0h-linux.zip) | 6dcf2ee1e645809cf7528f9a5656c5fe | Download for x86_64 Linux |
-| [tbutil-2_0h-mac.zip](https:/turbonomic/tbutil/releases/download/v2.0h/tbutil-2_0h-mac.zip) | 321cca6f2b745823a8ae752879347e20 | Download for MAC (64 bit) |
-| [tbutil-2_0h-windows.zip](https:/turbonomic/tbutil/releases/download/v2.0h/tbutil-2_0h-windows.zip) | 8b6d09ed613f3aca20fd6c758baf6d91 | Download for Windows (64 bit) |
+| [tbutil-2_0h-linux.zip](https:/turbonomic/tbutil/releases/download/v2.0h/tbutil-2_0h-linux.zip) | 901e6e24d62c211dfcb295a2a72b1c46 | Download for x86_64 Linux |
+| [tbutil-2_0h-mac.zip](https:/turbonomic/tbutil/releases/download/v2.0h/tbutil-2_0h-mac.zip) | 25cd94994e657924efa27da5611970ce | Download for MAC (64 bit) |
+| [tbutil-2_0h-windows.zip](https:/turbonomic/tbutil/releases/download/v2.0h/tbutil-2_0h-windows.zip) | 1459a9b3d4b25d03c283d4fe0a06a005 | Download for Windows (64 bit) |
 
 ## Other MarkDown Documents
 
