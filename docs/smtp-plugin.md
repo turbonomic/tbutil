@@ -1,12 +1,17 @@
 # SMTP Plugin for TBUtil
 
-*Last updated: 25 Aug 2021*
+*Last updated: 7 Sep 2021*
 
 ---
 
 TbUtil plugin for sending messages using the SMTP protocol.
 
 Note: this plugin performs no DKIM/DMARK or SPF verification of the sent email. You could consider using the free "dkimproxy" if that is an issue.
+
+## Presentation Slides
+
+[Click here](slides/SMTP-Plugin.pdf) for a PDF of training slides about the plugin.
+
 
 ## Usage
 

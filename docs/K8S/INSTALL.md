@@ -2,7 +2,7 @@
 
 | Info | Value |
 | ---- | ----- |
-| Date | 6 Sep 2021 |
+| Date | 7 Sep 2021 |
 | Author | Chris Lowth - chris.lowth@turbonomic.com |
 | TBUtil Version | 2.0h |
 
@@ -49,12 +49,12 @@ md5sum FILE-NAME-GOES-HERE
 
 | Flavour | Zip | deploy-online.yaml |
 | ------- | --- | ------------------ |
-| base | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0h/tbutil-base-k8s-2.0h.zip)<br><span style="color: orange">f393281d</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0h/yaml/base/deploy-online.yaml)<br><span style="color: orange">013641dc</span> |
-| actionscripts | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0h/tbutil-actionscripts-k8s-2.0h.zip)<br><span style="color: orange">507e3928</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0h/yaml/actionscripts/deploy-online.yaml)<br><span style="color: orange">b8943161</span> |
-| hotwarm | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0h/tbutil-hotwarm-k8s-2.0h.zip)<br><span style="color: orange">4d4054e0</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0h/yaml/hotwarm/deploy-online.yaml)<br><span style="color: orange">a8d948a2</span> |
-| chromedp | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0h/tbutil-chromedp-k8s-2.0h.zip)<br><span style="color: orange">2be8d817</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0h/yaml/chromedp/deploy-online.yaml)<br><span style="color: orange">b03d3649</span> |
-| flexera | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0h/tbutil-flexera-k8s-2.0h.zip)<br><span style="color: orange">afb5e8f4</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0h/yaml/flexera/deploy-online.yaml)<br><span style="color: orange">847b22a9</span> |
-| full | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0h/tbutil-full-k8s-2.0h.zip)<br><span style="color: orange">0a7b530c</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0h/yaml/full/deploy-online.yaml)<br><span style="color: orange">08cc8f01</span> |
+| base | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0h/tbutil-base-k8s-2.0h.zip)<br><span style="color: orange">e5f953c5</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0h/yaml/base/deploy-online.yaml)<br><span style="color: orange">013641dc</span> |
+| actionscripts | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0h/tbutil-actionscripts-k8s-2.0h.zip)<br><span style="color: orange">c5853357</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0h/yaml/actionscripts/deploy-online.yaml)<br><span style="color: orange">b8943161</span> |
+| hotwarm | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0h/tbutil-hotwarm-k8s-2.0h.zip)<br><span style="color: orange">13a072a5</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0h/yaml/hotwarm/deploy-online.yaml)<br><span style="color: orange">a8d948a2</span> |
+| chromedp | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0h/tbutil-chromedp-k8s-2.0h.zip)<br><span style="color: orange">48cefa15</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0h/yaml/chromedp/deploy-online.yaml)<br><span style="color: orange">b03d3649</span> |
+| flexera | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0h/tbutil-flexera-k8s-2.0h.zip)<br><span style="color: orange">0babb6f4</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0h/yaml/flexera/deploy-online.yaml)<br><span style="color: orange">847b22a9</span> |
+| full | [click here](https://github.com/turbonomic/tbutil/releases/download/v2.0h/tbutil-full-k8s-2.0h.zip)<br><span style="color: orange">9ee2acce</span> | [click here](https://raw.githubusercontent.com/turbonomic/tbutil/v2.0h/yaml/full/deploy-online.yaml)<br><span style="color: orange">08cc8f01</span> |
 
 
 

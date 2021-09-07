@@ -1,6 +1,6 @@
 # TbUtil Version 2.0h - Kubernetes POD deployments
 
-Released: 6 Sep 2021
+Released: 7 Sep 2021
 
 Unsupported software, Copyright (C) Turbonomic 2018 .. 2021
 
@@ -14,9 +14,9 @@ The following documents are available on this subject ...
 
 | File Name | MD5 Checksum | Notes |
 | --------- | ------------ | ----- |
-| [ACTIONSCRIPTS.md](../docs/K8S/ACTIONSCRIPTS.md) | 01d80eb381da76c3d1bc1bf06d4cd52b | TBUtil Action Scripts Pod |
-| [CHROMEDP.md](../docs/K8S/CHROMEDP.md) | 47ccf0f2f087cc7f739b29eaa405deb4 | TBUtil ChromeDP integration pod. |
-| [FLEXERA.md](../docs/K8S/FLEXERA.md) | 8c6cf59b09494857cf1235c9a1f80455 | TBUtil Flexera intergration Pod |
-| [HOTWARM.md](../docs/K8S/HOTWARM.md) | 3440e7da9cb7b04a50117a1e62995703 | TBUtil Hot/Warm Standby Pod |
-| [INSTALL.md](../docs/K8S/INSTALL.md) | da3fb0de7d00e7daaa689ef5b5cb21bc | Installing TBUtil PODs |
+| [ACTIONSCRIPTS.md](../docs/K8S/ACTIONSCRIPTS.md) | 40d1dec192479323eea545035b62e7d0 | TBUtil Action Scripts Pod |
+| [CHROMEDP.md](../docs/K8S/CHROMEDP.md) | 8e5e0795ca3d5fc995193c703028bd19 | TBUtil ChromeDP integration pod. |
+| [FLEXERA.md](../docs/K8S/FLEXERA.md) | 844e9efcf65a4494e3eec83c21781fce | TBUtil Flexera intergration Pod |
+| [HOTWARM.md](../docs/K8S/HOTWARM.md) | 1c3a6ec4c69183891517249fb3916a2d | TBUtil Hot/Warm Standby Pod |
+| [INSTALL.md](../docs/K8S/INSTALL.md) | 5de813da07a09252c00f834d97710b4b | Installing TBUtil PODs |
 | [INTERNALS.md](../docs/K8S/INTERNALS.md) | ecbcb11f5c1328065e76cf2507a6fc7b | TBUtil POD Internals. |
