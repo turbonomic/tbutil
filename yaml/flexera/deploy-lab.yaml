@@ -25,7 +25,7 @@ spec:
 
       containers:
       - name: tbutil-flexera
-        image: labdocker:5000/tbutil-flexera:2.0h
+        image: labdocker:5000/tbutil-flexera:2.0i
         imagePullPolicy: IfNotPresent
         env:
           - name: TURBO_MACHINE_ID_FILE

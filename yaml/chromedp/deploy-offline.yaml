@@ -25,7 +25,7 @@ spec:
 
       containers:
       - name: tbutil-chromedp
-        image: tbutil-chromedp:2.0h
+        image: tbutil-chromedp:2.0i
         imagePullPolicy: Never
         env:
           - name: TURBO_MACHINE_ID_FILE
