@@ -25,7 +25,7 @@ spec:
 
       containers:
       - name: tbutil-flexera
-        image: turbointegrations/tbutil-flexera:2.0i
+        image: turbointegrations/tbutil-flexera:2.0j
         imagePullPolicy: IfNotPresent
         env:
           - name: TURBO_MACHINE_ID_FILE
