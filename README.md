@@ -25,12 +25,12 @@ limitations under the License.
 
 All documentation for this tool can be found in the [project's WIKI](https://github.com/turbonomic/tbutil/wiki).
 
-The current version is 3.0c.
+The current version is 3.0d.
 
 
 # Overview
 
-"TbUtil" is a Swiss Army Knife command-line tool and scripting platform that allows you to access many features of Turbonomic (also known as CWOM and IWO). It is available in a number of pre-packaged K8S pods for Linux or as locally installable ZIP files for 64bit versions of Linux, Mac and Windows.
+"TbUtil" is a Swiss Army Knife command-line tool and scripting platform that allows you to access many features of Turbonomic (also badged as CWOM and IWO). It is available in a number of pre-packaged K8S pods for Linux or as locally installable ZIP files for 64bit versions of Linux, Mac and Windows.
 
 TBUtil is built and maintained by the Turbonomic field organisation and is free to download and use and is unsupported.
 
