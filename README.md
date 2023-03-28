@@ -25,7 +25,7 @@ limitations under the License.
 
 All documentation for this tool can be found in the [project's WIKI](https://github.com/turbonomic/tbutil/wiki).
 
-The current version is 3.0h.
+The current version is 3.0i.
 
 
 # Overview
@@ -35,5 +35,3 @@ The current version is 3.0h.
 TBUtil is built and maintained by the Turbonomic field organisation and is free to download and use and is unsupported.
 
 It is Licensed under the [Apache License, Version 2.0](LICENSE).
-
-It requires a personalised "unlock" key file which your Turbonomic representative can supply. This key is _not_ a license.
