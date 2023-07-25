@@ -25,7 +25,7 @@ limitations under the License.
 
 All documentation for this tool can be found in the [project's WIKI](https://github.com/turbonomic/tbutil/wiki).
 
-The current version is 3.1
+The current version is 3.2
 
 
 # Overview
