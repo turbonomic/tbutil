@@ -6,7 +6,7 @@
 http://www.apache.org/licenses/LICENSE-2.0.txt
 
 
-Copyright 2021 Turbonomic
+Copyright 2024 IBM
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ limitations under the License.
 
 All documentation for this tool can be found in the [project's WIKI](https://github.com/turbonomic/tbutil/wiki).
 
-The current version is 3.3
+The current version is 3.4
 
 
 # Overview
