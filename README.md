@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="assets/logo.png">
-</p>
-
 <!--
 http://www.apache.org/licenses/LICENSE-2.0.txt
 
@@ -27,6 +23,7 @@ All documentation for this tool can be found in the [project's WIKI](https://git
 
 The current version is 3.4
 
+:warning: :warning: * TbUtil is **NOT** supported and comes with no SLA. It's to be used "as-is" as no new features or bug corrections are planned since December 2023. If you need new features or bug corrections, please contact your IBM representative. :warning: :warning:
 
 # Overview
 
